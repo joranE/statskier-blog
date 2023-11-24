@@ -1,0 +1,77 @@
+---
+title: "Ruka 10k Classic Predictions"
+author: "Joran Elias"
+date: "2023-11-24"
+categories: [world cup,distance,classic,predictions]
+draft: false
+---
+
+```{r pkgs}
+library(tidyverse)
+library(statskier2)
+library(gt)
+library(gtExtras)
+library(ggpubr)
+
+theme_set(theme_bw())
+```
+
+Another set of predictions, this time for the first distance race. I haven't changed the methodology at all, yet.
+
+It's predicting Jessie Diggins to finish second, which seems like a moderately bold take. We'll see!
+
+
+```{r pred-data}
+mens_ruka_preds <- 
+  readr::read_csv(file = '2023-11-25_men_cl_dst_ruka.csv',
+                  show_col_types = FALSE)
+womens_ruka_preds <- 
+  readr::read_csv(file = '2023-11-25_women_cl_dst_ruka.csv',
+                  show_col_types = FALSE)
+```
+```{r tbl-men}
+mens_ruka_preds |> 
+  select(-compid) |> 
+  gt() |> 
+  tab_header(title = "Ruka 10k Classic",subtitle = "Men") |> 
+  opt_align_table_header(align = 'left') |> 
+  tab_caption(caption = "") |> 
+  tab_options(
+    table.font.size = 9,
+    ihtml.active = TRUE,
+    ihtml.use_pagination = TRUE,
+    ihtml.use_compact_mode = TRUE,
+    ihtml.use_highlight = TRUE
+  ) |> 
+  cols_label(
+    fisid = 'FIS Code',
+    name = 'Name',
+    page_rank = 'Predicted PR',
+    page_rank_pos = 'Predicted Finish') |> 
+  fmt_number(columns = page_rank,decimals = 4) |> 
+  gt_plt_bar(column = page_rank)
+```
+
+```{r tbl-wom}
+womens_ruka_preds |> 
+  select(-compid) |> 
+  gt() |> 
+  tab_header(title = "Ruka 10k Classic",subtitle = "Women") |>
+  opt_align_table_header(align = 'left') |> 
+  tab_caption(caption = "") |> 
+  tab_options(
+    table.font.size = 9,
+    ihtml.active = TRUE,
+    ihtml.use_pagination = TRUE,
+    ihtml.use_compact_mode = TRUE,
+    ihtml.use_highlight = TRUE
+  ) |> 
+  cols_label(
+    fisid = 'FIS Code',
+    name = 'Name',
+    page_rank = 'Predicted PR',
+    page_rank_pos = 'Predicted Finish') |> 
+  fmt_number(columns = page_rank,decimals = 4) |> 
+  gt_plt_bar(column = page_rank)
+```
+
