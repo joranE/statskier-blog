@@ -1,17 +1,23 @@
 ---
 title: "About"
+image: skierlogo-chart.png
 about:
-  template: jolla
+  template: marquee
+  image-shape: rectangle
   links:
-    - icon: twitter
-      text: Twitter
-      href: https://twitter.com
+    - icon: mastodon
+      text: Mastodon
+      href: https://mastodon.social/@joranelias
     - icon: linkedin
       text: LinkedIn
-      href: https://linkedin.com
+      href: https://www.linkedin.com/in/joran-elias-ab1548255/
     - icon: github
       text: Github
-      href: https://github.com
+      href: https://github.com/joranE
 ---
 
-About this blog
+I am a skier and statistician.
+
+I raced for much of my youth, from the Bill Koch League through the Dartmouth College Ski Team. I was, at times, not entirely slow. Nowadays I live in Montana. I also rides bikes and run moderately long distances.
+
+I have degrees in Mathematics (BA, Dartmouth College), Algebra (MA, Univeristy of Montana-Missoula) and Applied Statistics (PhD, University of Montana-Missoula). Graduate school taught me many things, among them that I hate academia and that I love wrangling data. Given the choice between wrangling awesome data and making tons of money, I’ll choose the former. Hence this website.
