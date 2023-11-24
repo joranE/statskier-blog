@@ -1,6 +1,5 @@
 ---
 title: "About"
-image: profile.jpg
 about:
   template: jolla
   links:
@@ -13,7 +12,6 @@ about:
     - icon: github
       text: Github
       href: https://github.com
-
 ---
 
 About this blog
