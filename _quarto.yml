@@ -3,8 +3,10 @@ project:
 
 website:
   title: "Statistical Skier"
+  favicon: skierlogo-square_400x400.png
   site-url: "https://statisticalskier.netlify.app/"
   description: "Statistical commentary on cross country skiing"
+  open-graph: true
   navbar:
     logo: skierlogo-chart.png
     right:
