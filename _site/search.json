@@ -4,7 +4,7 @@
     "href": "index.html",
     "title": "Periodic Musing On Cross Country Skiing",
     "section": "",
-    "text": "Post With Code\n\n\n\n\n\n\n\nnews\n\n\ncode\n\n\nanalysis\n\n\n\n\n\n\n\n\n\n\n\nNov 23, 2023\n\n\nHarlow Malloc\n\n\n\n\n\n\n  \n\n\n\n\nWelcome To My Blog\n\n\n\n\n\n\n\nnews\n\n\n\n\n\n\n\n\n\n\n\nNov 20, 2023\n\n\nTristan O’Malley\n\n\n\n\n\n\nNo matching items"
+    "text": "Post With Code\n\n\n\n\n\n\n\nnews\n\n\ncode\n\n\nanalysis\n\n\n\n\n\n\n\n\n\n\n\nNov 23, 2023\n\n\nHarlow Malloc\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nRuka Classic Sprint Predictions\n\n\n\n\n\n\n\nworld cup\n\n\nsprint\n\n\npredictions\n\n\n\n\n\n\n\n\n\n\n\nNov 23, 2023\n\n\nJoran Elias\n\n\n\n\n\n\n  \n\n\n\n\nWelcome To My Blog\n\n\n\n\n\n\n\nnews\n\n\n\n\n\n\n\n\n\n\n\nNov 20, 2023\n\n\nTristan O’Malley\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "posts/post-with-code/index.html",
@@ -26,5 +26,12 @@
     "title": "About",
     "section": "",
     "text": "I am a skier and statistician.\nI raced for much of my youth, from the Bill Koch League through the Dartmouth College Ski Team. I was, at times, not entirely slow. Nowadays I live in Montana. I also rides bikes and run moderately long distances.\nI have degrees in Mathematics (BA, Dartmouth College), Algebra (MA, Univeristy of Montana-Missoula) and Applied Statistics (PhD, University of Montana-Missoula). Graduate school taught me many things, among them that I hate academia and that I love wrangling data. Given the choice between wrangling awesome data and making tons of money, I’ll choose the former. Hence this website."
+  },
+  {
+    "objectID": "posts/2023-11-23-ruka-sprint-predictions/ruka_spr_preds.html",
+    "href": "posts/2023-11-23-ruka-sprint-predictions/ruka_spr_preds.html",
+    "title": "Ruka Classic Sprint Predictions",
+    "section": "",
+    "text": "Don’t take this too seriously. This is mostly an intellectual exercise for me, based on an interesting method that was suggested to me several months ago. I’m not going to go into the details at the moment, I’m mainly recording the predictions here just to force myself to commit to following up on it afterwards. So I’ll try to update each prediction post with the actual results and a comparison. My expectations for it’s performance at the moment is fairly low.\nThe methodology is also still unfinished. I’m sure I’ll be fiddling with it a lot over the course of the season, but I’m trying to commit to publish these for as many World Cup events as I can. It’s sort of reliant on my having a reliable start list, so if I’m busy or traveling the day before a race, I may not get to it in time, we’ll see.\nFor the moment all I’m going to say is that I’m publishing predicted finishing order for the entire start list. The “Predicted PR” column is the actual value the model outputs, so it gives some relative sense of certainty. Values that are further apart represent more certainty of the gap in finishing place. But they are not probabilities and do not have any particular units.\nAlso, in case it wasn’t clear, I’m not terribly interested in participating in Twitter anymore, so anything I produce this season will be going here.\n\n\n\n\n\n?(caption)\n\n\n\n\n\n\n\nRuka Classic Sprint\nMen\n\n\n\n\n\n\n\n\n\n?(caption)\n\n\n\n\n\n\n\nRuka Classic Sprint\nWomen"
   }
 ]
