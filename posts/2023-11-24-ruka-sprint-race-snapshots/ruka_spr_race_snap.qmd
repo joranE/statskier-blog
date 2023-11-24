@@ -1,0 +1,29 @@
+---
+title: "Ruka Classic Sprint Race Snapshots"
+author: "Joran Elias"
+date: "2023-11-24"
+categories: [world cup,sprint,race snapshots,classic,ruka]
+draft: false
+---
+
+```{r pkgs}
+library(tidyverse)
+library(statskier2)
+
+statskier_connect()
+```
+
+```{r gen-snap}
+p_men <- race_snapshot_spr(event_id = 19175,title = "Men's Ruka Classic Sprint",reduced = TRUE)
+p_wom <- race_snapshot_spr(event_id = 19174,title = "Women's Ruka Classic Sprint",reduced = TRUE)
+```
+
+## Men's Race Snapshot
+```{r men-snap,fig.height=10,fig.width=6}
+p_men$plot
+```
+
+## Women's Race Snapshot
+```{r wom-snap,fig.height=10,fig.width=6}
+p_wom$plot
+```
