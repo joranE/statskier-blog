@@ -7,14 +7,21 @@ website:
     logo: skierlogo-chart.png
     right:
       - about.qmd
-      - icon: github
-        href: https://github.com/joranE
       - icon: mastodon
         href: https://mastodon.social/@joranelias
+      - icon: github
+        href: https://github.com/joranE
+      - icon: linkedin
+        href: https://www.linkedin.com/in/joran-elias-ab1548255/
 format:
   html:
     theme: darkly
     css: styles.css
 
 editor: source
+
+execute: 
+  freeze: auto
+  echo: false
+  warning: false
 
