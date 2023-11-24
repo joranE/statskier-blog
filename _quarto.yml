@@ -3,6 +3,8 @@ project:
 
 website:
   title: "Statistical Skier"
+  site-url: "https://statisticalskier.netlify.app/"
+  description: "Statistical commentary on cross country skiing"
   navbar:
     logo: skierlogo-chart.png
     right:
@@ -15,6 +17,7 @@ website:
         href: https://github.com/joranE
       - icon: linkedin
         href: https://www.linkedin.com/in/joran-elias-ab1548255/
+
 format:
   html:
     theme: darkly
