@@ -11,6 +11,9 @@ library(tidyverse)
 library(statskier2)
 library(gt)
 library(gtExtras)
+library(ggpubr)
+
+theme_set(theme_bw())
 ```
 
 Don’t take this too seriously. This is mostly an intellectual exercise for me, based on an interesting method that was suggested to me several months ago. I’m not going to go into the details at the moment, I’m mainly recording the predictions here just to force myself to commit to following up on it afterwards. So I’ll try to update each prediction post with the actual results and a comparison. My expectations for it’s performance at the moment is fairly low.
@@ -74,3 +77,88 @@ womens_ruka_preds |>
   fmt_number(columns = page_rank,decimals = 4) |> 
   gt_plt_bar(column = page_rank)
 ```
+
+## Update
+```{r db-con}
+statskier_connect()
+v_spr_maj_int <- dplyr::tbl(..statskier_pg_con..,'v_sprint_maj_int')
+```
+
+```{r race-data}
+ruka_spr_res <- v_spr_maj_int |> 
+  filter(eventid %in% c(19174,19175)) |> 
+  collect()
+
+fis_pts <- readRDS(file = '~/Documents/official-fis-points-lists/output/fis_pts_list.rds') |> 
+  select(listid = Listid,
+         listname = Listname,
+         listnum = ListNum,
+         compid = Competitorid,
+         year = year,
+         calc_date = Calculationdate,
+         spr_points = SPpoints) |> 
+  filter(year >= 2015)
+
+men_comb <- ruka_spr_res |> 
+  filter(gender == 'Men') |> 
+  select(date,compid,rank) |> 
+  mutate(date = as.Date(date)) |> 
+  full_join(mens_ruka_preds,by = 'compid') |> 
+  left_join(
+    fis_pts,
+    join_by(compid == compid,closest(date > calc_date))) |> 
+  mutate(
+    fis_pts_rank = rank(spr_points,ties.method = 'min')) |> 
+  arrange(rank)
+
+wom_comb <- ruka_spr_res |> 
+  filter(gender == 'Women') |> 
+  select(date,compid,rank) |> 
+  mutate(date = as.Date(date)) |>
+  full_join(womens_ruka_preds,by = 'compid') |> 
+  left_join(
+    fis_pts,
+    join_by(compid == compid,closest(date > calc_date))) |> 
+  mutate(
+    fis_pts_rank = rank(spr_points,ties.method = 'min')) |> 
+  arrange(rank)
+```
+
+Now that we have the actual results, let's take a look.
+
+```{r men-perf}
+men_comb |> 
+  select(compid,rank,page_rank_pos,fis_pts_rank) |> 
+  pivot_longer(cols = c(page_rank_pos,fis_pts_rank),names_to = 'grp',values_to = 'val') |> 
+  mutate(grp = if_else(grp == 'fis_pts_rank','FIS Sprint Points List','PR Method')) |> 
+  ggplot(data = _,aes(x = rank,y = val)) + 
+  facet_wrap(~grp,ncol = 1) + 
+  geom_point() + 
+  geom_abline(slope = 1,intercept = 0,color = 'blue') + 
+  stat_cor(aes(label = after_stat(..r.label..))) +
+  ggtitle(label = "Men's Ruka Sprint Predicted vs True Athlete Finishing Order",
+          subtitle = "Athletes ordered by most recent FIS Sprint points list (top) & my PR method (bottom)") +
+  labs(x = 'True Finishing Place',y = 'Predicted Finishing Place')
+```
+My method does slightly better overall than if we had simply ordered the racers by the most recent FIS sprint points list. One interesting feature here is that a lot of the misses are the same between the two methods.
+
+However, my method did significantly better at ordering the top finishers. For only the top 12, my method had a correlation of 0.64, whereas using the FIS sprint points list had a correlation of only 0.24.
+
+As for the women:
+
+```{r wom-perf}
+wom_comb |> 
+  select(compid,rank,page_rank_pos,fis_pts_rank) |> 
+  pivot_longer(cols = c(page_rank_pos,fis_pts_rank),names_to = 'grp',values_to = 'val') |> 
+  mutate(grp = if_else(grp == 'fis_pts_rank','FIS Sprint Points List','PR Method')) |> 
+  ggplot(data = _,aes(x = rank,y = val)) + 
+  facet_wrap(~grp,ncol = 1) + 
+  geom_point() + 
+  geom_abline(slope = 1,intercept = 0,color = 'blue') + 
+  stat_cor(aes(label = after_stat(..r.label..))) +
+  ggtitle(label = "Women's Ruka Sprint Predicted vs True Athlete Finishing Order",
+          subtitle = "Athletes ordered by most recent FIS Sprint points list (top) & my PR method (bottom)") +
+  labs(x = 'True Finishing Place',y = 'Predicted Finishing Place')
+```
+
+Here my method did slightly worse. Oh well. It's just one race, and the tinkering will continue.
