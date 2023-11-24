@@ -3,7 +3,7 @@ title: "Ruka Classic Sprint Predictions"
 author: "Joran Elias"
 date: "2023-11-23"
 categories: [world cup,sprint,predictions]
-draft: true
+draft: false
 ---
 
 ```{r pkgs}
