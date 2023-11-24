@@ -11,7 +11,7 @@
     "href": "posts/post-with-code/index.html",
     "title": "Post With Code",
     "section": "",
-    "text": "This is a post with executable code.\n\n1 + 1\n\n[1] 2"
+    "text": "This is a post with executable code.\n\n\n[1] 2"
   },
   {
     "objectID": "posts/welcome/index.html",
@@ -25,6 +25,6 @@
     "href": "about.html",
     "title": "About",
     "section": "",
-    "text": "About this blog"
+    "text": "I am a skier and statistician.\nI raced for much of my youth, from the Bill Koch League through the Dartmouth College Ski Team. I was, at times, not entirely slow. Nowadays I live in Montana. I also rides bikes and run moderately long distances.\nI have degrees in Mathematics (BA, Dartmouth College), Algebra (MA, Univeristy of Montana-Missoula) and Applied Statistics (PhD, University of Montana-Missoula). Graduate school taught me many things, among them that I hate academia and that I love wrangling data. Given the choice between wrangling awesome data and making tons of money, I’ll choose the former. Hence this website."
   }
 ]
