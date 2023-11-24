@@ -1,5 +1,5 @@
 ---
-title: "About"
+title: "Who Am I?"
 image: skierlogo-chart.png
 about:
   template: marquee
