@@ -17,6 +17,8 @@ website:
         href: https://github.com/joranE
       - icon: linkedin
         href: https://www.linkedin.com/in/joran-elias-ab1548255/
+      - icon: rss
+        href: index.xml
 
 format:
   html:
