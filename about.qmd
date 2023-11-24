@@ -5,6 +5,9 @@ about:
   template: marquee
   image-shape: rectangle
   links:
+    - icon: graph-up
+      text: Interactive Data Explorer
+      href: https://statisticalskier.shinyapps.io/StatisticalSkierApp/
     - icon: mastodon
       text: Mastodon
       href: https://mastodon.social/@joranelias
