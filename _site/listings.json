@@ -2,9 +2,7 @@
   {
     "listing": "/index.html",
     "items": [
-      "/posts/post-with-code/index.html",
-      "/posts/2023-11-23-ruka-sprint-predictions/ruka_spr_preds.html",
-      "/posts/welcome/index.html"
+      "/posts/2023-11-23-ruka-sprint-predictions/ruka_spr_preds.html"
     ]
   }
 ]
