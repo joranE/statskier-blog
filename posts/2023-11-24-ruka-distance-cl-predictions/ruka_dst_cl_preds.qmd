@@ -20,7 +20,6 @@ Another set of predictions, this time for the first distance race. I haven't cha
 
 It's predicting Jessie Diggins to finish second, which seems like a moderately bold take. We'll see!
 
-
 ```{r pred-data}
 mens_ruka_preds <- 
   readr::read_csv(file = '2023-11-25_men_cl_dst_ruka.csv',
@@ -29,6 +28,8 @@ womens_ruka_preds <-
   readr::read_csv(file = '2023-11-25_women_cl_dst_ruka.csv',
                   show_col_types = FALSE)
 ```
+
+## Men's 10k Classic Predictions
 ```{r tbl-men}
 mens_ruka_preds |> 
   select(-compid) |> 
@@ -51,7 +52,7 @@ mens_ruka_preds |>
   fmt_number(columns = page_rank,decimals = 4) |> 
   gt_plt_bar(column = page_rank)
 ```
-
+## Women's 10k Classic Predictions
 ```{r tbl-wom}
 womens_ruka_preds |> 
   select(-compid) |> 
