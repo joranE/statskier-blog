@@ -16,9 +16,13 @@ library(ggpubr)
 theme_set(theme_bw())
 ```
 
+## Predictions
 Another set of predictions, this time for the first distance race. I haven't changed the methodology at all, yet.
 
-It's predicting Jessie Diggins to finish second, which seems like a moderately bold take. We'll see!
+~~It's predicting Jessie Diggins to finish second, which seems like a moderately bold take. We'll see!~~
+
+Ha ha! I accidentally used the start list from the women's sprint instead of the 10k classic, no wonder 
+the predictions looked a little wonky! I replaced them with ones generated from the correct start list.
 
 ```{r pred-data}
 mens_ruka_preds <- 
@@ -29,7 +33,7 @@ womens_ruka_preds <-
                   show_col_types = FALSE)
 ```
 
-## Men's 10k Classic Predictions
+### Men's 10k Classic Predictions
 ```{r tbl-men}
 mens_ruka_preds |> 
   select(-compid) |> 
@@ -52,7 +56,7 @@ mens_ruka_preds |>
   fmt_number(columns = page_rank,decimals = 4) |> 
   gt_plt_bar(column = page_rank) 
 ```
-## Women's 10k Classic Predictions
+### Women's 10k Classic Predictions
 ```{r tbl-wom}
 womens_ruka_preds |> 
   select(-compid) |> 
@@ -75,4 +79,92 @@ womens_ruka_preds |>
   fmt_number(columns = page_rank,decimals = 4) |> 
   gt_plt_bar(column = page_rank)
 ```
+
+## Update
+```{r db-con}
+statskier_connect()
+v_dst_maj_int <- dplyr::tbl(..statskier_pg_con..,'v_distance_maj_int')
+```
+
+```{r race-data}
+ruka_dst_res <- v_dst_maj_int |> 
+  filter(eventid %in% c(19176,19177)) |> 
+  collect()
+
+fis_pts <- readRDS(file = '~/Documents/code/official-fis-points-lists/output/fis_pts_list.rds') |> 
+  select(listid = Listid,
+         listname = Listname,
+         listnum = ListNum,
+         compid = Competitorid,
+         year = year,
+         calc_date = Calculationdate,
+         dst_points = DIpoints) |> 
+  filter(year >= 2020)
+
+men_comb <- ruka_dst_res |> 
+  filter(gender == 'Men') |> 
+  select(date,compid,rank) |> 
+  mutate(date = as.Date(date)) |> 
+  full_join(mens_ruka_preds,by = 'compid') |> 
+  left_join(
+    fis_pts,
+    join_by(compid == compid,closest(date > calc_date))) |> 
+  mutate(
+    fis_pts_rank = rank(dst_points,ties.method = 'min')) |> 
+  arrange(rank)
+
+wom_comb <- ruka_dst_res |> 
+  filter(gender == 'Women') |> 
+  select(date,compid,rank) |> 
+  mutate(date = as.Date(date)) |>
+  full_join(womens_ruka_preds,by = 'compid') |> 
+  left_join(
+    fis_pts,
+    join_by(compid == compid,closest(date > calc_date))) |> 
+  mutate(
+    fis_pts_rank = rank(dst_points,ties.method = 'min')) |> 
+  arrange(rank)
+```
+
+Alright, let's see how we did, starting with the men:
+
+```{r men-perf}
+men_comb |> 
+  select(compid,rank,page_rank_pos,fis_pts_rank) |> 
+  pivot_longer(cols = c(page_rank_pos,fis_pts_rank),names_to = 'grp',values_to = 'val') |> 
+  mutate(grp = if_else(grp == 'fis_pts_rank','FIS Sprint Points List','PR Method')) |> 
+  ggplot(data = _,aes(x = rank,y = val)) + 
+  facet_wrap(~grp,ncol = 1) + 
+  geom_point() + 
+  geom_abline(slope = 1,intercept = 0,color = 'blue') + 
+  stat_cor(aes(label = after_stat(..r.label..))) +
+  ggtitle(label = "Men's Ruka 10k Classic Predicted vs True Athlete Finishing Order",
+          subtitle = "Athletes ordered by most recent FIS Sprint points list (top) & my PR method (bottom)") +
+  labs(x = 'True Finishing Place',y = 'Predicted Finishing Place')
+```
+
+Again, my predictions did somewhat better than my chosen baseline here. I'm beginning to notice a 
+pattern where my predictions do particularly well for the very top & bottom of the fields, while
+things are more similar between the two in the middle. 
+
+How about the women:
+
+```{r wom-perf}
+wom_comb |> 
+  select(compid,rank,page_rank_pos,fis_pts_rank) |> 
+  pivot_longer(cols = c(page_rank_pos,fis_pts_rank),names_to = 'grp',values_to = 'val') |> 
+  mutate(grp = if_else(grp == 'fis_pts_rank','FIS Sprint Points List','PR Method')) |> 
+  ggplot(data = _,aes(x = rank,y = val)) + 
+  facet_wrap(~grp,ncol = 1) + 
+  geom_point() + 
+  geom_abline(slope = 1,intercept = 0,color = 'blue') + 
+  stat_cor(aes(label = after_stat(..r.label..))) +
+  ggtitle(label = "Women's Ruka 10k Classic Predicted vs True Athlete Finishing Order",
+          subtitle = "Athletes ordered by most recent FIS Sprint points list (top) & my PR method (bottom)") +
+  labs(x = 'True Finishing Place',y = 'Predicted Finishing Place')
+```
+
+We did slightly better here, but not as much better as with the men. Unlike with the men, there isn't
+a big difference with the performance at the front of the field, but my predictions did do noticeably
+better with the bottom of the field.
 
