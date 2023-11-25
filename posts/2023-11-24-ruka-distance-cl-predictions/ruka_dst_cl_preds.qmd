@@ -6,7 +6,7 @@ categories: [world cup,distance,classic,predictions]
 draft: false
 ---
 
-```{r pkgs}
+```{r pkgs,message=FALSE}
 library(tidyverse)
 library(statskier2)
 library(gt)
@@ -50,7 +50,7 @@ mens_ruka_preds |>
     page_rank = 'Predicted PR',
     page_rank_pos = 'Predicted Finish') |> 
   fmt_number(columns = page_rank,decimals = 4) |> 
-  gt_plt_bar(column = page_rank)
+  gt_plt_bar(column = page_rank) 
 ```
 ## Women's 10k Classic Predictions
 ```{r tbl-wom}
