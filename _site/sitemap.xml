@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://statisticalskier.netlify.app/index.html</loc>
-    <lastmod>2023-11-24T18:27:19.816Z</lastmod>
+    <lastmod>2023-11-24T21:55:51.756Z</lastmod>
   </url>
   <url>
     <loc>https://statisticalskier.netlify.app/posts/2023-11-24-ruka-sprint-race-snapshots/ruka_spr_race_snap.html</loc>
@@ -10,6 +10,10 @@
   </url>
   <url>
     <loc>https://statisticalskier.netlify.app/posts/2023-11-24-ruka-distance-cl-predictions/ruka_dst_cl_preds.html</loc>
-    <lastmod>2023-11-24T18:27:15.401Z</lastmod>
+    <lastmod>2023-11-24T21:55:51.410Z</lastmod>
+  </url>
+  <url>
+    <loc>https://statisticalskier.netlify.app/about.html</loc>
+    <lastmod>2023-11-25T02:40:37.125Z</lastmod>
   </url>
 </urlset>
