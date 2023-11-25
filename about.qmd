@@ -1,6 +1,6 @@
 ---
 title: "Who Am I?"
-image: skierlogo-chart.png
+image: assets/skierlogo-chart.png
 about:
   template: marquee
   image-shape: rectangle

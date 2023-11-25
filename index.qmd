@@ -4,7 +4,7 @@ listing:
   contents: posts
   feed:
     type: full
-    image: skierlogo-square_400x400.png
+    image: assets/skierlogo-square_400x400.png
   sort: "date desc"
   type: default
   categories: true
