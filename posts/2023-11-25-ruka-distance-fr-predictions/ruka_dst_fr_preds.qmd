@@ -1,0 +1,78 @@
+---
+title: "Ruka 20k Freestyle Mass Start Predictions"
+author: "Joran Elias"
+date: "2023-11-25"
+categories: [world cup,distance,freestyle,mass start,predictions]
+draft: false
+---
+
+```{r pkgs,message=FALSE}
+library(tidyverse)
+library(statskier2)
+library(gt)
+library(gtExtras)
+library(ggpubr)
+
+theme_set(theme_bw())
+```
+
+### Predictions
+First predictions for a mass start event, tomorrow's 20k freestyle mass start in Ruka.
+
+```{r pred-data}
+mens_ruka_preds <- 
+  readr::read_csv(file = '2023-11-26_men_fr_dst_ruka.csv',
+                  show_col_types = FALSE)
+womens_ruka_preds <- 
+  readr::read_csv(file = '2023-11-26_women_fr_dst_ruka.csv',
+                  show_col_types = FALSE)
+```
+
+#### Men's 10k Classic Predictions
+```{r tbl-men}
+mens_ruka_preds |> 
+  select(-compid) |> 
+  gt() |> 
+  tab_header(title = "Ruka 20k Freestyle Mass Start",subtitle = "Men") |> 
+  opt_align_table_header(align = 'left') |> 
+  tab_caption(caption = "") |> 
+  tab_options(
+    table.font.size = 9,
+    ihtml.active = TRUE,
+    ihtml.use_pagination = TRUE,
+    ihtml.use_compact_mode = TRUE,
+    ihtml.use_highlight = TRUE
+  ) |> 
+  cols_label(
+    fisid = 'FIS Code',
+    name = 'Name',
+    page_rank = 'Predicted PR',
+    page_rank_pos = 'Predicted Finish') |> 
+  fmt_number(columns = page_rank,decimals = 4) |> 
+  gt_plt_bar(column = page_rank) 
+```
+
+#### Women's 10k Classic Predictions
+```{r tbl-wom}
+womens_ruka_preds |> 
+  select(-compid) |> 
+  gt() |> 
+  tab_header(title = "Ruka 20k Freestyle Mass Start",subtitle = "Women") |>
+  opt_align_table_header(align = 'left') |> 
+  tab_caption(caption = "") |> 
+  tab_options(
+    table.font.size = 9,
+    ihtml.active = TRUE,
+    ihtml.use_pagination = TRUE,
+    ihtml.use_compact_mode = TRUE,
+    ihtml.use_highlight = TRUE
+  ) |> 
+  cols_label(
+    fisid = 'FIS Code',
+    name = 'Name',
+    page_rank = 'Predicted PR',
+    page_rank_pos = 'Predicted Finish') |> 
+  fmt_number(columns = page_rank,decimals = 4) |> 
+  gt_plt_bar(column = page_rank)
+```
+
