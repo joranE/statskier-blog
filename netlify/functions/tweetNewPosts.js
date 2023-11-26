@@ -41,7 +41,7 @@ exports.handler = async (event, context) => {
       //const alreadyTweeted = await hasTweeted(fullURL);
 
       //if (!alreadyTweeted) {
-        await tweetPost(fullURL);
+      //  await tweetPost(fullURL);
       //}
     //}
 

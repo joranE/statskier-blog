@@ -13,3 +13,6 @@
 
 # Local dev environment vars
 .env
+
+# Netlify functions; can't make this work
+/netlify
