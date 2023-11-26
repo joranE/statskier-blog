@@ -1,5 +1,5 @@
-const { TwitterApi } = require('twitter-api-v2');
-const fetch = require('node-fetch');
+import { TwitterApi } from 'twitter-api-v2';
+import fetch from 'node-fetch';
 
 const twitterClient = new TwitterApi({
   appKey: process.env.TWITTER_API_KEY,
@@ -18,15 +18,15 @@ const tweetPost = async (url) => {
   }
 };
 
-const hasTweeted = async (url) => {
-  try {
-    const tweets = await twitterClient.v2.search(url, { max_results: 10 });
-    return tweets.data.some(tweet => tweet.text.includes(url));
-  } catch (error) {
-    console.error('Error searching tweets:', error);
-    return false;
-  }
-};
+//const hasTweeted = async (url) => {
+//  try {
+//    const tweets = await twitterClient.v2.search(url, { max_results: 10 });
+//    return tweets.data.some(tweet => tweet.text.includes(url));
+//  } catch (error) {
+//    console.error('Error searching tweets:', error);
+//    return false;
+//  }
+//};
 
 exports.handler = async (event, context) => {
   try {
@@ -34,16 +34,16 @@ exports.handler = async (event, context) => {
     const listings = await response.json();
     
     // Assuming the first item in the array is the most recent listing
-    const items = listings[0].items;
+    const item = listings[0].items[0];
 
-    for (const item of items) {
+    //for (const item of items) {
       const fullURL = `${baseURL}${item}`;
-      const alreadyTweeted = await hasTweeted(fullURL);
+      //const alreadyTweeted = await hasTweeted(fullURL);
 
-      if (!alreadyTweeted) {
-        await tweetPost(fullURL);
-      }
-    }
+      //if (!alreadyTweeted) {
+      //  await tweetPost(fullURL);
+      //}
+    //}
 
     return {
       statusCode: 200,
@@ -51,6 +51,7 @@ exports.handler = async (event, context) => {
     };
   } catch (error) {
     console.error('Error:', error);
+    console.error('Error:',`${baseURL}/listings.json`)
     return {
       statusCode: 500,
       body: 'Internal Server Error',
