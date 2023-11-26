@@ -7,6 +7,11 @@ website:
   site-url: "https://statisticalskier.netlify.app/"
   description: "Statistical commentary on cross country skiing"
   open-graph: true
+  google-analytics: 
+    tracking-id: G-H711RSP89G
+    storage: cookies
+  cookie-consent: 
+    palette: dark
   navbar:
     logo: skierlogo-chart.png
     right:
