@@ -1,0 +1,46 @@
+---
+title: "Some Jan Thomas Jenssen Results"
+author: "Joran Elias"
+date: "2023-11-29"
+categories: [world cup,ruka,jan thomas jenssen]
+draft: false
+---
+
+```{r pkgs,message=FALSE}
+library(tidyverse)
+library(statskier2)
+
+statskier_connect()
+```
+
+I'll be honest, I'm posting this mostly just to test some of my internal blog
+setup stuff. I was poking around with Jan Thomas Jenssen's race results, given his
+dramatic win last weekend and found one mostly boring thing, and one slightly
+confusing thing.
+
+```{r ath-data}
+p_dst <- ath_plot_dst(ath_names = 'JENSSEN Jan Thomas',races = 'fis',by_tech = TRUE)
+p_spr <- ath_plot_spr(ath_names = 'JENSSEN Jan Thomas',races = 'fis',by_tech = TRUE)
+```
+
+### Mostly Boring Thing
+He's been consistently better at freestyle than classic.
+
+```{r dst-plot}
+p_dst$plot
+```
+
+### Slightly Confusing Thing
+He did a sprint race where he finished 315th? And it's not shown in the plot,
+but in that race his qualification time was 25th. It was a Norwegian junior
+national championship race from 2015. There must be something about the format
+of how they ran that sprint race that's not entirely clear from the results, 
+because a single sprint race with 475 competitors seems dubious, even for Norway.
+
+Maybe the "real" results were split up by age group somehow that isn't reflected
+on the FIS website? I'm not sure. You can check the [qualification](https://www.fis-ski.com/DB/general/results.html?sectorcode=CC&raceid=25312) and
+[final](https://www.fis-ski.com/DB/general/results.html?sectorcode=CC&raceid=25313) results yourself.
+
+```{r spr-plot}
+p_spr$plot
+```
