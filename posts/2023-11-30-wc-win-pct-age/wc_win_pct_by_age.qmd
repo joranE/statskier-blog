@@ -1,0 +1,147 @@
+---
+title: "Cumulative Win Percentages = GoAT?"
+author: "Joran Elias"
+date: "2023-11-30"
+categories: [world cup]
+draft: false
+---
+
+```{r pkgs,message=FALSE}
+library(tidyverse)
+library(statskier2)
+library(readxl)
+
+cap <- 'statisticalskier.netlify.app'
+
+theme_set(theme_bw())
+statskier_connect()
+```
+
+I was chatting with some friends of moderately advanced years today about how
+people anointing Johannes Klaebo as the GoAT should get off our lawn. Or at 
+least get off Bjorn Daehlie or Marit Bjoergen's lawn.
+
+It was suggested that since the number of available World Cup starts has shifted
+pretty dramatically over the years, a decent way to compare skiers would be
+cumulative win percentage by age. I'm going to throw in cumulative podium percentage
+in there as well just for additional perspective.
+
+I'm taking the win/podium percentage across both sprint & distance events, but 
+I'm excluding the modern pursuit races entirely, as "winning" them isn't really
+comparable to anything we're terribly interested in.
+
+The other important note is that we should consider this as a (nearly) complete
+look from the late 80's forward. So I'm capturing the skiers of the Daehlie, 
+Vaelbe generation forward, but my data isn't complete enough from the rest of the
+80's back to examine them.
+
+```{r ath-data}
+v_dst_maj_int <- dplyr::tbl(..statskier_pg_con..,'v_distance_maj_int')
+v_spr_maj_int <- dplyr::tbl(..statskier_pg_con..,'v_sprint_maj_int')
+
+dst <- v_dst_maj_int |> 
+  filter(!is.na(rank) & format != 'Pursuit') |> 
+  collect() |> 
+  mutate(dst_spr = 'Distance')
+spr <- v_spr_maj_int |> 
+  filter(!is.na(rank)) |> 
+  collect() |> 
+  mutate(dst_spr = 'Sprint')
+```
+
+```{r early}
+early_vaelbe <- readxl::read_xlsx(
+  path = 'early_vaelbe.xlsx',
+  sheet = 'vaelbe') |> 
+  mutate(gender = 'Women',
+         compid = 63291,
+         eventid = -(1:n()))
+early_daehlie <- readxl::read_xlsx(
+  path = 'early_vaelbe.xlsx',
+  sheet = 'daehlie') |> 
+  mutate(gender = 'Men',
+         compid = 12150,
+         eventid = -(1:n()))
+```
+
+### Cumulative Win Percentage
+Here's cumulative win percentage among World Cup, WSC, OWG and TdS races,
+sprint & distance. Maybe the Klaebo stans should, in fact, remain on my lawn.
+
+But Elena Vaelbe probably wins here. (Y'all can argue about doping elsewhere.)
+
+```{r dst-plot}
+dst_spr <- 
+  bind_rows(
+    dst |> select(season,date,eventid,dst_spr,fisid,compid,name,gender,age,rank),
+    spr |> select(season,date,eventid,dst_spr,fisid,compid,name,gender,age,rank)
+  ) |> 
+  bind_rows(early_daehlie) |> 
+  bind_rows(early_vaelbe)
+
+started100 <- dst_spr |> 
+  summarise(
+    n = n_distinct(eventid),
+    .by = 'compid'
+  ) |> 
+  filter(n >= 100)
+
+dst_spr_100 <- dst_spr |> 
+  semi_join(started100,by = 'compid')
+```
+
+```{r win-pct}
+win_pct <- dst_spr_100 |> 
+  group_by(gender,season,compid) |> 
+  group_by(compid) |> 
+  arrange(date) |> 
+  mutate(age = timetk::ts_impute_vec(x = age,period = 1)) |> 
+  tidyr::fill(name,.direction = 'downup') |> 
+  mutate(cum_win_pct = cummean(rank == 1),
+         cum_pod_pct = cummean(rank <= 3)) |> 
+  ungroup()
+```
+
+```{r,cum-win-pct}
+focus_ath_ids <- c(63291,12150,56885,5223,184205,121309)
+focus_ath <- win_pct |> 
+  filter(age >= 19 & age <= 40) |>
+  filter(compid %in% focus_ath_ids)
+
+win_pct |> 
+  filter(age >= 20 & age <= 40) |> 
+  ggplot(data = _,aes(x = age,y = cum_win_pct,group = compid)) + 
+  facet_wrap(~gender,ncol = 1) +
+  geom_line(alpha = 0.1) + 
+  geom_line(data = focus_ath,aes(color = name),size = 1.05) + 
+  scale_color_brewer(palette = 'Set2') + 
+  scale_y_continuous(labels = scales::percent_format()) +
+  labs(x = 'Age',y = 'Cumulative Win Pct',
+       color = NULL,caption = ) +
+  ggtitle(label = '') +
+  theme(legend.direction = 'horizontal',legend.position = 'bottom')
+```
+
+### Cumulative Podium Percentage
+Klaebo looks just as good here, maybe even closer to the standard set by Vaelbe.
+
+```{r,cum-pod-pct}
+focus_ath_ids <- c(63291,12150,15232,57203,183629,5223,184205,121309)
+focus_ath <- win_pct |> 
+  filter(age >= 19 & age <= 40) |> 
+  filter(compid %in% focus_ath_ids)
+win_pct |> 
+  filter(age >= 19 & age <= 40) |> 
+  ggplot(data = _,aes(x = age,y = cum_pod_pct,group = compid)) + 
+  facet_wrap(~gender,ncol = 1) +
+  geom_line(alpha = 0.1) + 
+  geom_line(data = focus_ath,aes(color = name),size = 1.05) + 
+  #scale_color_brewer(palette = 'Set2') + 
+  scale_y_continuous(labels = scales::percent_format()) +
+  guides(color = guide_legend(nrow = 3)) +
+  labs(x = 'Age',y = 'Cumulative Podium Pct',
+       color = NULL,caption = ) +
+  ggtitle(label = '') +
+  theme(legend.direction = 'horizontal',legend.position = 'bottom')
+```
+
