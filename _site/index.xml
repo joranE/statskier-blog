@@ -15,7 +15,62 @@
 <link>https://statisticalskier.netlify.app/index.html</link>
 </image>
 <generator>quarto-1.2.313</generator>
-<lastBuildDate>Wed, 29 Nov 2023 07:00:00 GMT</lastBuildDate>
+<lastBuildDate>Thu, 30 Nov 2023 07:00:00 GMT</lastBuildDate>
+<item>
+  <title>Cumulative Win Percentages = GoAT?</title>
+  <dc:creator>Joran Elias</dc:creator>
+  <link>https://statisticalskier.netlify.app/posts/2023-11-30-wc-win-pct-age/wc_win_pct_by_age.html</link>
+  <description><![CDATA[ 
+
+
+
+
+<div class="cell">
+
+</div>
+<p>I was chatting with some friends of moderately advanced years today about how people anointing Johannes Klaebo as the GoAT should get off our lawn. Or at least get off Bjorn Daehlie or Marit Bjoergen’s lawn.</p>
+<p>It was suggested that since the number of available World Cup starts has shifted pretty dramatically over the years, a decent way to compare skiers would be cumulative win percentage by age. I’m going to throw in cumulative podium percentage in there as well just for additional perspective.</p>
+<p>I’m taking the win/podium percentage across both sprint &amp; distance events, but I’m excluding the modern pursuit races entirely, as “winning” them isn’t really comparable to anything we’re terribly interested in.</p>
+<p>The other important note is that we should consider this as a (nearly) complete look from the late 80’s forward. So I’m capturing the skiers of the Daehlie, Vaelbe generation forward, but my data isn’t complete enough from the rest of the 80’s back to examine them.</p>
+<div class="cell">
+
+</div>
+<div class="cell">
+
+</div>
+<section id="cumulative-win-percentage" class="level3">
+<h3 class="anchored" data-anchor-id="cumulative-win-percentage">Cumulative Win Percentage</h3>
+<p>Here’s cumulative win percentage among World Cup, WSC, OWG and TdS races, sprint &amp; distance. Maybe the Klaebo stans should, in fact, remain on my lawn.</p>
+<p>But Elena Vaelbe probably wins here. (Y’all can argue about doping elsewhere.)</p>
+<div class="cell">
+
+</div>
+<div class="cell">
+
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="https://statisticalskier.netlify.app/posts/2023-11-30-wc-win-pct-age/wc_win_pct_by_age_files/figure-html/cum-win-pct-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+</section>
+<section id="cumulative-podium-percentage" class="level3">
+<h3 class="anchored" data-anchor-id="cumulative-podium-percentage">Cumulative Podium Percentage</h3>
+<p>Klaebo looks just as good here, maybe even closer to the standard set by Vaelbe.</p>
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="https://statisticalskier.netlify.app/posts/2023-11-30-wc-win-pct-age/wc_win_pct_by_age_files/figure-html/cum-pod-pct-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+
+
+</section>
+
+ ]]></description>
+  <category>world cup</category>
+  <guid>https://statisticalskier.netlify.app/posts/2023-11-30-wc-win-pct-age/wc_win_pct_by_age.html</guid>
+  <pubDate>Thu, 30 Nov 2023 07:00:00 GMT</pubDate>
+</item>
 <item>
   <title>Some Jan Thomas Jenssen Results</title>
   <dc:creator>Joran Elias</dc:creator>
