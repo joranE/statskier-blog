@@ -1,0 +1,72 @@
+---
+title: "Östersund Classic Sprint Race Snapshots"
+author: "Joran Elias"
+date: "2023-12-09"
+pubDate: "Sat, 09 Dec 2023 09:30:00 MST"
+categories: [world cup,sprint,race snapshots,classic,östersund]
+draft: false
+---
+
+```{r pkgs}
+library(tidyverse)
+library(statskier2)
+library(patchwork)
+
+statskier_connect()
+```
+
+```{r gen-snap}
+location <- "Östersund"
+men_spr_id <- 19241
+wom_spr_id <- 19240
+
+p_men <- race_snapshot_spr(
+  event_id = men_spr_id,
+  title = glue::glue("Men's {loc} Classic Sprint",loc = location),
+  reduced = TRUE)
+
+p_wom <- race_snapshot_spr(
+  event_id = wom_spr_id,
+  title = glue::glue("Women's {loc} Classic Sprint",loc = location),
+  reduced = TRUE)
+```
+
+### Men's Race Snapshot
+```{r men-snap,fig.height=10,fig.width=6}
+p_men$plot
+```
+
+### Women's Race Snapshot
+```{r wom-snap,fig.height=10,fig.width=6}
+p_wom$plot
+```
+
+### Heat Progressions
+```{r heat-progressions}
+#| fig-height: 13
+#| fig-width: 15
+wom_heat_raw <- spr_heat_plot(
+  .eventid = wom_spr_id,
+  subtitle = "QF & SF heats indicated by numbers on the plot.",
+  time_scale = "raw",
+  clip = c(210,260))
+men_heat_raw <- spr_heat_plot(
+  .eventid = men_spr_id,
+  subtitle = "QF & SF heats indicated by numbers on the plot.",
+  time_scale = "raw",
+  clip = NULL)
+
+wom_heat_med <- spr_heat_plot(
+  .eventid = wom_spr_id,
+  subtitle = "QF & SF heats indicated by numbers on the plot.",
+  time_scale = "median",
+  clip = c(-10,40))
+men_heat_med <- spr_heat_plot(
+  .eventid = men_spr_id,
+  subtitle = "QF & SF heats indicated by numbers on the plot.",
+  time_scale = "median",
+  clip = NULL)
+
+all_heats <- wom_heat_raw + wom_heat_med + men_heat_raw + men_heat_med
+all_heats
+```
