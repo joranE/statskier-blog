@@ -2,6 +2,7 @@
 title: "Östersund Classic Sprint Predictions"
 author: "Joran Elias"
 date: "2023-12-08"
+pubDate: "Fri, 08 Dec 2023 20:05:00 MST"
 categories: [world cup,sprint,predictions,classic,östersund]
 draft: false
 ---
