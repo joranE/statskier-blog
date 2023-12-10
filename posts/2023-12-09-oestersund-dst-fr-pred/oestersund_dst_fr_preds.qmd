@@ -78,3 +78,81 @@ womens_preds |>
   fmt_number(columns = page_rank,decimals = 4) |> 
   gt_plt_bar(column = page_rank)
 ```
+
+### Update
+```{r db-con}
+statskier_connect()
+v_dst_maj_int <- dplyr::tbl(..statskier_pg_con..,'v_distance_maj_int')
+```
+
+```{r race-data}
+dst_res <- v_dst_maj_int |> 
+  filter(eventid %in% c(19242,19243)) |> 
+  collect()
+
+fis_pts <- readRDS(file = '~/Documents/code/official-fis-points-lists/output/fis_pts_list.rds') |> 
+  select(listid = Listid,
+         listname = Listname,
+         listnum = ListNum,
+         compid = Competitorid,
+         year = year,
+         calc_date = Calculationdate,
+         dst_points = DIpoints) |> 
+  filter(year >= 2020)
+
+men_comb <- dst_res |> 
+  filter(gender == 'Men') |> 
+  select(date,compid,rank) |> 
+  mutate(date = as.Date(date)) |> 
+  full_join(mens_preds,by = 'compid') |> 
+  left_join(
+    fis_pts,
+    join_by(compid == compid,closest(date > calc_date))) |> 
+  mutate(
+    fis_pts_rank = rank(dst_points,ties.method = 'min')) |> 
+  arrange(rank)
+
+wom_comb <- dst_res |> 
+  filter(gender == 'Women') |> 
+  select(date,compid,rank) |> 
+  mutate(date = as.Date(date)) |>
+  full_join(womens_preds,by = 'compid') |> 
+  left_join(
+    fis_pts,
+    join_by(compid == compid,closest(date > calc_date))) |> 
+  mutate(
+    fis_pts_rank = rank(dst_points,ties.method = 'min')) |> 
+  arrange(rank)
+```
+
+It's a tie, across the board!
+
+```{r men-perf}
+men_comb |> 
+  select(compid,rank,page_rank_pos,fis_pts_rank) |> 
+  pivot_longer(cols = c(page_rank_pos,fis_pts_rank),names_to = 'grp',values_to = 'val') |> 
+  mutate(grp = if_else(grp == 'fis_pts_rank','FIS Dst Pts List','PR Method')) |> 
+  ggplot(data = _,aes(x = rank,y = val)) + 
+  facet_wrap(~grp,ncol = 1) + 
+  geom_point() + 
+  geom_abline(slope = 1,intercept = 0,color = 'blue') + 
+  stat_cor(aes(label = after_stat(..r.label..))) +
+  ggtitle(label = "Men's Östersund 10k Freestyle Interval Predicted vs True Athlete Finishing Order",
+          subtitle = "Athletes ordered by most recent FIS Dst pts list (top) & my PR method (bottom)") +
+  labs(x = 'True Finishing Place',y = 'Predicted Finishing Place')
+```
+
+```{r wom-perf}
+wom_comb |> 
+  select(compid,rank,page_rank_pos,fis_pts_rank) |> 
+  pivot_longer(cols = c(page_rank_pos,fis_pts_rank),names_to = 'grp',values_to = 'val') |> 
+  mutate(grp = if_else(grp == 'fis_pts_rank','FIS Dst Pts List','PR Method')) |> 
+  ggplot(data = _,aes(x = rank,y = val)) + 
+  facet_wrap(~grp,ncol = 1) + 
+  geom_point() + 
+  geom_abline(slope = 1,intercept = 0,color = 'blue') + 
+  stat_cor(aes(label = after_stat(..r.label..))) +
+  ggtitle(label = "Women's Östersund 10k Freestyle Interval Predicted vs True Athlete Finishing Order",
+          subtitle = "Athletes ordered by most recent FIS Dst pts list (top) & my PR method (bottom)") +
+  labs(x = 'True Finishing Place',y = 'Predicted Finishing Place')
+```
