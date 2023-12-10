@@ -77,3 +77,83 @@ womens_oestersund_preds |>
   gt_plt_bar(column = page_rank)
 ```
 
+### Update
+I have a feeling this isn't going to look too great, but oh well.
+```{r db-con}
+statskier_connect()
+v_spr_maj_int <- dplyr::tbl(..statskier_pg_con..,'v_sprint_maj_int')
+```
+
+```{r race-data}
+spr_res <- v_spr_maj_int |> 
+  filter(eventid %in% c(19240,19241)) |> 
+  collect()
+
+fis_pts <- readRDS(file = '~/Documents/code/official-fis-points-lists/output/fis_pts_list.rds') |> 
+  select(listid = Listid,
+         listname = Listname,
+         listnum = ListNum,
+         compid = Competitorid,
+         year = year,
+         calc_date = Calculationdate,
+         spr_points = SPpoints) |> 
+  filter(year >= 2020)
+
+men_comb <- spr_res |> 
+  filter(gender == 'Men') |> 
+  select(date,compid,rank) |> 
+  mutate(date = as.Date(date)) |> 
+  full_join(mens_oestersund_preds,by = 'compid') |> 
+  left_join(
+    fis_pts,
+    join_by(compid == compid,closest(date > calc_date))) |> 
+  mutate(
+    fis_pts_rank = rank(spr_points,ties.method = 'min')) |> 
+  arrange(rank)
+
+wom_comb <- spr_res |> 
+  filter(gender == 'Women') |> 
+  select(date,compid,rank) |> 
+  mutate(date = as.Date(date)) |>
+  full_join(womens_oestersund_preds,by = 'compid') |> 
+  left_join(
+    fis_pts,
+    join_by(compid == compid,closest(date > calc_date))) |> 
+  mutate(
+    fis_pts_rank = rank(spr_points,ties.method = 'min')) |> 
+  arrange(rank)
+```
+
+Actually, my method did pretty well, although the correlation was a little lower
+than in the past across the board.
+
+```{r men-perf}
+men_comb |> 
+  select(compid,rank,page_rank_pos,fis_pts_rank) |> 
+  pivot_longer(cols = c(page_rank_pos,fis_pts_rank),names_to = 'grp',values_to = 'val') |> 
+  mutate(grp = if_else(grp == 'fis_pts_rank','FIS Dst Pts List','PR Method')) |> 
+  ggplot(data = _,aes(x = rank,y = val)) + 
+  facet_wrap(~grp,ncol = 1) + 
+  geom_point() + 
+  geom_abline(slope = 1,intercept = 0,color = 'blue') + 
+  stat_cor(aes(label = after_stat(..r.label..))) +
+  ggtitle(label = "Men's Östersund Classic Sprint Predicted vs True Athlete Finishing Order",
+          subtitle = "Athletes ordered by most recent FIS Spr pts list (top) & my PR method (bottom)") +
+  labs(x = 'True Finishing Place',y = 'Predicted Finishing Place')
+```
+
+```{r wom-perf}
+wom_comb |> 
+  select(compid,rank,page_rank_pos,fis_pts_rank) |> 
+  pivot_longer(cols = c(page_rank_pos,fis_pts_rank),names_to = 'grp',values_to = 'val') |> 
+  mutate(grp = if_else(grp == 'fis_pts_rank','FIS Dst Pts List','PR Method')) |> 
+  ggplot(data = _,aes(x = rank,y = val)) + 
+  facet_wrap(~grp,ncol = 1) + 
+  geom_point() + 
+  geom_abline(slope = 1,intercept = 0,color = 'blue') + 
+  stat_cor(aes(label = after_stat(..r.label..))) +
+  ggtitle(label = "Women's Östersund Classic Sprint Predicted vs True Athlete Finishing Order",
+          subtitle = "Athletes ordered by most recent FIS Spr pts list (top) & my PR method (bottom)") +
+  labs(x = 'True Finishing Place',y = 'Predicted Finishing Place')
+```
+
