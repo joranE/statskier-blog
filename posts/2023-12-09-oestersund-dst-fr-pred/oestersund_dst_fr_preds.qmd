@@ -1,0 +1,80 @@
+---
+title: "Östersund 10k Freestyle Interval Start Predictions"
+author: "Joran Elias"
+date: "2023-12-09"
+pubDate: "Sat, 09 Dec 2023 15:35:23 MST"
+categories: [world cup,distance,freestyle,interval start,predictions,östersund]
+draft: false
+---
+
+```{r pkgs,message=FALSE}
+library(tidyverse)
+library(statskier2)
+library(gt)
+library(gtExtras)
+library(ggpubr)
+
+theme_set(theme_bw())
+```
+
+### Predictions
+It's always a tradeoff on balancing how much these predictions respond to the 
+most recent races versus how much you weight older results. No good solution
+to that, really.
+
+```{r pred-data}
+mens_preds <- 
+  readr::read_csv(file = '2023-12-10_men_fr_dst_oestersund.csv',
+                  show_col_types = FALSE)
+womens_preds <- 
+  readr::read_csv(file = '2023-12-10_women_fr_dst_oestersund.csv',
+                  show_col_types = FALSE)
+```
+
+#### Men's 10k Freestyle Predictions
+```{r tbl-men}
+mens_preds |> 
+  select(-compid) |> 
+  gt() |> 
+  tab_header(title = "Östersund 10k Freestyle Interval",subtitle = "Men") |> 
+  opt_align_table_header(align = 'left') |> 
+  tab_caption(caption = "") |> 
+  tab_options(
+    table.font.size = 9,
+    ihtml.active = TRUE,
+    ihtml.use_pagination = TRUE,
+    ihtml.use_compact_mode = TRUE,
+    ihtml.use_highlight = TRUE
+  ) |> 
+  cols_label(
+    fisid = 'FIS Code',
+    name = 'Name',
+    page_rank = 'Predicted PR',
+    page_rank_pos = 'Predicted Finish') |> 
+  fmt_number(columns = page_rank,decimals = 4) |> 
+  gt_plt_bar(column = page_rank) 
+```
+
+#### Women's 10k Freestyle Predictions
+```{r tbl-wom}
+womens_preds |> 
+  select(-compid) |> 
+  gt() |> 
+  tab_header(title = "Ostersund 10k Freestyle Interval",subtitle = "Women") |>
+  opt_align_table_header(align = 'left') |> 
+  tab_caption(caption = "") |> 
+  tab_options(
+    table.font.size = 9,
+    ihtml.active = TRUE,
+    ihtml.use_pagination = TRUE,
+    ihtml.use_compact_mode = TRUE,
+    ihtml.use_highlight = TRUE
+  ) |> 
+  cols_label(
+    fisid = 'FIS Code',
+    name = 'Name',
+    page_rank = 'Predicted PR',
+    page_rank_pos = 'Predicted Finish') |> 
+  fmt_number(columns = page_rank,decimals = 4) |> 
+  gt_plt_bar(column = page_rank)
+```
