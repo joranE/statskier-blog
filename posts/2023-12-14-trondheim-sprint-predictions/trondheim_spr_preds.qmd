@@ -1,5 +1,5 @@
 ---
-title: "Östersund Classic Sprint Predictions"
+title: "Trondheim Freestyle Sprint Predictions"
 author: "Joran Elias"
 date: "2023-12-14"
 categories: [world cup,sprint,predictions,freestyle,trondheim]
