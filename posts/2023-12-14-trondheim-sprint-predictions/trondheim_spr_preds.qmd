@@ -80,3 +80,85 @@ womens_preds |>
   gt_plt_bar(column = page_rank)
 ```
 
+### Update
+With a few sprints in the books, let's take a look.
+```{r db-con}
+statskier_connect()
+v_spr_maj_int <- dplyr::tbl(..statskier_pg_con..,'v_sprint_maj_int')
+```
+
+```{r race-data}
+spr_res <- v_spr_maj_int |> 
+  filter(eventid %in% c(19275,19274)) |> 
+  collect()
+
+fis_pts <- readRDS(file = '~/Documents/code/official-fis-points-lists/output/fis_pts_list.rds') |> 
+  select(listid = Listid,
+         listname = Listname,
+         listnum = ListNum,
+         compid = Competitorid,
+         year = year,
+         calc_date = Calculationdate,
+         spr_points = SPpoints) |> 
+  filter(year >= 2020)
+
+men_comb <- spr_res |> 
+  filter(gender == 'Men') |> 
+  select(date,compid,rank) |> 
+  mutate(date = as.Date(date)) |> 
+  full_join(mens_preds,by = 'compid') |> 
+  left_join(
+    fis_pts,
+    join_by(compid == compid,closest(date > calc_date))) |> 
+  mutate(
+    fis_pts_rank = rank(spr_points,ties.method = 'min')) |> 
+  arrange(rank)
+
+wom_comb <- spr_res |> 
+  filter(gender == 'Women') |> 
+  select(date,compid,rank) |> 
+  mutate(date = as.Date(date)) |>
+  full_join(womens_preds,by = 'compid') |> 
+  left_join(
+    fis_pts,
+    join_by(compid == compid,closest(date > calc_date))) |> 
+  mutate(
+    fis_pts_rank = rank(spr_points,ties.method = 'min')) |> 
+  arrange(rank)
+```
+
+I probably need a better baseline for comparison for sprint race predictions,
+because FIS sprint points are a pretty absurd measure of overall sprint ability.
+
+That said, my method did solidly better for the men, about the same for the women.
+
+```{r men-perf}
+men_comb |> 
+  select(compid,rank,page_rank_pos,fis_pts_rank) |> 
+  pivot_longer(cols = c(page_rank_pos,fis_pts_rank),names_to = 'grp',values_to = 'val') |> 
+  mutate(grp = if_else(grp == 'fis_pts_rank','FIS Dst Pts List','PR Method')) |> 
+  ggplot(data = _,aes(x = rank,y = val)) + 
+  facet_wrap(~grp,ncol = 1) + 
+  geom_point() + 
+  geom_abline(slope = 1,intercept = 0,color = 'blue') + 
+  stat_cor(aes(label = after_stat(..r.label..))) +
+  ggtitle(label = glue::glue("Men's {loc} {tech} Sprint Predicted vs True Athlete Finishing Order",loc = location,tech = tech),
+          subtitle = "Athletes ordered by most recent FIS Spr pts list (top) & my PR method (bottom)") +
+  labs(x = 'True Finishing Place',y = 'Predicted Finishing Place')
+```
+
+```{r wom-perf}
+wom_comb |> 
+  select(compid,rank,page_rank_pos,fis_pts_rank) |> 
+  pivot_longer(cols = c(page_rank_pos,fis_pts_rank),names_to = 'grp',values_to = 'val') |> 
+  mutate(grp = if_else(grp == 'fis_pts_rank','FIS Dst Pts List','PR Method')) |> 
+  ggplot(data = _,aes(x = rank,y = val)) + 
+  facet_wrap(~grp,ncol = 1) + 
+  geom_point() + 
+  geom_abline(slope = 1,intercept = 0,color = 'blue') + 
+  stat_cor(aes(label = after_stat(..r.label..))) +
+  ggtitle(label = glue::glue("Women's {loc} {tech} Sprint Predicted vs True Athlete Finishing Order",loc = location,tech = tech),
+          subtitle = "Athletes ordered by most recent FIS Spr pts list (top) & my PR method (bottom)") +
+  labs(x = 'True Finishing Place',y = 'Predicted Finishing Place')
+```
+
