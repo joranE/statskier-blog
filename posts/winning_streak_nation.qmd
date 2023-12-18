@@ -1,0 +1,168 @@
+---
+title: "World Cup Winning Streaks By Nation"
+author: "Joran Elias"
+date: "2023-12-17"
+categories: [world cup,distance,sprint,winning streak]
+draft: false
+execute: 
+  message: false
+---
+
+```{r}
+#| label: pkgs
+#| message: false
+library(tidyverse)
+library(statskier2)
+library(gt)
+
+theme_set(theme_minimal())
+
+statskier_connect()
+
+v_dst_tbl <- dplyr::tbl(..statskier_pg_con..,'v_distance_maj_int')
+v_spr_tbl <- dplyr::tbl(..statskier_pg_con..,'v_sprint_maj_int')
+```
+
+```{r}
+#| label: pull-data
+dst <- v_dst_tbl |> 
+  filter(season >= '1991-1992' & 
+           !is.na(rank) & 
+           rank == 1) |> 
+  collect() |> 
+  arrange(gender,date)
+spr <- v_spr_tbl |> 
+  filter(season >= '2006-2007' & 
+           !is.na(rank) & 
+           rank == 1) |> 
+  collect() |> 
+  arrange(gender,date)
+```
+
+```{r}
+build_ath_counts <- function(nms){
+  nms <- extract_all_caps(nms)
+  nms <- str_to_title(nms)
+  nms_tbl <- sort(table(nms),decreasing = TRUE)
+  paste(paste(names(nms_tbl),paste0("(",nms_tbl,")")),collapse = "<br>")
+}
+```
+
+```{r}
+#| label: process-data
+dst_streaks <- 
+  dst |> 
+  group_by(gender) |> 
+  mutate(streak_id = consecutive_id(nation)) |> 
+  group_by(gender,streak_id) |> 
+  summarise(nation = nation[1],
+            streak_start = min(date),
+            streak_end = max(date),
+            streak_len_days = as.integer(as.Date(streak_end) - as.Date(streak_start)) + 1,
+            streak_len_n = n(),
+            n_skiers = n_distinct(compid),
+            skier_names = build_ath_counts(name),
+            .groups = 'drop') |> 
+  mutate(streak_end = if_else(streak_end == '2023-12-17','?',streak_end))
+
+spr_streaks <- 
+  spr |> 
+  group_by(gender) |> 
+  mutate(streak_id = consecutive_id(nation)) |> 
+  group_by(gender,streak_id) |> 
+  summarise(nation = nation[1],
+            streak_start = min(date),
+            streak_end = max(date),
+            streak_len_days = as.integer(as.Date(streak_end) - as.Date(streak_start)) + 1,
+            streak_len_n = n(),
+            n_skiers = n_distinct(compid),
+            skier_names = build_ath_counts(name),
+            .groups = 'drop') |> 
+  mutate(streak_end = if_else(streak_end == '2023-12-17','?',streak_end))
+```
+
+## National Winning Streaks
+The Norwegian men are currently on a 17 race winning streak in distance races which
+frankly doesn't seem likely to end anytime soon.
+
+In that light, I thought I'd catalogue the longest such streaks I can find. This
+first table lists the largest distance winning streaks. As you can see, the 
+Norwegian men are on the cusp of besting the Norwegian women's streak of 17 
+spanning 2014 & 2015.
+
+```{r}
+#| label: dst-streak-tbls
+dst_streaks |> 
+  group_by(gender) |> 
+  slice_max(order_by = streak_len_n,n = 5) |> 
+  select(-streak_id,-streak_len_days,-n_skiers) |> 
+  gt(row_group_as_column = TRUE) |> 
+  tab_options(table.font.size = pct(80)) |> 
+  cols_label(
+    nation = "Nation",
+    streak_start = "Start",
+    streak_end = "End",
+    streak_len_n = "# Races",
+    skier_names = "Athletes"
+  ) |> 
+  fmt_markdown(columns = skier_names) |> 
+  tab_style(
+    style = cell_text(v_align = 'top'),
+    locations = cells_body(columns = -c(skier_names))
+  ) |>
+  tab_style(
+    style = cell_text(align = 'right'),
+    locations = cells_body(columns = skier_names)
+  ) |> 
+  tab_style(
+    style = cell_text(weight = 'bold'),
+    locations = list(cells_column_labels(),cells_row_groups())
+  ) |> 
+  tab_header(title = "National Winning Streaks: Distance",
+             subtitle = "Includes World Cup, OWG, WSC & TdS events from 1991") |> 
+  tab_style(
+    style = cell_text(align = 'left'),
+    locations = cells_title()
+  ) |> 
+  tab_footnote(footnote = "This streak may have extended earlier but my data is incomplete pre-1991.",
+               locations = cells_body(rows = streak_start == '1991-12-08',columns = streak_start),placement = 'right')
+```
+
+Sprinting winning streaks by a nation haven't been as long, topping out at 9.
+
+```{r}
+#| label: spr-streak-tbls
+spr_streaks |> 
+  group_by(gender) |> 
+  slice_max(order_by = streak_len_n,n = 5) |> 
+  select(-streak_id,-streak_len_days,-n_skiers) |> 
+  gt(row_group_as_column = TRUE) |> 
+  tab_options(table.font.size = pct(80)) |> 
+  cols_label(
+    nation = "Nation",
+    streak_start = "Start",
+    streak_end = "End",
+    streak_len_n = "# Races",
+    skier_names = "Athletes"
+  ) |> 
+  fmt_markdown(columns = skier_names) |> 
+  tab_style(
+    style = cell_text(v_align = 'top'),
+    locations = cells_body(columns = -c(skier_names))
+  ) |>
+  tab_style(
+    style = cell_text(align = 'right'),
+    locations = cells_body(columns = skier_names)
+  ) |> 
+  tab_style(
+    style = cell_text(weight = 'bold'),
+    locations = list(cells_column_labels(),cells_row_groups())
+  ) |> 
+  tab_header(title = "National Winning Streaks: Sprint",
+             subtitle = "Includes World Cup, OWG, WSC & TdS events from 2006") |> 
+  tab_style(
+    style = cell_text(align = 'left'),
+    locations = cells_title()
+  )
+```
+
