@@ -1,0 +1,199 @@
+---
+title: "Impacts of Sprint QF Heat Choice"
+author: "Joran Elias"
+date: "2023-12-31"
+categories: [world cup,sprint,heats]
+draft: false
+execute: 
+  message: false
+---
+
+```{r}
+#| label: pkgs
+#| message: false
+library(MASS)
+library(tidyverse)
+library(statskier2)
+library(RColorBrewer)
+library(broom)
+
+theme_set(theme_minimal())
+
+statskier_connect()
+
+v_spr_hts <- dplyr::tbl(..statskier_pg_con..,'v_sprint_heats')
+```
+
+```{r}
+#| label: pull-data
+maj_int_spr <- v_spr_hts |> 
+  filter(primary_tag %in% c('wc','tds','owg','wsc') & 
+           season >= '2015-2016') |> 
+  collect()
+
+qf_key <- maj_int_spr |> 
+  filter(!is.na(qf)) |> 
+  select(eventid,compid,qf) |> 
+  distinct()
+sf_key <- maj_int_spr |> 
+  filter(!is.na(sf)) |> 
+  select(eventid,compid,sf) |> 
+  distinct()
+
+ath_fn <- maj_int_spr |> 
+  filter(!is.na(fn)) |> 
+  select(-qf,-sf) |> 
+  left_join(qf_key,by = c('eventid','compid')) |> 
+  left_join(sf_key,by = c('eventid','compid'))
+```
+
+## Sprint QF Heat Choices
+I was having a conversation earlier with some friends about the strategy behind
+the choice of QF heat in World Cup sprint races, and realized I hadn't looked
+at the actual empirical data on that in quite a while.
+
+The background here is that athletes can choose their QF heat, and there's some
+debate about how to strategize that, balancing: 
+
+- what other competitors have already selected a particular heat
+- the fact that QFs 1 & 2 are funneled into SF1, giving them an extra few minutes of
+rest before the final (assuming you make it through)
+
+So what have the athletes been doing? The following plot shows the proportion of
+each QF comprising the atheletes in the final in each season.
+
+```{r}
+#| label: spr-heat-qf-bar-plot
+qf_pct <- ath_fn |> 
+  group_by(season,gender,qf) |> 
+  summarise(
+    n = n(),
+    .groups = 'drop'
+  ) |> 
+  group_by(season,gender) |> 
+  mutate(pct = n / sum(n),
+         qf_fct = factor(qf,levels = as.character(5:1)))
+
+brbg <- RColorBrewer::brewer.pal(n = 5,'BrBG')
+brbg[3] <- gplots::col2hex('darkgrey')
+
+ggplot(data = qf_pct,aes(x = season,y = n,fill = qf_fct)) + 
+  facet_wrap(~gender,ncol = 1) +
+  geom_col(position = position_fill()) + 
+  geom_vline(xintercept = 8.5,linewidth = 1.5) +
+  scale_fill_manual(values = brbg) + 
+  scale_y_continuous(labels = scales::label_percent()) + 
+  labs(x = NULL,y = NULL,fill = 'QF',caption = 'statisticalskier.netlify.app') +
+  ggtitle(
+    label = "QF Choices of Sprint Finalists",
+    subtitle = "Proportion of each QF represented in the top six for each season."
+  ) +
+  guides(fill = guide_legend(reverse = TRUE)) +
+  theme(
+    strip.text = element_text(face = 'bold',size = 12),
+    legend.position = 'bottom',
+    legend.direction = 'horizontal',
+    panel.grid = element_blank()
+  )
+```
+
+As you can see, there's been a modest but consistent preference for QFs 1 & 2 
+for both men & women, and while it has bounced around it has remained fairly
+consistent over time. (Note that I've separated the current season slightly, since
+we only have a handful of sprint races so far, so we can't necessarily read much
+into any changes yet.)
+
+The problem here is that causality is almost impossible to establish. Are skiers
+more likely to reach the finals because they are choosing QFs 1/2, or are the 
+sprinters choosing QFs 1/2 already the best sprinters, so they'd be more likely
+to reach the finals anyway?
+
+A very crude way to try to disentangle that might be to fit a proportional odds
+logistic regression (POLR) with a variable that acts as some sort of proxy for skier
+strength.
+
+Specifically, we can model a response variable of finishing place in the final 
+(1st - 6th) as a function of their sprint FIS points at the time of the race 
+(to control for skier strength) and the QF they originated from.
+
+If you've never heard of POLR the basic idea is that it's fitting 5 separate 
+binary logistic regressions for each response variable category transition: 6th to 5th,
+5th to 4th, 4th to 3rd, etc. and estimating the impact of each variable on 
+finishing in one of the higher categories.
+
+You can see the results in the following plot, which due to the way the model 
+works presents everything relative to QF1.
+
+```{r}
+#| label: polr-mdl-coefs
+fis_pts <- arrow::read_parquet(file = '~/Documents/code/official-fis-points-lists/output/fis_pts_list_2023-12-28.parquet') |> 
+  select(listid = Listid,
+         #listname = Listname,
+         listnum = ListNum,
+         compid = Competitorid,
+         year = year,
+         calc_date = Calculationdate,
+         spr_points = SPpoints) |> 
+  filter(year >= 2015) |>
+  distinct()
+
+polr_data <- ath_fn |>
+  filter(heat_rank <= 6) |> 
+  mutate(date = as.Date(date)) |> 
+  left_join(
+    fis_pts,
+    join_by(compid == compid,closest(date > calc_date))) |> 
+  mutate(qf_fct = factor(qf),
+         qf1 = factor(as.numeric(qf == 1)),
+         qf2 = factor(as.numeric(qf == 2)),
+         qf3 = factor(as.numeric(qf == 3)),
+         qf4 = factor(as.numeric(qf == 4)),
+         qf5 = factor(as.numeric(qf == 5)),
+         fn_fct = factor(heat_rank,levels = as.character(6:1)),
+         spr_points_scl = (spr_points - mean(spr_points,na.rm = TRUE)) / sd(spr_points,na.rm = TRUE))
+
+m_men <- MASS::polr(fn_fct ~ spr_points_scl + qf_fct,
+                    data = polr_data,
+                    subset = polr_data$gender == 'Men')
+m_wom <- MASS::polr(fn_fct ~ spr_points_scl + qf_fct,
+                    data = polr_data,
+                    subset = polr_data$gender == 'Women')
+
+men_coef <- broom::tidy(m_men,exponentiate = TRUE,conf.int = TRUE)
+wom_coef <- broom::tidy(m_wom,exponentiate = TRUE,conf.int = TRUE)
+
+bind_rows(
+  men_coef |> mutate(gender = 'Men'),
+  wom_coef |> mutate(gender = 'Women')
+) |> 
+  filter(grepl('^qf',term)) |> 
+  mutate(term_lbl = gsub('qf_fct','QF',term)) |> 
+  select(gender,term_lbl,estimate,starts_with('conf')) |> 
+  ggplot(data = _,aes(x = term_lbl)) + 
+  facet_wrap(~gender,ncol = 1,scales = 'free_y') +
+  geom_pointrange(aes(y = estimate,ymin = conf.low,ymax = conf.high),size = 0.2) +
+  labs(x = NULL,
+       y = 'Relative Likelihood',
+       caption = 'statisticalskier.netlify.app') + 
+  ggtitle(
+    label = 'Relative likelihood of a better result in sprint final compared to QF1',
+    subtitle = 'e.g. men from QF3 are ~0.2x less likely to finish\n1st vs 2nd, 2nd vs 3rd, 3rd vs 4th, etc compared to QF1'
+  ) +
+  theme(
+    strip.text = element_text(face = 'bold',size = 12)
+  )
+
+```
+
+It's tempting to think we've solved the causality direction problem here since these
+results "controlled for" skier strength, but I don't really buy it. This is still
+operating on fundamentally observational data; ideally we'd run a bunch of sprint 
+races with athletes randomly assigned to QFs, but for some reason FIS hasn't
+taken me up on that idea.
+
+Also, I think that FIS sprint points are a fairly noisy measure of "skier strength"
+since it's really just measuring qualification speed. That's almost certainly
+*sort of* correlated with overall results in the heats, but I think most World
+Cup athletes would tell you that succeeding the in heats is a pretty different
+sort of skill than succeeding in qualification.
+
