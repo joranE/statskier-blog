@@ -1,0 +1,166 @@
+---
+title: "Oberhof Classic Sprint Predictions"
+author: "Joran Elias"
+date: "2024-01-19"
+categories: [world cup,sprint,predictions,classic,oberhof]
+draft: false
+---
+
+```{r pkgs}
+library(tidyverse)
+library(statskier2)
+library(gt)
+library(gtExtras)
+library(ggpubr)
+library(arrow)
+
+theme_set(theme_bw())
+```
+
+And.....things go back to a weekly schedule and I promptly forget that the sprint races are on Friday, not Saturday. Ah well.
+
+```{r pred-data}
+location <- "Oberhof"
+tech <- "Classic"
+mens_preds <- 
+  readr::read_csv(file = '2024-01-19_men_cl_spr_oberhof.csv',
+                  show_col_types = FALSE)
+womens_preds <- 
+  readr::read_csv(file = '2024-01-19_wom_cl_spr_oberhof.csv',
+                  show_col_types = FALSE)
+```
+
+### Men's Predictions
+```{r tbl-men}
+mens_preds |> 
+  select(-compid) |> 
+  gt() |> 
+  tab_header(title = glue::glue("{loc} {tech} Sprint",loc = location,tech = tech),
+             subtitle = "Men") |> 
+  opt_align_table_header(align = 'left') |> 
+  tab_caption(caption = "") |> 
+  tab_options(
+    table.font.size = 9,
+    ihtml.active = TRUE,
+    ihtml.use_pagination = TRUE,
+    ihtml.use_compact_mode = TRUE,
+    ihtml.use_highlight = TRUE
+  ) |> 
+  cols_label(
+    fisid = 'FIS Code',
+    name = 'Name',
+    page_rank = 'Predicted PR',
+    page_rank_pos = 'Predicted Finish') |> 
+  fmt_number(columns = page_rank,decimals = 4) |> 
+  gt_plt_bar(column = page_rank)
+```
+
+# Women's Predictions
+```{r tbl-wom}
+womens_preds |> 
+  select(-compid) |> 
+  gt() |> 
+  tab_header(title = glue::glue("{loc} {tech} Sprint",loc = location,tech = tech),
+             subtitle = "Women") |>
+  opt_align_table_header(align = 'left') |> 
+  tab_caption(caption = "") |> 
+  tab_options(
+    table.font.size = 9,
+    ihtml.active = TRUE,
+    ihtml.use_pagination = TRUE,
+    ihtml.use_compact_mode = TRUE,
+    ihtml.use_highlight = TRUE
+  ) |> 
+  cols_label(
+    fisid = 'FIS Code',
+    name = 'Name',
+    page_rank = 'Predicted PR',
+    page_rank_pos = 'Predicted Finish') |> 
+  fmt_number(columns = page_rank,decimals = 4) |> 
+  gt_plt_bar(column = page_rank)
+```
+
+### Update
+So how did we do this time?
+
+```{r db-con}
+statskier_connect()
+v_spr_maj_int <- dplyr::tbl(..statskier_pg_con..,'v_sprint_maj_int')
+```
+
+```{r race-data}
+spr_res <- v_spr_maj_int |> 
+  filter(eventid %in% c(19520,19521)) |> 
+  collect()
+
+#fis_pts <- readRDS(file = '~/Documents/code/official-fis-points-lists/output/fis_pts_list.rds') |> 
+fis_pts <- arrow::read_parquet(file = '~/Documents/code/official-fis-points-lists/output/fis_pts_list_2024-01-10.parquet') |> 
+  select(listid = Listid,
+         #listname = Listname,
+         listnum = ListNum,
+         compid = Competitorid,
+         year = year,
+         calc_date = Calculationdate,
+         spr_points = SPpoints) |> 
+  filter(year >= 2020) |> 
+  distinct()
+
+men_comb <- spr_res |> 
+  filter(gender == 'Men') |> 
+  select(date,compid,rank) |> 
+  mutate(date = as.Date(date)) |> 
+  full_join(mens_preds,by = 'compid') |> 
+  left_join(
+    fis_pts,
+    join_by(compid == compid,closest(date > calc_date))) |> 
+  mutate(
+    fis_pts_rank = rank(spr_points,ties.method = 'min')) |> 
+  arrange(rank)
+
+wom_comb <- spr_res |> 
+  filter(gender == 'Women') |> 
+  select(date,compid,rank) |> 
+  mutate(date = as.Date(date)) |>
+  full_join(womens_preds,by = 'compid') |> 
+  left_join(
+    fis_pts,
+    join_by(compid == compid,closest(date > calc_date))) |> 
+  mutate(
+    fis_pts_rank = rank(spr_points,ties.method = 'min')) |> 
+  arrange(rank)
+```
+
+Nearly identical this time. Oh well.
+
+```{r men-perf}
+men_comb |> 
+  select(compid,rank,page_rank_pos,fis_pts_rank) |> 
+  pivot_longer(cols = c(page_rank_pos,fis_pts_rank),names_to = 'grp',values_to = 'val') |> 
+  mutate(grp = if_else(grp == 'fis_pts_rank','FIS Dst Pts List','PR Method')) |> 
+  ggplot(data = _,aes(x = rank,y = val)) + 
+  facet_wrap(~grp,ncol = 1) + 
+  geom_point() + 
+  geom_abline(slope = 1,intercept = 0,color = 'blue') + 
+  stat_cor(aes(label = after_stat(..r.label..))) +
+  ggtitle(label = glue::glue("Men's {loc} {tech} Sprint Predicted vs True Athlete Finishing Order",loc = location,tech = tech),
+          subtitle = "Athletes ordered by most recent FIS Spr pts list (top) & my PR method (bottom)") +
+  labs(x = 'True Finishing Place',y = 'Predicted Finishing Place')
+```
+
+```{r wom-perf}
+wom_comb |> 
+  select(compid,rank,page_rank_pos,fis_pts_rank) |> 
+  pivot_longer(cols = c(page_rank_pos,fis_pts_rank),names_to = 'grp',values_to = 'val') |> 
+  mutate(grp = if_else(grp == 'fis_pts_rank','FIS Dst Pts List','PR Method')) |> 
+  ggplot(data = _,aes(x = rank,y = val)) + 
+  facet_wrap(~grp,ncol = 1) + 
+  geom_point() + 
+  geom_abline(slope = 1,intercept = 0,color = 'blue') + 
+  stat_cor(aes(label = after_stat(..r.label..))) +
+  ggtitle(label = glue::glue("Women's {loc} {tech} Sprint Predicted vs True Athlete Finishing Order",loc = location,tech = tech),
+          subtitle = "Athletes ordered by most recent FIS Spr pts list (top) & my PR method (bottom)") +
+  labs(x = 'True Finishing Place',y = 'Predicted Finishing Place')
+```
+
+
+
