@@ -17,6 +17,57 @@
 <generator>quarto-1.2.313</generator>
 <lastBuildDate>Fri, 19 Jan 2024 07:00:00 GMT</lastBuildDate>
 <item>
+  <title>Oberhof Classic Sprint Race Snapshots</title>
+  <dc:creator>Joran Elias</dc:creator>
+  <link>https://statisticalskier.netlify.app/posts/2024-01-19-oberhof-spr-race-snapshots/oberhof_spr_race_snap.html</link>
+  <description><![CDATA[ 
+
+
+
+
+<div class="cell">
+
+</div>
+<div class="cell">
+
+</div>
+<section id="mens-race-snapshot" class="level3">
+<h3 class="anchored" data-anchor-id="mens-race-snapshot">Men’s Race Snapshot</h3>
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="https://statisticalskier.netlify.app/posts/2024-01-19-oberhof-spr-race-snapshots/oberhof_spr_race_snap_files/figure-html/men-snap-1.png" class="img-fluid" width="576"></p>
+</div>
+</div>
+</section>
+<section id="womens-race-snapshot" class="level3">
+<h3 class="anchored" data-anchor-id="womens-race-snapshot">Women’s Race Snapshot</h3>
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="https://statisticalskier.netlify.app/posts/2024-01-19-oberhof-spr-race-snapshots/oberhof_spr_race_snap_files/figure-html/wom-snap-1.png" class="img-fluid" width="576"></p>
+</div>
+</div>
+</section>
+<section id="heat-progressions" class="level3">
+<h3 class="anchored" data-anchor-id="heat-progressions">Heat Progressions</h3>
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="https://statisticalskier.netlify.app/posts/2024-01-19-oberhof-spr-race-snapshots/oberhof_spr_race_snap_files/figure-html/heat-progressions-1.png" class="img-fluid" width="1440"></p>
+</div>
+</div>
+
+
+</section>
+
+ ]]></description>
+  <category>world cup</category>
+  <category>sprint</category>
+  <category>race snapshots</category>
+  <category>classic</category>
+  <category>oberhof</category>
+  <guid>https://statisticalskier.netlify.app/posts/2024-01-19-oberhof-spr-race-snapshots/oberhof_spr_race_snap.html</guid>
+  <pubDate>Fri, 19 Jan 2024 07:00:00 GMT</pubDate>
+</item>
+<item>
   <title>Oberhof Classic Sprint Predictions</title>
   <dc:creator>Joran Elias</dc:creator>
   <link>https://statisticalskier.netlify.app/posts/2024-01-19-oberhof-spr-pred/oberhof_spr_preds.html</link>
@@ -10545,57 +10596,6 @@
   <category>predictions</category>
   <category>östersund</category>
   <guid>https://statisticalskier.netlify.app/posts/2023-12-09-oestersund-dst-fr-pred/oestersund_dst_fr_preds.html</guid>
-  <pubDate>Sat, 09 Dec 2023 07:00:00 GMT</pubDate>
-</item>
-<item>
-  <title>Östersund Classic Sprint Race Snapshots</title>
-  <dc:creator>Joran Elias</dc:creator>
-  <link>https://statisticalskier.netlify.app/posts/2023-12-09-oestersund-sprint-race-snapshots/oestersund_spr_race_snap.html</link>
-  <description><![CDATA[ 
-
-
-
-
-<div class="cell">
-
-</div>
-<div class="cell">
-
-</div>
-<section id="mens-race-snapshot" class="level3">
-<h3 class="anchored" data-anchor-id="mens-race-snapshot">Men’s Race Snapshot</h3>
-<div class="cell">
-<div class="cell-output-display">
-<p><img src="https://statisticalskier.netlify.app/posts/2023-12-09-oestersund-sprint-race-snapshots/oestersund_spr_race_snap_files/figure-html/men-snap-1.png" class="img-fluid" width="576"></p>
-</div>
-</div>
-</section>
-<section id="womens-race-snapshot" class="level3">
-<h3 class="anchored" data-anchor-id="womens-race-snapshot">Women’s Race Snapshot</h3>
-<div class="cell">
-<div class="cell-output-display">
-<p><img src="https://statisticalskier.netlify.app/posts/2023-12-09-oestersund-sprint-race-snapshots/oestersund_spr_race_snap_files/figure-html/wom-snap-1.png" class="img-fluid" width="576"></p>
-</div>
-</div>
-</section>
-<section id="heat-progressions" class="level3">
-<h3 class="anchored" data-anchor-id="heat-progressions">Heat Progressions</h3>
-<div class="cell">
-<div class="cell-output-display">
-<p><img src="https://statisticalskier.netlify.app/posts/2023-12-09-oestersund-sprint-race-snapshots/oestersund_spr_race_snap_files/figure-html/heat-progressions-1.png" class="img-fluid" width="1440"></p>
-</div>
-</div>
-
-
-</section>
-
- ]]></description>
-  <category>world cup</category>
-  <category>sprint</category>
-  <category>race snapshots</category>
-  <category>classic</category>
-  <category>östersund</category>
-  <guid>https://statisticalskier.netlify.app/posts/2023-12-09-oestersund-sprint-race-snapshots/oestersund_spr_race_snap.html</guid>
   <pubDate>Sat, 09 Dec 2023 07:00:00 GMT</pubDate>
 </item>
 </channel>
