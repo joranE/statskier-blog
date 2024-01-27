@@ -2,6 +2,7 @@
   {
     "listing": "/index.html",
     "items": [
+      "/posts/2024-01-27-goms-spr-race-snapshots/goms_spr_race_snap.html",
       "/posts/2024-01-26-goms-spr-pred/goms_spr_preds.html",
       "/posts/2024-01-20-oberhof-dst-cl-race-snapshots/oberhof_dst_cl_race_snap.html",
       "/posts/2024-01-19-oberhof-dst-cl-pred/oberhof_dst_cl_preds.html",
@@ -37,8 +38,7 @@
       "/posts/2023-11-24-ruka-sprint-race-snapshots/ruka_spr_race_snap.html",
       "/posts/2023-11-24-ruka-distance-cl-predictions/ruka_dst_cl_preds.html",
       "/posts/2023-11-23-ruka-sprint-predictions/ruka_spr_preds.html",
-      "/posts/2022-02-13-diversity-of-nations/index.html",
-      "/posts/2024-01-27-goms-spr-race-snapshots/goms_spr_race_snap.html"
+      "/posts/2022-02-13-diversity-of-nations/index.html"
     ]
   }
 ]
