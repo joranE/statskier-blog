@@ -17,6 +17,39 @@
 <generator>quarto-1.2.313</generator>
 <lastBuildDate>Sat, 27 Jan 2024 07:00:00 GMT</lastBuildDate>
 <item>
+  <title>Jessie Diggins’ Unique QF Choice Strategy</title>
+  <dc:creator>Joran Elias</dc:creator>
+  <link>https://statisticalskier.netlify.app/posts/2024-01-27-diggins-qf-choices/diggins_qf_choices.html</link>
+  <description><![CDATA[ 
+
+
+
+
+<div class="cell">
+
+</div>
+<div class="cell">
+
+</div>
+<p>Has anyone else noticed that Jessie Diggins isn’t making QF choices like any of her peers?</p>
+<p>The “normal” choice is to opt for QFs 1 &amp; 2, presumably for the additional rest, while Jessie has been gravitating towards QF 5 at a steadily increasing rate. I wonder what the rationale is here. Trying to avoid the bulk of the Swedes in the quarterfinals? Something else?</p>
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="https://statisticalskier.netlify.app/posts/2024-01-27-diggins-qf-choices/diggins_qf_choices_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+
+
+
+ ]]></description>
+  <category>world cup</category>
+  <category>sprint</category>
+  <category>heats</category>
+  <category>jessie diggins</category>
+  <guid>https://statisticalskier.netlify.app/posts/2024-01-27-diggins-qf-choices/diggins_qf_choices.html</guid>
+  <pubDate>Sat, 27 Jan 2024 07:00:00 GMT</pubDate>
+</item>
+<item>
   <title>Goms Freestyle Sprint Race Snapshots</title>
   <dc:creator>Joran Elias</dc:creator>
   <link>https://statisticalskier.netlify.app/posts/2024-01-27-goms-spr-race-snapshots/goms_spr_race_snap.html</link>
@@ -9626,57 +9659,6 @@
   <category>trondheim</category>
   <guid>https://statisticalskier.netlify.app/posts/2023-12-16-trondheim-dst-cl-pred/trondheim_dst_cl_preds.html</guid>
   <pubDate>Sat, 16 Dec 2023 07:00:00 GMT</pubDate>
-</item>
-<item>
-  <title>Trondheim Freestyle Sprint Race Snapshots</title>
-  <dc:creator>Joran Elias</dc:creator>
-  <link>https://statisticalskier.netlify.app/posts/2023-12-15-trondheim-sprint-race-snapshots/trondheim_spr_race_snap.html</link>
-  <description><![CDATA[ 
-
-
-
-
-<div class="cell">
-
-</div>
-<div class="cell">
-
-</div>
-<section id="mens-race-snapshot" class="level3">
-<h3 class="anchored" data-anchor-id="mens-race-snapshot">Men’s Race Snapshot</h3>
-<div class="cell">
-<div class="cell-output-display">
-<p><img src="https://statisticalskier.netlify.app/posts/2023-12-15-trondheim-sprint-race-snapshots/trondheim_spr_race_snap_files/figure-html/men-snap-1.png" class="img-fluid" width="576"></p>
-</div>
-</div>
-</section>
-<section id="womens-race-snapshot" class="level3">
-<h3 class="anchored" data-anchor-id="womens-race-snapshot">Women’s Race Snapshot</h3>
-<div class="cell">
-<div class="cell-output-display">
-<p><img src="https://statisticalskier.netlify.app/posts/2023-12-15-trondheim-sprint-race-snapshots/trondheim_spr_race_snap_files/figure-html/wom-snap-1.png" class="img-fluid" width="576"></p>
-</div>
-</div>
-</section>
-<section id="heat-progressions" class="level3">
-<h3 class="anchored" data-anchor-id="heat-progressions">Heat Progressions</h3>
-<div class="cell">
-<div class="cell-output-display">
-<p><img src="https://statisticalskier.netlify.app/posts/2023-12-15-trondheim-sprint-race-snapshots/trondheim_spr_race_snap_files/figure-html/heat-progressions-1.png" class="img-fluid" width="1440"></p>
-</div>
-</div>
-
-
-</section>
-
- ]]></description>
-  <category>world cup</category>
-  <category>sprint</category>
-  <category>race snapshots</category>
-  <category>freestyle</category>
-  <category>trondheim</category>
-  <guid>https://statisticalskier.netlify.app/posts/2023-12-15-trondheim-sprint-race-snapshots/trondheim_spr_race_snap.html</guid>
-  <pubDate>Fri, 15 Dec 2023 07:00:00 GMT</pubDate>
 </item>
 </channel>
 </rss>
