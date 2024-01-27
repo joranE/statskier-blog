@@ -1,7 +1,7 @@
 ---
-title: "Oberhof Classic Sprint Predictions"
+title: "Goms Freestyle Sprint Predictions"
 author: "Joran Elias"
-date: "2024-01-19"
+date: "2024-01-26"
 categories: [world cup,sprint,predictions,classic,oberhof]
 draft: false
 ---
