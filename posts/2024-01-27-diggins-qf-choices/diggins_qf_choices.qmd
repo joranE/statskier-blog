@@ -1,0 +1,117 @@
+---
+title: "Jessie Diggins' Unique QF Choice Strategy"
+author: "Joran Elias"
+date: "2024-01-27"
+categories: [world cup,sprint,heats,jessie diggins]
+draft: false
+execute: 
+  message: false
+---
+
+```{r}
+#| label: pkgs
+#| message: false
+library(tidyverse)
+library(statskier2)
+library(glue)
+
+theme_set(theme_minimal())
+
+statskier_connect()
+
+v_spr_hts <- dplyr::tbl(..statskier_pg_con..,'v_sprint_heats')
+v_spr <- dplyr::tbl(..statskier_pg_con..,'v_sprint')
+```
+
+```{r}
+#| label: pull-data
+maj_int_hts <- v_spr_hts |> 
+  filter(primary_tag %in% c('wc','tds','owg','wsc') & 
+           season >= '2015-2016') |> 
+  collect()
+maj_int_res <- v_spr |> 
+  filter(primary_tag %in% c('wc','tds','owg','wsc') & 
+           season >= '2015-2016') |> 
+  collect()
+
+nms <- c(
+  'SVAHN Linn',
+  'RIBOM Emma',
+  'SKISTAD Kristine Stavaas',
+  'DIGGINS Jessie',
+  'KARLSSON Frida',
+  'SUNDLING Jonna',
+  'DAHLQVIST Maja',
+  'BRENNAN Rosie',
+  'FAEHNDRICH Nadine',
+  'JOENSUU Jasmi'
+)
+
+nms2 <- nms[!grepl('DIGGINS',nms)]
+nms2 <- statskier2::extract_all_caps(nms2)
+nms2 <- stringr::str_to_title(nms2)
+nms2 <- paste(nms2,collapse = ', ')
+
+qf_choices <- maj_int_hts |> 
+  filter(!is.na(qf) & 
+           name %in% nms) |> 
+  select(eventid,compid,name,qf) |> 
+  distinct()
+
+qual_res <- maj_int_res |> 
+  filter(name %in% nms) |> 
+  select(eventid,date,season,tech,length,location,site,compid,rankqual)
+
+ath_dat <- 
+  left_join(
+    qf_choices,
+    qual_res,
+    by = c('eventid','compid')
+  )
+
+qf_summary <- ath_dat |> 
+  group_by(name,season,qf) |> 
+  summarise(n = n_distinct(eventid)) |> 
+  ungroup() |> 
+  complete(nesting(name,season),qf,fill = list(n = 0)) |> 
+  mutate(diggins_flag = if_else(grepl('DIGGINS',name),'Jessie Diggins','Top 10 WC Spr Pts*'),
+         season_lbl = substr(season,6,9))
+```
+
+Has anyone else noticed that Jessie Diggins isn't making QF choices like any of
+her peers?
+
+The "normal" choice is to opt for QFs 1 & 2, presumably for the additional rest,
+while Jessie has been gravitating towards QF 5 at a steadily increasing rate. I 
+wonder what the rationale is here. Trying to avoid the bulk of the Swedes in the
+quarterfinals? Something else?
+
+```{r}
+qf_summary |> 
+  summarise(
+    n = sum(n),
+    .by = c('diggins_flag','season_lbl','qf')
+  ) |> 
+  group_by(diggins_flag,season_lbl) |> 
+  mutate(pct = n / sum(n)) |> 
+  filter(season_lbl >= '2018') |> 
+  ggplot(data = _,aes(x = season_lbl,y = pct,color = factor(qf),group = factor(qf))) + 
+  facet_wrap(~diggins_flag,ncol = 2) + 
+  geom_point() + 
+  geom_line() + 
+  scale_color_brewer(palette = 'Set1') +
+  scale_y_continuous(labels = scales::label_percent()) +
+  labs(
+    x = 'Season',
+    y = NULL,
+    color = 'QF Choice',
+    caption = glue('*{nms2}')) +
+  ggtitle(
+    label = 'Jessie Diggins Unique QF Choice Strategy'
+  ) +
+  theme(
+    legend.direction = 'horizontal',
+    legend.position = 'bottom',
+    plot.title.position = 'plot',
+    plot.title = element_text(face = 'bold'))
+```
