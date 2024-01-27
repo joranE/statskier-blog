@@ -60,7 +60,7 @@ debate about how to strategize that, balancing:
 rest before the final (assuming you make it through)
 
 So what have the athletes been doing? The following plot shows the proportion of
-each QF comprising the atheletes in the final in each season.
+each QF comprising the athletes in the final in each season.
 
 ```{r}
 #| label: spr-heat-qf-bar-plot
