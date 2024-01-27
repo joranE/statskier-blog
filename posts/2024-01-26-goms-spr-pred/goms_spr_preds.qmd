@@ -1,0 +1,87 @@
+---
+title: "Oberhof Classic Sprint Predictions"
+author: "Joran Elias"
+date: "2024-01-19"
+categories: [world cup,sprint,predictions,classic,oberhof]
+draft: false
+---
+
+```{r pkgs}
+library(tidyverse)
+library(statskier2)
+library(gt)
+library(gtExtras)
+library(ggpubr)
+library(arrow)
+
+theme_set(theme_bw())
+```
+
+Freestyle sprints in Goms should go well for Jessie, you'd think, but my little
+algorithm is sticking with a Swedish sweep.
+
+Picking the Valnes to win for the men seems a pretty easy call, but the algorithm
+definitely is still weighting pre-illness Klæbo pretty heavily. He had a rough 
+weekend last time, but he's got to bounce back eventually you'd think.
+
+```{r pred-data}
+location <- "Goms"
+tech <- "Freestyle"
+mens_preds <- 
+  readr::read_csv(file = '2024-01-27_men_fr_spr_goms.csv',
+                  show_col_types = FALSE)
+womens_preds <- 
+  readr::read_csv(file = '2024-01-27_wom_fr_spr_goms.csv',
+                  show_col_types = FALSE)
+```
+
+### Men's Predictions
+```{r tbl-men}
+mens_preds |> 
+  select(-compid) |> 
+  gt() |> 
+  tab_header(title = glue::glue("{loc} {tech} Sprint",loc = location,tech = tech),
+             subtitle = "Men") |> 
+  opt_align_table_header(align = 'left') |> 
+  tab_caption(caption = "") |> 
+  tab_options(
+    table.font.size = 9,
+    ihtml.active = TRUE,
+    ihtml.use_pagination = TRUE,
+    ihtml.use_compact_mode = TRUE,
+    ihtml.use_highlight = TRUE
+  ) |> 
+  cols_label(
+    fisid = 'FIS Code',
+    name = 'Name',
+    page_rank = 'Predicted PR',
+    page_rank_pos = 'Predicted Finish') |> 
+  fmt_number(columns = page_rank,decimals = 4) |> 
+  gt_plt_bar(column = page_rank)
+```
+
+# Women's Predictions
+```{r tbl-wom}
+womens_preds |> 
+  select(-compid) |> 
+  gt() |> 
+  tab_header(title = glue::glue("{loc} {tech} Sprint",loc = location,tech = tech),
+             subtitle = "Women") |>
+  opt_align_table_header(align = 'left') |> 
+  tab_caption(caption = "") |> 
+  tab_options(
+    table.font.size = 9,
+    ihtml.active = TRUE,
+    ihtml.use_pagination = TRUE,
+    ihtml.use_compact_mode = TRUE,
+    ihtml.use_highlight = TRUE
+  ) |> 
+  cols_label(
+    fisid = 'FIS Code',
+    name = 'Name',
+    page_rank = 'Predicted PR',
+    page_rank_pos = 'Predicted Finish') |> 
+  fmt_number(columns = page_rank,decimals = 4) |> 
+  gt_plt_bar(column = page_rank)
+```
+
