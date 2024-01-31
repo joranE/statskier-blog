@@ -1,0 +1,147 @@
+---
+title: "The 20k Freestyle Race in Goms Was Absurdly Fast"
+author: "Joran Elias"
+date: "2024-01-30"
+categories: [world cup,distance,freestyle,mass start,goms,pace]
+draft: false
+---
+
+```{r pkgs,message=FALSE}
+library(tidyverse)
+library(statskier2)
+library(ggrepel)
+library(hms)
+library(gt)
+
+theme_set(theme_minimal())
+statskier_connect()
+```
+
+```{r}
+ev_ids <- c(19590,19591)
+
+v_dst_maj_int <- dplyr::tbl(..statskier_pg_con..,"v_distance_maj_int")
+v_dst_splits <- dplyr::tbl(..statskier_pg_con..,"v_distance_splits")
+
+goms_splits <- 
+  v_dst_splits |> 
+  filter(eventid %in% ev_ids) |> 
+  collect()
+
+dst_res <- 
+  v_dst_maj_int |> 
+  filter(between(length,5,50) & !is.na(rank) & rank <= 10 & format %in% c("Interval","Mass") & tech == "F") |> 
+  collect()
+```
+
+```{r}
+dst_res <- 
+  dst_res |> 
+  mutate(pace = time / length)
+
+avg_pace <- 
+  dst_res |> 
+  group_by(season,date,eventid,gender,location,site,primary_tag,length,format) |> 
+  summarise(
+    avg_sec_per_km = mean(pace,na.rm = TRUE),
+    winning_time = min(time),
+    .groups = "drop")
+goms_avg_pace <- 
+  avg_pace |> 
+  filter(date == "2024-01-28") |> 
+  mutate(lbl = "Goms")
+tds_climb <- 
+  data.frame(
+    date = c("2024-01-01","2024-01-01"),
+    avg_sec_per_km = c(210,235),
+    gender = c("Men","Women"),
+    lbl = rep("TdS Alpe Cermis",2)
+  )
+```
+
+A reader emailed me to comment on the blistering pace of the recent 20k freestyle 
+mass start races in Goms. And indeed, they were quite fast!
+
+```{r}
+avg_pace |> 
+  ggplot(data = _,aes(x = as.Date(date),y = avg_sec_per_km,color = format)) + 
+  facet_wrap(~gender,ncol = 2) +
+  geom_point(alpha = 0.75) + 
+  geom_smooth(formula = y~x,method = MASS::rlm,se = FALSE,linewidth = 0.8) +
+  geom_point(data = goms_avg_pace,color = "orange",size = 3) + 
+  geom_text_repel(data = goms_avg_pace,aes(label = lbl),color = "black",nudge_y = -15,size = 3) +
+  geom_text_repel(data = tds_climb,aes(label = lbl),color = "black",size = 3) +
+  scale_color_brewer(palette = "Set2") +
+  labs(x = NULL,y = "Seconds / Kilometer",color = NULL) + 
+  ggtitle(
+    label = "Average freestyle pace of top ten skiers in WC/TdS/WSC/OWG events",
+    subtitle = "Only freestyle interval & mass start events (excluding skiathlons) between 5-50km") +
+  theme(
+    legend.position = "bottom",
+    legend.direction = "horizontal",
+    plot.title.position = "plot",
+    plot.title = element_text(face = "bold")
+  )
+```
+
+Everything I've heard suggests that the course was very icy and fast, so that was
+surely a contributing factor. It is a **little** strange maybe to have such a fast
+pace in a mass start these days, but it's not unprecedented.
+
+The men's race was the fastest (by this measure, average pace of the top ten) that
+I have on record, but just barely. The women's was only the second fastest. I'd
+certainly call them mild outliers for mass start races, but if you squint maybe 
+within the realm of possibility given the "normal" variation in the scatterplot
+above.
+
+```{r}
+avg_pace |> 
+  filter(gender == "Men") |> 
+  mutate(winning_time_lbl = hms(winning_time)) |> 
+  arrange(avg_sec_per_km) |> 
+  select(date,primary_tag,location,site,length,format,avg_sec_per_km,winning_time_lbl) |> 
+  slice_min(order_by = avg_sec_per_km,n = 10) |> 
+  gt() |> 
+  fmt_number(columns = avg_sec_per_km) |> 
+  cols_label(
+    date = "Date",
+    primary_tag = "Event",
+    location = "Nation",
+    site = "Site",
+    length = "Km",
+    format = "Format",
+    avg_sec_per_km = "Avg Leader Pace",
+    winning_time_lbl = "Winning Time"
+  ) |> 
+  tab_header(
+    title = "Fastest Men's Freestyle Races"
+  ) |> 
+  tab_style(style = cell_text(weight = "bold"),locations = list(cells_column_labels(),cells_title())) |> 
+  tab_style(style = cell_text(align = "left"),locations = list(cells_column_labels(columns = 1),cells_title()))
+```
+
+```{r}
+avg_pace |> 
+  filter(gender == "Women") |> 
+  mutate(winning_time_lbl = hms(winning_time)) |> 
+  arrange(avg_sec_per_km) |> 
+  select(date,primary_tag,location,site,length,format,avg_sec_per_km,winning_time_lbl) |> 
+  slice_min(order_by = avg_sec_per_km,n = 10) |> 
+  gt() |> 
+  fmt_number(columns = avg_sec_per_km) |> 
+  cols_label(
+    date = "Date",
+    primary_tag = "Event",
+    location = "Nation",
+    site = "Site",
+    length = "Km",
+    format = "Format",
+    avg_sec_per_km = "Avg Leader Pace",
+    winning_time_lbl = "Winning Time"
+  ) |> 
+  tab_header(
+    title = "Fastest Women's Freestyle Races"
+  ) |> 
+  tab_style(style = cell_text(weight = "bold"),locations = list(cells_column_labels(),cells_title())) |> 
+  tab_style(style = cell_text(align = "left"),locations = list(cells_column_labels(columns = 1),cells_title()))
+```
