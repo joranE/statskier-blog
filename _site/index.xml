@@ -15,7 +15,1142 @@
 <link>https://statisticalskier.netlify.app/index.html</link>
 </image>
 <generator>quarto-1.2.313</generator>
-<lastBuildDate>Sun, 28 Jan 2024 07:00:00 GMT</lastBuildDate>
+<lastBuildDate>Tue, 30 Jan 2024 07:00:00 GMT</lastBuildDate>
+<item>
+  <title>The 20k Freestyle Race in Goms Was Absurdly Fast</title>
+  <dc:creator>Joran Elias</dc:creator>
+  <link>https://statisticalskier.netlify.app/posts/2024-01-30-goms-fr-dst-fast-pace/goms_fast_pace.html</link>
+  <description><![CDATA[ 
+
+
+
+
+<div class="cell">
+
+</div>
+<div class="cell">
+
+</div>
+<div class="cell">
+
+</div>
+<p>A reader emailed me to comment on the blistering pace of the recent 20k freestyle mass start races in Goms. And indeed, they were quite fast!</p>
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="https://statisticalskier.netlify.app/posts/2024-01-30-goms-fr-dst-fast-pace/goms_fast_pace_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<p>Everything I’ve heard suggests that the course was very icy and fast, so that was surely a contributing factor. It is a <strong>little</strong> strange maybe to have such a fast pace in a mass start these days, but it’s not unprecedented.</p>
+<p>The men’s race was the fastest (by this measure, average pace of the top ten) that I have on record, but just barely. The women’s was only the second fastest. I’d certainly call them mild outliers for mass start races, but if you squint maybe within the realm of possibility given the “normal” variation in the scatterplot above.</p>
+<div class="cell">
+<div class="cell-output-display">
+
+<div id="vnjwcfscus" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#vnjwcfscus table {
+  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#vnjwcfscus thead, #vnjwcfscus tbody, #vnjwcfscus tfoot, #vnjwcfscus tr, #vnjwcfscus td, #vnjwcfscus th {
+  border-style: none;
+}
+
+#vnjwcfscus p {
+  margin: 0;
+  padding: 0;
+}
+
+#vnjwcfscus .gt_table {
+  display: table;
+  border-collapse: collapse;
+  line-height: normal;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#vnjwcfscus .gt_caption {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+#vnjwcfscus .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#vnjwcfscus .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 3px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#vnjwcfscus .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#vnjwcfscus .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#vnjwcfscus .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#vnjwcfscus .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#vnjwcfscus .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#vnjwcfscus .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#vnjwcfscus .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#vnjwcfscus .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#vnjwcfscus .gt_spanner_row {
+  border-bottom-style: hidden;
+}
+
+#vnjwcfscus .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  text-align: left;
+}
+
+#vnjwcfscus .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#vnjwcfscus .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#vnjwcfscus .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#vnjwcfscus .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#vnjwcfscus .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#vnjwcfscus .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#vnjwcfscus .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#vnjwcfscus .gt_row_group_first th {
+  border-top-width: 2px;
+}
+
+#vnjwcfscus .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#vnjwcfscus .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+#vnjwcfscus .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#vnjwcfscus .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#vnjwcfscus .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#vnjwcfscus .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#vnjwcfscus .gt_last_grand_summary_row_top {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: double;
+  border-bottom-width: 6px;
+  border-bottom-color: #D3D3D3;
+}
+
+#vnjwcfscus .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#vnjwcfscus .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#vnjwcfscus .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#vnjwcfscus .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#vnjwcfscus .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#vnjwcfscus .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#vnjwcfscus .gt_left {
+  text-align: left;
+}
+
+#vnjwcfscus .gt_center {
+  text-align: center;
+}
+
+#vnjwcfscus .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#vnjwcfscus .gt_font_normal {
+  font-weight: normal;
+}
+
+#vnjwcfscus .gt_font_bold {
+  font-weight: bold;
+}
+
+#vnjwcfscus .gt_font_italic {
+  font-style: italic;
+}
+
+#vnjwcfscus .gt_super {
+  font-size: 65%;
+}
+
+#vnjwcfscus .gt_footnote_marks {
+  font-size: 75%;
+  vertical-align: 0.4em;
+  position: initial;
+}
+
+#vnjwcfscus .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#vnjwcfscus .gt_indent_1 {
+  text-indent: 5px;
+}
+
+#vnjwcfscus .gt_indent_2 {
+  text-indent: 10px;
+}
+
+#vnjwcfscus .gt_indent_3 {
+  text-indent: 15px;
+}
+
+#vnjwcfscus .gt_indent_4 {
+  text-indent: 20px;
+}
+
+#vnjwcfscus .gt_indent_5 {
+  text-indent: 25px;
+}
+</style>
+<table class="gt_table" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+  <thead>
+    <tr class="gt_heading">
+      <td colspan="8" class="gt_heading gt_title gt_font_normal gt_bottom_border" style="font-weight: bold; text-align: left;">Fastest Men's Freestyle Races</td>
+    </tr>
+    
+    <tr class="gt_col_headings">
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" style="font-weight: bold; text-align: left;" scope="col" id="Date">Date</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" style="font-weight: bold;" scope="col" id="Event">Event</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" style="font-weight: bold;" scope="col" id="Nation">Nation</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" style="font-weight: bold;" scope="col" id="Site">Site</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" style="font-weight: bold;" scope="col" id="Km">Km</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" style="font-weight: bold;" scope="col" id="Format">Format</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" style="font-weight: bold;" scope="col" id="Avg Leader Pace">Avg Leader Pace</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" style="font-weight: bold;" scope="col" id="Winning Time">Winning Time</th>
+    </tr>
+  </thead>
+  <tbody class="gt_table_body">
+    <tr><td headers="date" class="gt_row gt_right">2024-01-28</td>
+<td headers="primary_tag" class="gt_row gt_left">wc</td>
+<td headers="location" class="gt_row gt_left">SUI</td>
+<td headers="site" class="gt_row gt_left">Goms</td>
+<td headers="length" class="gt_row gt_right">20</td>
+<td headers="format" class="gt_row gt_left">Mass</td>
+<td headers="avg_sec_per_km" class="gt_row gt_right">118.89</td>
+<td headers="winning_time_lbl" class="gt_row gt_center">00:39:25.2</td></tr>
+    <tr><td headers="date" class="gt_row gt_right">2018-01-04</td>
+<td headers="primary_tag" class="gt_row gt_left">tds</td>
+<td headers="location" class="gt_row gt_left">GER</td>
+<td headers="site" class="gt_row gt_left">Oberstdorf</td>
+<td headers="length" class="gt_row gt_right">15</td>
+<td headers="format" class="gt_row gt_left">Mass</td>
+<td headers="avg_sec_per_km" class="gt_row gt_right">119.53</td>
+<td headers="winning_time_lbl" class="gt_row gt_center">00:29:49.8</td></tr>
+    <tr><td headers="date" class="gt_row gt_right">2017-12-16</td>
+<td headers="primary_tag" class="gt_row gt_left">wc</td>
+<td headers="location" class="gt_row gt_left">ITA</td>
+<td headers="site" class="gt_row gt_left">Toblach</td>
+<td headers="length" class="gt_row gt_right">15</td>
+<td headers="format" class="gt_row gt_left">Interval</td>
+<td headers="avg_sec_per_km" class="gt_row gt_right">121.27</td>
+<td headers="winning_time_lbl" class="gt_row gt_center">00:29:58.8</td></tr>
+    <tr><td headers="date" class="gt_row gt_right">2020-02-15</td>
+<td headers="primary_tag" class="gt_row gt_left">wc</td>
+<td headers="location" class="gt_row gt_left">SWE</td>
+<td headers="site" class="gt_row gt_left">Östersund</td>
+<td headers="length" class="gt_row gt_right">15</td>
+<td headers="format" class="gt_row gt_left">Interval</td>
+<td headers="avg_sec_per_km" class="gt_row gt_right">124.11</td>
+<td headers="winning_time_lbl" class="gt_row gt_center">00:30:41.5</td></tr>
+    <tr><td headers="date" class="gt_row gt_right">2018-12-30</td>
+<td headers="primary_tag" class="gt_row gt_left">tds</td>
+<td headers="location" class="gt_row gt_left">ITA</td>
+<td headers="site" class="gt_row gt_left">Toblach</td>
+<td headers="length" class="gt_row gt_right">15</td>
+<td headers="format" class="gt_row gt_left">Interval</td>
+<td headers="avg_sec_per_km" class="gt_row gt_right">124.18</td>
+<td headers="winning_time_lbl" class="gt_row gt_center">00:30:34.1</td></tr>
+    <tr><td headers="date" class="gt_row gt_right">2012-11-24</td>
+<td headers="primary_tag" class="gt_row gt_left">wc</td>
+<td headers="location" class="gt_row gt_left">SWE</td>
+<td headers="site" class="gt_row gt_left">Gaellivare</td>
+<td headers="length" class="gt_row gt_right">15</td>
+<td headers="format" class="gt_row gt_left">Interval</td>
+<td headers="avg_sec_per_km" class="gt_row gt_right">124.28</td>
+<td headers="winning_time_lbl" class="gt_row gt_center">00:30:37.0</td></tr>
+    <tr><td headers="date" class="gt_row gt_right">2023-02-04</td>
+<td headers="primary_tag" class="gt_row gt_left">wc</td>
+<td headers="location" class="gt_row gt_left">ITA</td>
+<td headers="site" class="gt_row gt_left">Toblach</td>
+<td headers="length" class="gt_row gt_right">10</td>
+<td headers="format" class="gt_row gt_left">Interval</td>
+<td headers="avg_sec_per_km" class="gt_row gt_right">125.86</td>
+<td headers="winning_time_lbl" class="gt_row gt_center">00:20:46.4</td></tr>
+    <tr><td headers="date" class="gt_row gt_right">2019-12-31</td>
+<td headers="primary_tag" class="gt_row gt_left">tds</td>
+<td headers="location" class="gt_row gt_left">ITA</td>
+<td headers="site" class="gt_row gt_left">Toblach</td>
+<td headers="length" class="gt_row gt_right">15</td>
+<td headers="format" class="gt_row gt_left">Interval</td>
+<td headers="avg_sec_per_km" class="gt_row gt_right">126.25</td>
+<td headers="winning_time_lbl" class="gt_row gt_center">00:31:02.5</td></tr>
+    <tr><td headers="date" class="gt_row gt_right">2016-02-14</td>
+<td headers="primary_tag" class="gt_row gt_left">wc</td>
+<td headers="location" class="gt_row gt_left">SWE</td>
+<td headers="site" class="gt_row gt_left">Falun</td>
+<td headers="length" class="gt_row gt_right">15</td>
+<td headers="format" class="gt_row gt_left">Mass</td>
+<td headers="avg_sec_per_km" class="gt_row gt_right">126.92</td>
+<td headers="winning_time_lbl" class="gt_row gt_center">00:31:42.5</td></tr>
+    <tr><td headers="date" class="gt_row gt_right">2018-01-28</td>
+<td headers="primary_tag" class="gt_row gt_left">wc</td>
+<td headers="location" class="gt_row gt_left">AUT</td>
+<td headers="site" class="gt_row gt_left">Seefeld</td>
+<td headers="length" class="gt_row gt_right">15</td>
+<td headers="format" class="gt_row gt_left">Mass</td>
+<td headers="avg_sec_per_km" class="gt_row gt_right">126.93</td>
+<td headers="winning_time_lbl" class="gt_row gt_center">00:31:37.9</td></tr>
+  </tbody>
+  
+  
+</table>
+</div>
+</div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+
+<div id="shvpklkefy" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#shvpklkefy table {
+  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#shvpklkefy thead, #shvpklkefy tbody, #shvpklkefy tfoot, #shvpklkefy tr, #shvpklkefy td, #shvpklkefy th {
+  border-style: none;
+}
+
+#shvpklkefy p {
+  margin: 0;
+  padding: 0;
+}
+
+#shvpklkefy .gt_table {
+  display: table;
+  border-collapse: collapse;
+  line-height: normal;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#shvpklkefy .gt_caption {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+#shvpklkefy .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#shvpklkefy .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 3px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#shvpklkefy .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#shvpklkefy .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#shvpklkefy .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#shvpklkefy .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#shvpklkefy .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#shvpklkefy .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#shvpklkefy .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#shvpklkefy .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#shvpklkefy .gt_spanner_row {
+  border-bottom-style: hidden;
+}
+
+#shvpklkefy .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  text-align: left;
+}
+
+#shvpklkefy .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#shvpklkefy .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#shvpklkefy .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#shvpklkefy .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#shvpklkefy .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#shvpklkefy .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#shvpklkefy .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#shvpklkefy .gt_row_group_first th {
+  border-top-width: 2px;
+}
+
+#shvpklkefy .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#shvpklkefy .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+#shvpklkefy .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#shvpklkefy .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#shvpklkefy .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#shvpklkefy .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#shvpklkefy .gt_last_grand_summary_row_top {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: double;
+  border-bottom-width: 6px;
+  border-bottom-color: #D3D3D3;
+}
+
+#shvpklkefy .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#shvpklkefy .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#shvpklkefy .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#shvpklkefy .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#shvpklkefy .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#shvpklkefy .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#shvpklkefy .gt_left {
+  text-align: left;
+}
+
+#shvpklkefy .gt_center {
+  text-align: center;
+}
+
+#shvpklkefy .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#shvpklkefy .gt_font_normal {
+  font-weight: normal;
+}
+
+#shvpklkefy .gt_font_bold {
+  font-weight: bold;
+}
+
+#shvpklkefy .gt_font_italic {
+  font-style: italic;
+}
+
+#shvpklkefy .gt_super {
+  font-size: 65%;
+}
+
+#shvpklkefy .gt_footnote_marks {
+  font-size: 75%;
+  vertical-align: 0.4em;
+  position: initial;
+}
+
+#shvpklkefy .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#shvpklkefy .gt_indent_1 {
+  text-indent: 5px;
+}
+
+#shvpklkefy .gt_indent_2 {
+  text-indent: 10px;
+}
+
+#shvpklkefy .gt_indent_3 {
+  text-indent: 15px;
+}
+
+#shvpklkefy .gt_indent_4 {
+  text-indent: 20px;
+}
+
+#shvpklkefy .gt_indent_5 {
+  text-indent: 25px;
+}
+</style>
+<table class="gt_table" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+  <thead>
+    <tr class="gt_heading">
+      <td colspan="8" class="gt_heading gt_title gt_font_normal gt_bottom_border" style="font-weight: bold; text-align: left;">Fastest Women's Freestyle Races</td>
+    </tr>
+    
+    <tr class="gt_col_headings">
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" style="font-weight: bold; text-align: left;" scope="col" id="Date">Date</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" style="font-weight: bold;" scope="col" id="Event">Event</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" style="font-weight: bold;" scope="col" id="Nation">Nation</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" style="font-weight: bold;" scope="col" id="Site">Site</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" style="font-weight: bold;" scope="col" id="Km">Km</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" style="font-weight: bold;" scope="col" id="Format">Format</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" style="font-weight: bold;" scope="col" id="Avg Leader Pace">Avg Leader Pace</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" style="font-weight: bold;" scope="col" id="Winning Time">Winning Time</th>
+    </tr>
+  </thead>
+  <tbody class="gt_table_body">
+    <tr><td headers="date" class="gt_row gt_right">2021-12-31</td>
+<td headers="primary_tag" class="gt_row gt_left">tds</td>
+<td headers="location" class="gt_row gt_left">GER</td>
+<td headers="site" class="gt_row gt_left">Oberstdorf</td>
+<td headers="length" class="gt_row gt_right">10</td>
+<td headers="format" class="gt_row gt_left">Mass</td>
+<td headers="avg_sec_per_km" class="gt_row gt_right">129.60</td>
+<td headers="winning_time_lbl" class="gt_row gt_center">00:21:30.8</td></tr>
+    <tr><td headers="date" class="gt_row gt_right">2024-01-28</td>
+<td headers="primary_tag" class="gt_row gt_left">wc</td>
+<td headers="location" class="gt_row gt_left">SUI</td>
+<td headers="site" class="gt_row gt_left">Goms</td>
+<td headers="length" class="gt_row gt_right">20</td>
+<td headers="format" class="gt_row gt_left">Mass</td>
+<td headers="avg_sec_per_km" class="gt_row gt_right">136.84</td>
+<td headers="winning_time_lbl" class="gt_row gt_center">00:45:26.3</td></tr>
+    <tr><td headers="date" class="gt_row gt_right">2020-02-15</td>
+<td headers="primary_tag" class="gt_row gt_left">wc</td>
+<td headers="location" class="gt_row gt_left">SWE</td>
+<td headers="site" class="gt_row gt_left">Östersund</td>
+<td headers="length" class="gt_row gt_right">10</td>
+<td headers="format" class="gt_row gt_left">Interval</td>
+<td headers="avg_sec_per_km" class="gt_row gt_right">136.99</td>
+<td headers="winning_time_lbl" class="gt_row gt_center">00:21:49.7</td></tr>
+    <tr><td headers="date" class="gt_row gt_right">2017-03-04</td>
+<td headers="primary_tag" class="gt_row gt_left">wsc</td>
+<td headers="location" class="gt_row gt_left">FIN</td>
+<td headers="site" class="gt_row gt_left">Lahti</td>
+<td headers="length" class="gt_row gt_right">30</td>
+<td headers="format" class="gt_row gt_left">Mass</td>
+<td headers="avg_sec_per_km" class="gt_row gt_right">137.77</td>
+<td headers="winning_time_lbl" class="gt_row gt_center">01:08:36.8</td></tr>
+    <tr><td headers="date" class="gt_row gt_right">2012-11-24</td>
+<td headers="primary_tag" class="gt_row gt_left">wc</td>
+<td headers="location" class="gt_row gt_left">SWE</td>
+<td headers="site" class="gt_row gt_left">Gaellivare</td>
+<td headers="length" class="gt_row gt_right">10</td>
+<td headers="format" class="gt_row gt_left">Interval</td>
+<td headers="avg_sec_per_km" class="gt_row gt_right">138.31</td>
+<td headers="winning_time_lbl" class="gt_row gt_center">00:22:31.8</td></tr>
+    <tr><td headers="date" class="gt_row gt_right">2017-12-16</td>
+<td headers="primary_tag" class="gt_row gt_left">wc</td>
+<td headers="location" class="gt_row gt_left">ITA</td>
+<td headers="site" class="gt_row gt_left">Toblach</td>
+<td headers="length" class="gt_row gt_right">10</td>
+<td headers="format" class="gt_row gt_left">Interval</td>
+<td headers="avg_sec_per_km" class="gt_row gt_right">138.64</td>
+<td headers="winning_time_lbl" class="gt_row gt_center">00:22:40.1</td></tr>
+    <tr><td headers="date" class="gt_row gt_right">2022-03-12</td>
+<td headers="primary_tag" class="gt_row gt_left">wc</td>
+<td headers="location" class="gt_row gt_left">SWE</td>
+<td headers="site" class="gt_row gt_left">Falun</td>
+<td headers="length" class="gt_row gt_right">10</td>
+<td headers="format" class="gt_row gt_left">Interval</td>
+<td headers="avg_sec_per_km" class="gt_row gt_right">139.75</td>
+<td headers="winning_time_lbl" class="gt_row gt_center">00:22:34.4</td></tr>
+    <tr><td headers="date" class="gt_row gt_right">2018-01-04</td>
+<td headers="primary_tag" class="gt_row gt_left">tds</td>
+<td headers="location" class="gt_row gt_left">GER</td>
+<td headers="site" class="gt_row gt_left">Oberstdorf</td>
+<td headers="length" class="gt_row gt_right">10</td>
+<td headers="format" class="gt_row gt_left">Mass</td>
+<td headers="avg_sec_per_km" class="gt_row gt_right">140.10</td>
+<td headers="winning_time_lbl" class="gt_row gt_center">00:23:16.5</td></tr>
+    <tr><td headers="date" class="gt_row gt_right">2018-01-28</td>
+<td headers="primary_tag" class="gt_row gt_left">wc</td>
+<td headers="location" class="gt_row gt_left">AUT</td>
+<td headers="site" class="gt_row gt_left">Seefeld</td>
+<td headers="length" class="gt_row gt_right">10</td>
+<td headers="format" class="gt_row gt_left">Mass</td>
+<td headers="avg_sec_per_km" class="gt_row gt_right">140.31</td>
+<td headers="winning_time_lbl" class="gt_row gt_center">00:23:08.5</td></tr>
+    <tr><td headers="date" class="gt_row gt_right">2015-11-28</td>
+<td headers="primary_tag" class="gt_row gt_left">wc</td>
+<td headers="location" class="gt_row gt_left">FIN</td>
+<td headers="site" class="gt_row gt_left">Ruka</td>
+<td headers="length" class="gt_row gt_right">5</td>
+<td headers="format" class="gt_row gt_left">Interval</td>
+<td headers="avg_sec_per_km" class="gt_row gt_right">142.19</td>
+<td headers="winning_time_lbl" class="gt_row gt_center">00:11:23.8</td></tr>
+  </tbody>
+  
+  
+</table>
+</div>
+</div>
+</div>
+
+
+
+ ]]></description>
+  <category>world cup</category>
+  <category>distance</category>
+  <category>freestyle</category>
+  <category>mass start</category>
+  <category>goms</category>
+  <category>pace</category>
+  <guid>https://statisticalskier.netlify.app/posts/2024-01-30-goms-fr-dst-fast-pace/goms_fast_pace.html</guid>
+  <pubDate>Tue, 30 Jan 2024 07:00:00 GMT</pubDate>
+</item>
 <item>
   <title>Goms 20k Freestyle Mass Start Race Snapshots</title>
   <dc:creator>Joran Elias</dc:creator>
@@ -8527,1138 +9662,6 @@
   <category>classic</category>
   <category>trondheim</category>
   <guid>https://statisticalskier.netlify.app/posts/2023-12-17-trondheim-dst-cl-race-snapshots/trondheim_dst_cl_race_snap.html</guid>
-  <pubDate>Sun, 17 Dec 2023 07:00:00 GMT</pubDate>
-</item>
-<item>
-  <title>World Cup Winning Streaks By Nation</title>
-  <dc:creator>Joran Elias</dc:creator>
-  <link>https://statisticalskier.netlify.app/posts/2023-12-17-winning-streak-by-nation/winning_streak_nation.html</link>
-  <description><![CDATA[ 
-
-
-
-
-<div class="cell">
-
-</div>
-<div class="cell">
-
-</div>
-<div class="cell">
-
-</div>
-<div class="cell">
-
-</div>
-<section id="national-winning-streaks" class="level2">
-<h2 class="anchored" data-anchor-id="national-winning-streaks">National Winning Streaks</h2>
-<p>The Norwegian men are currently on a 17 race winning streak in distance races which frankly doesn’t seem likely to end anytime soon.</p>
-<p>In that light, I thought I’d catalogue the longest such streaks I can find. This first table lists the largest distance winning streaks. As you can see, the Norwegian men are on the cusp of besting the Norwegian women’s streak of 17 spanning 2014 &amp; 2015.</p>
-<div class="cell">
-<div class="cell-output-display">
-
-<div id="ujctvblhkb" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#ujctvblhkb table {
-  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-#ujctvblhkb thead, #ujctvblhkb tbody, #ujctvblhkb tfoot, #ujctvblhkb tr, #ujctvblhkb td, #ujctvblhkb th {
-  border-style: none;
-}
-
-#ujctvblhkb p {
-  margin: 0;
-  padding: 0;
-}
-
-#ujctvblhkb .gt_table {
-  display: table;
-  border-collapse: collapse;
-  line-height: normal;
-  margin-left: auto;
-  margin-right: auto;
-  color: #333333;
-  font-size: 80%;
-  font-weight: normal;
-  font-style: normal;
-  background-color: #FFFFFF;
-  width: auto;
-  border-top-style: solid;
-  border-top-width: 2px;
-  border-top-color: #A8A8A8;
-  border-right-style: none;
-  border-right-width: 2px;
-  border-right-color: #D3D3D3;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #A8A8A8;
-  border-left-style: none;
-  border-left-width: 2px;
-  border-left-color: #D3D3D3;
-}
-
-#ujctvblhkb .gt_caption {
-  padding-top: 4px;
-  padding-bottom: 4px;
-}
-
-#ujctvblhkb .gt_title {
-  color: #333333;
-  font-size: 125%;
-  font-weight: initial;
-  padding-top: 4px;
-  padding-bottom: 4px;
-  padding-left: 5px;
-  padding-right: 5px;
-  border-bottom-color: #FFFFFF;
-  border-bottom-width: 0;
-}
-
-#ujctvblhkb .gt_subtitle {
-  color: #333333;
-  font-size: 85%;
-  font-weight: initial;
-  padding-top: 3px;
-  padding-bottom: 5px;
-  padding-left: 5px;
-  padding-right: 5px;
-  border-top-color: #FFFFFF;
-  border-top-width: 0;
-}
-
-#ujctvblhkb .gt_heading {
-  background-color: #FFFFFF;
-  text-align: center;
-  border-bottom-color: #FFFFFF;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
-}
-
-#ujctvblhkb .gt_bottom_border {
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-}
-
-#ujctvblhkb .gt_col_headings {
-  border-top-style: solid;
-  border-top-width: 2px;
-  border-top-color: #D3D3D3;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
-}
-
-#ujctvblhkb .gt_col_heading {
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: normal;
-  text-transform: inherit;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
-  vertical-align: bottom;
-  padding-top: 5px;
-  padding-bottom: 6px;
-  padding-left: 5px;
-  padding-right: 5px;
-  overflow-x: hidden;
-}
-
-#ujctvblhkb .gt_column_spanner_outer {
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: normal;
-  text-transform: inherit;
-  padding-top: 0;
-  padding-bottom: 0;
-  padding-left: 4px;
-  padding-right: 4px;
-}
-
-#ujctvblhkb .gt_column_spanner_outer:first-child {
-  padding-left: 0;
-}
-
-#ujctvblhkb .gt_column_spanner_outer:last-child {
-  padding-right: 0;
-}
-
-#ujctvblhkb .gt_column_spanner {
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  vertical-align: bottom;
-  padding-top: 5px;
-  padding-bottom: 5px;
-  overflow-x: hidden;
-  display: inline-block;
-  width: 100%;
-}
-
-#ujctvblhkb .gt_spanner_row {
-  border-bottom-style: hidden;
-}
-
-#ujctvblhkb .gt_group_heading {
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: initial;
-  text-transform: inherit;
-  border-top-style: solid;
-  border-top-width: 2px;
-  border-top-color: #D3D3D3;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
-  vertical-align: middle;
-  text-align: left;
-}
-
-#ujctvblhkb .gt_empty_group_heading {
-  padding: 0.5px;
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: initial;
-  border-top-style: solid;
-  border-top-width: 2px;
-  border-top-color: #D3D3D3;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  vertical-align: middle;
-}
-
-#ujctvblhkb .gt_from_md > :first-child {
-  margin-top: 0;
-}
-
-#ujctvblhkb .gt_from_md > :last-child {
-  margin-bottom: 0;
-}
-
-#ujctvblhkb .gt_row {
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-  margin: 10px;
-  border-top-style: solid;
-  border-top-width: 1px;
-  border-top-color: #D3D3D3;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
-  vertical-align: middle;
-  overflow-x: hidden;
-}
-
-#ujctvblhkb .gt_stub {
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: initial;
-  text-transform: inherit;
-  border-right-style: solid;
-  border-right-width: 2px;
-  border-right-color: #D3D3D3;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-#ujctvblhkb .gt_stub_row_group {
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: initial;
-  text-transform: inherit;
-  border-right-style: solid;
-  border-right-width: 2px;
-  border-right-color: #D3D3D3;
-  padding-left: 5px;
-  padding-right: 5px;
-  vertical-align: top;
-}
-
-#ujctvblhkb .gt_row_group_first td {
-  border-top-width: 2px;
-}
-
-#ujctvblhkb .gt_row_group_first th {
-  border-top-width: 2px;
-}
-
-#ujctvblhkb .gt_summary_row {
-  color: #333333;
-  background-color: #FFFFFF;
-  text-transform: inherit;
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-#ujctvblhkb .gt_first_summary_row {
-  border-top-style: solid;
-  border-top-color: #D3D3D3;
-}
-
-#ujctvblhkb .gt_first_summary_row.thick {
-  border-top-width: 2px;
-}
-
-#ujctvblhkb .gt_last_summary_row {
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-}
-
-#ujctvblhkb .gt_grand_summary_row {
-  color: #333333;
-  background-color: #FFFFFF;
-  text-transform: inherit;
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-#ujctvblhkb .gt_first_grand_summary_row {
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-  border-top-style: double;
-  border-top-width: 6px;
-  border-top-color: #D3D3D3;
-}
-
-#ujctvblhkb .gt_last_grand_summary_row_top {
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-  border-bottom-style: double;
-  border-bottom-width: 6px;
-  border-bottom-color: #D3D3D3;
-}
-
-#ujctvblhkb .gt_striped {
-  background-color: rgba(128, 128, 128, 0.05);
-}
-
-#ujctvblhkb .gt_table_body {
-  border-top-style: solid;
-  border-top-width: 2px;
-  border-top-color: #D3D3D3;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-}
-
-#ujctvblhkb .gt_footnotes {
-  color: #333333;
-  background-color: #FFFFFF;
-  border-bottom-style: none;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  border-left-style: none;
-  border-left-width: 2px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 2px;
-  border-right-color: #D3D3D3;
-}
-
-#ujctvblhkb .gt_footnote {
-  margin: 0px;
-  font-size: 90%;
-  padding-top: 4px;
-  padding-bottom: 4px;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-#ujctvblhkb .gt_sourcenotes {
-  color: #333333;
-  background-color: #FFFFFF;
-  border-bottom-style: none;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  border-left-style: none;
-  border-left-width: 2px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 2px;
-  border-right-color: #D3D3D3;
-}
-
-#ujctvblhkb .gt_sourcenote {
-  font-size: 90%;
-  padding-top: 4px;
-  padding-bottom: 4px;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-#ujctvblhkb .gt_left {
-  text-align: left;
-}
-
-#ujctvblhkb .gt_center {
-  text-align: center;
-}
-
-#ujctvblhkb .gt_right {
-  text-align: right;
-  font-variant-numeric: tabular-nums;
-}
-
-#ujctvblhkb .gt_font_normal {
-  font-weight: normal;
-}
-
-#ujctvblhkb .gt_font_bold {
-  font-weight: bold;
-}
-
-#ujctvblhkb .gt_font_italic {
-  font-style: italic;
-}
-
-#ujctvblhkb .gt_super {
-  font-size: 65%;
-}
-
-#ujctvblhkb .gt_footnote_marks {
-  font-size: 75%;
-  vertical-align: 0.4em;
-  position: initial;
-}
-
-#ujctvblhkb .gt_asterisk {
-  font-size: 100%;
-  vertical-align: 0;
-}
-
-#ujctvblhkb .gt_indent_1 {
-  text-indent: 5px;
-}
-
-#ujctvblhkb .gt_indent_2 {
-  text-indent: 10px;
-}
-
-#ujctvblhkb .gt_indent_3 {
-  text-indent: 15px;
-}
-
-#ujctvblhkb .gt_indent_4 {
-  text-indent: 20px;
-}
-
-#ujctvblhkb .gt_indent_5 {
-  text-indent: 25px;
-}
-</style>
-<table class="gt_table" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
-  <thead>
-    <tr class="gt_heading">
-      <td colspan="6" class="gt_heading gt_title gt_font_normal" style="text-align: left;">National Winning Streaks: Distance</td>
-    </tr>
-    <tr class="gt_heading">
-      <td colspan="6" class="gt_heading gt_subtitle gt_font_normal gt_bottom_border" style="text-align: left;">Includes World Cup, OWG, WSC &amp; TdS events from 1991</td>
-    </tr>
-    <tr class="gt_col_headings">
-      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col" id=""></th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" style="font-weight: bold;" scope="col" id="Nation">Nation</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" style="font-weight: bold;" scope="col" id="Start">Start</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" style="font-weight: bold;" scope="col" id="End">End</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" style="font-weight: bold;" scope="col" id="# Races"># Races</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" style="font-weight: bold;" scope="col" id="Athletes">Athletes</th>
-    </tr>
-  </thead>
-  <tbody class="gt_table_body">
-    <tr class="gt_row_group_first"><td headers="Men stub_1_1 stub_1" rowspan="5" class="gt_row gt_left gt_stub_row_group" style="font-weight: bold;">Men</td>
-<td headers="Men stub_1_1 nation" class="gt_row gt_left" style="vertical-align: top;">NOR</td>
-<td headers="Men stub_1_1 streak_start" class="gt_row gt_right" style="vertical-align: top;">2023-01-07</td>
-<td headers="Men stub_1_1 streak_end" class="gt_row gt_left" style="vertical-align: top;">?</td>
-<td headers="Men stub_1_1 streak_len_n" class="gt_row gt_right" style="vertical-align: top;">17</td>
-<td headers="Men stub_1_1 skier_names" class="gt_row gt_left" style="text-align: right;"><div data-qmd="Klaebo (6)<br>Krueger (4)<br>Golberg (3)<br>Amundsen (2)<br>Jenssen (1)<br>Nyenget (1)"><div class="gt_from_md"><p>Klaebo (6)<br>Krueger (4)<br>Golberg (3)<br>Amundsen (2)<br>Jenssen (1)<br>Nyenget (1)</p>
-</div></div></td></tr>
-    <tr><td headers="Men nation_2 nation" class="gt_row gt_left" style="vertical-align: top;">NOR</td>
-<td headers="Men nation_2 streak_start" class="gt_row gt_right" style="vertical-align: top;">1991-12-08<span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>1</sup></span></td>
-<td headers="Men nation_2 streak_end" class="gt_row gt_left" style="vertical-align: top;">1992-02-29</td>
-<td headers="Men nation_2 streak_len_n" class="gt_row gt_right" style="vertical-align: top;">10</td>
-<td headers="Men nation_2 skier_names" class="gt_row gt_left" style="text-align: right;"><div data-qmd="Daehlie (6)<br>Ulvang (4)"><div class="gt_from_md"><p>Daehlie (6)<br>Ulvang (4)</p>
-</div></div></td></tr>
-    <tr><td headers="Men nation_3 nation" class="gt_row gt_left" style="vertical-align: top;">NOR</td>
-<td headers="Men nation_3 streak_start" class="gt_row gt_right" style="vertical-align: top;">2022-03-06</td>
-<td headers="Men nation_3 streak_end" class="gt_row gt_left" style="vertical-align: top;">2023-01-03</td>
-<td headers="Men nation_3 streak_len_n" class="gt_row gt_right" style="vertical-align: top;">10</td>
-<td headers="Men nation_3 skier_names" class="gt_row gt_left" style="text-align: right;"><div data-qmd="Golberg (2)<br>Klaebo (2)<br>Krueger (2)<br>Nyenget (2)<br>Andersen (1)<br>Toenseth (1)"><div class="gt_from_md"><p>Golberg (2)<br>Klaebo (2)<br>Krueger (2)<br>Nyenget (2)<br>Andersen (1)<br>Toenseth (1)</p>
-</div></div></td></tr>
-    <tr><td headers="Men nation_4 nation" class="gt_row gt_left" style="vertical-align: top;">NOR</td>
-<td headers="Men nation_4 streak_start" class="gt_row gt_right" style="vertical-align: top;">2015-03-14</td>
-<td headers="Men nation_4 streak_end" class="gt_row gt_left" style="vertical-align: top;">2016-01-03</td>
-<td headers="Men nation_4 streak_len_n" class="gt_row gt_right" style="vertical-align: top;">8</td>
-<td headers="Men nation_4 skier_names" class="gt_row gt_left" style="text-align: right;"><div data-qmd="Sundby (5)<br>Dyrhaug (1)<br>Krogh (1)<br>Roethe (1)"><div class="gt_from_md"><p>Sundby (5)<br>Dyrhaug (1)<br>Krogh (1)<br>Roethe (1)</p>
-</div></div></td></tr>
-    <tr><td headers="Men nation_5 nation" class="gt_row gt_left" style="vertical-align: top;">RUS</td>
-<td headers="Men nation_5 streak_start" class="gt_row gt_right" style="vertical-align: top;">2020-12-13</td>
-<td headers="Men nation_5 streak_end" class="gt_row gt_left" style="vertical-align: top;">2021-01-10</td>
-<td headers="Men nation_5 streak_len_n" class="gt_row gt_right" style="vertical-align: top;">7</td>
-<td headers="Men nation_5 skier_names" class="gt_row gt_left" style="text-align: right;"><div data-qmd="Bolshunov (5)<br>Spitsov (2)"><div class="gt_from_md"><p>Bolshunov (5)<br>Spitsov (2)</p>
-</div></div></td></tr>
-    <tr class="gt_row_group_first"><td headers="Women stub_1_6 stub_1" rowspan="6" class="gt_row gt_left gt_stub_row_group" style="font-weight: bold;">Women</td>
-<td headers="Women stub_1_6 nation" class="gt_row gt_left" style="vertical-align: top;">NOR</td>
-<td headers="Women stub_1_6 streak_start" class="gt_row gt_right" style="vertical-align: top;">2014-02-22</td>
-<td headers="Women stub_1_6 streak_end" class="gt_row gt_left" style="vertical-align: top;">2015-01-23</td>
-<td headers="Women stub_1_6 streak_len_n" class="gt_row gt_right" style="vertical-align: top;">17</td>
-<td headers="Women stub_1_6 skier_names" class="gt_row gt_left" style="text-align: right;"><div data-qmd="Bjoergen (8)<br>Johaug (8)<br>Jacobsen (1)"><div class="gt_from_md"><p>Bjoergen (8)<br>Johaug (8)<br>Jacobsen (1)</p>
-</div></div></td></tr>
-    <tr><td headers="Women nation_7 nation" class="gt_row gt_left" style="vertical-align: top;">NOR</td>
-<td headers="Women nation_7 streak_start" class="gt_row gt_right" style="vertical-align: top;">2019-03-24</td>
-<td headers="Women nation_7 streak_end" class="gt_row gt_left" style="vertical-align: top;">2020-02-15</td>
-<td headers="Women nation_7 streak_len_n" class="gt_row gt_right" style="vertical-align: top;">15</td>
-<td headers="Women nation_7 skier_names" class="gt_row gt_left" style="text-align: right;"><div data-qmd="Johaug (13)<br>Jacobsen (1)<br>Oestberg (1)"><div class="gt_from_md"><p>Johaug (13)<br>Jacobsen (1)<br>Oestberg (1)</p>
-</div></div></td></tr>
-    <tr><td headers="Women nation_8 nation" class="gt_row gt_left" style="vertical-align: top;">NOR</td>
-<td headers="Women nation_8 streak_start" class="gt_row gt_right" style="vertical-align: top;">2015-02-28</td>
-<td headers="Women nation_8 streak_end" class="gt_row gt_left" style="vertical-align: top;">2016-01-06</td>
-<td headers="Women nation_8 streak_len_n" class="gt_row gt_right" style="vertical-align: top;">11</td>
-<td headers="Women nation_8 skier_names" class="gt_row gt_left" style="text-align: right;"><div data-qmd="Johaug (8)<br>Bjoergen (2)<br>Oestberg (1)"><div class="gt_from_md"><p>Johaug (8)<br>Bjoergen (2)<br>Oestberg (1)</p>
-</div></div></td></tr>
-    <tr><td headers="Women nation_9 nation" class="gt_row gt_left" style="vertical-align: top;">NOR</td>
-<td headers="Women nation_9 streak_start" class="gt_row gt_right" style="vertical-align: top;">2016-01-09</td>
-<td headers="Women nation_9 streak_end" class="gt_row gt_left" style="vertical-align: top;">2016-03-11</td>
-<td headers="Women nation_9 streak_len_n" class="gt_row gt_right" style="vertical-align: top;">11</td>
-<td headers="Women nation_9 skier_names" class="gt_row gt_left" style="text-align: right;"><div data-qmd="Johaug (8)<br>Weng (2)<br>Oestberg (1)"><div class="gt_from_md"><p>Johaug (8)<br>Weng (2)<br>Oestberg (1)</p>
-</div></div></td></tr>
-    <tr><td headers="Women nation_10 nation" class="gt_row gt_left" style="vertical-align: top;">RUS</td>
-<td headers="Women nation_10 streak_start" class="gt_row gt_right" style="vertical-align: top;">1995-02-04</td>
-<td headers="Women nation_10 streak_end" class="gt_row gt_left" style="vertical-align: top;">1995-11-25</td>
-<td headers="Women nation_10 streak_len_n" class="gt_row gt_right" style="vertical-align: top;">9</td>
-<td headers="Women nation_10 skier_names" class="gt_row gt_left" style="text-align: right;"><div data-qmd="Lazutina (4)<br>Vaelbe (3)<br>Egorova (1)<br>Gavriljuk (1)"><div class="gt_from_md"><p>Lazutina (4)<br>Vaelbe (3)<br>Egorova (1)<br>Gavriljuk (1)</p>
-</div></div></td></tr>
-    <tr><td headers="Women nation_11 nation" class="gt_row gt_left" style="vertical-align: top;">NOR</td>
-<td headers="Women nation_11 streak_start" class="gt_row gt_right" style="vertical-align: top;">2017-02-19</td>
-<td headers="Women nation_11 streak_end" class="gt_row gt_left" style="vertical-align: top;">2017-11-26</td>
-<td headers="Women nation_11 streak_len_n" class="gt_row gt_right" style="vertical-align: top;">9</td>
-<td headers="Women nation_11 skier_names" class="gt_row gt_left" style="text-align: right;"><div data-qmd="Bjoergen (8)<br>Haga (1)"><div class="gt_from_md"><p>Bjoergen (8)<br>Haga (1)</p>
-</div></div></td></tr>
-  </tbody>
-  
-  <tfoot class="gt_footnotes">
-    <tr>
-      <td class="gt_footnote" colspan="6"><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>1</sup></span> This streak may have extended earlier but my data is incomplete pre-1991.</td>
-    </tr>
-  </tfoot>
-</table>
-</div>
-</div>
-</div>
-<p>Sprinting winning streaks by a nation haven’t been as long, topping out at 9.</p>
-<div class="cell">
-<div class="cell-output-display">
-
-<div id="ijlkwpzems" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#ijlkwpzems table {
-  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-#ijlkwpzems thead, #ijlkwpzems tbody, #ijlkwpzems tfoot, #ijlkwpzems tr, #ijlkwpzems td, #ijlkwpzems th {
-  border-style: none;
-}
-
-#ijlkwpzems p {
-  margin: 0;
-  padding: 0;
-}
-
-#ijlkwpzems .gt_table {
-  display: table;
-  border-collapse: collapse;
-  line-height: normal;
-  margin-left: auto;
-  margin-right: auto;
-  color: #333333;
-  font-size: 80%;
-  font-weight: normal;
-  font-style: normal;
-  background-color: #FFFFFF;
-  width: auto;
-  border-top-style: solid;
-  border-top-width: 2px;
-  border-top-color: #A8A8A8;
-  border-right-style: none;
-  border-right-width: 2px;
-  border-right-color: #D3D3D3;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #A8A8A8;
-  border-left-style: none;
-  border-left-width: 2px;
-  border-left-color: #D3D3D3;
-}
-
-#ijlkwpzems .gt_caption {
-  padding-top: 4px;
-  padding-bottom: 4px;
-}
-
-#ijlkwpzems .gt_title {
-  color: #333333;
-  font-size: 125%;
-  font-weight: initial;
-  padding-top: 4px;
-  padding-bottom: 4px;
-  padding-left: 5px;
-  padding-right: 5px;
-  border-bottom-color: #FFFFFF;
-  border-bottom-width: 0;
-}
-
-#ijlkwpzems .gt_subtitle {
-  color: #333333;
-  font-size: 85%;
-  font-weight: initial;
-  padding-top: 3px;
-  padding-bottom: 5px;
-  padding-left: 5px;
-  padding-right: 5px;
-  border-top-color: #FFFFFF;
-  border-top-width: 0;
-}
-
-#ijlkwpzems .gt_heading {
-  background-color: #FFFFFF;
-  text-align: center;
-  border-bottom-color: #FFFFFF;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
-}
-
-#ijlkwpzems .gt_bottom_border {
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-}
-
-#ijlkwpzems .gt_col_headings {
-  border-top-style: solid;
-  border-top-width: 2px;
-  border-top-color: #D3D3D3;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
-}
-
-#ijlkwpzems .gt_col_heading {
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: normal;
-  text-transform: inherit;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
-  vertical-align: bottom;
-  padding-top: 5px;
-  padding-bottom: 6px;
-  padding-left: 5px;
-  padding-right: 5px;
-  overflow-x: hidden;
-}
-
-#ijlkwpzems .gt_column_spanner_outer {
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: normal;
-  text-transform: inherit;
-  padding-top: 0;
-  padding-bottom: 0;
-  padding-left: 4px;
-  padding-right: 4px;
-}
-
-#ijlkwpzems .gt_column_spanner_outer:first-child {
-  padding-left: 0;
-}
-
-#ijlkwpzems .gt_column_spanner_outer:last-child {
-  padding-right: 0;
-}
-
-#ijlkwpzems .gt_column_spanner {
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  vertical-align: bottom;
-  padding-top: 5px;
-  padding-bottom: 5px;
-  overflow-x: hidden;
-  display: inline-block;
-  width: 100%;
-}
-
-#ijlkwpzems .gt_spanner_row {
-  border-bottom-style: hidden;
-}
-
-#ijlkwpzems .gt_group_heading {
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: initial;
-  text-transform: inherit;
-  border-top-style: solid;
-  border-top-width: 2px;
-  border-top-color: #D3D3D3;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
-  vertical-align: middle;
-  text-align: left;
-}
-
-#ijlkwpzems .gt_empty_group_heading {
-  padding: 0.5px;
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: initial;
-  border-top-style: solid;
-  border-top-width: 2px;
-  border-top-color: #D3D3D3;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  vertical-align: middle;
-}
-
-#ijlkwpzems .gt_from_md > :first-child {
-  margin-top: 0;
-}
-
-#ijlkwpzems .gt_from_md > :last-child {
-  margin-bottom: 0;
-}
-
-#ijlkwpzems .gt_row {
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-  margin: 10px;
-  border-top-style: solid;
-  border-top-width: 1px;
-  border-top-color: #D3D3D3;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
-  vertical-align: middle;
-  overflow-x: hidden;
-}
-
-#ijlkwpzems .gt_stub {
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: initial;
-  text-transform: inherit;
-  border-right-style: solid;
-  border-right-width: 2px;
-  border-right-color: #D3D3D3;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-#ijlkwpzems .gt_stub_row_group {
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: initial;
-  text-transform: inherit;
-  border-right-style: solid;
-  border-right-width: 2px;
-  border-right-color: #D3D3D3;
-  padding-left: 5px;
-  padding-right: 5px;
-  vertical-align: top;
-}
-
-#ijlkwpzems .gt_row_group_first td {
-  border-top-width: 2px;
-}
-
-#ijlkwpzems .gt_row_group_first th {
-  border-top-width: 2px;
-}
-
-#ijlkwpzems .gt_summary_row {
-  color: #333333;
-  background-color: #FFFFFF;
-  text-transform: inherit;
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-#ijlkwpzems .gt_first_summary_row {
-  border-top-style: solid;
-  border-top-color: #D3D3D3;
-}
-
-#ijlkwpzems .gt_first_summary_row.thick {
-  border-top-width: 2px;
-}
-
-#ijlkwpzems .gt_last_summary_row {
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-}
-
-#ijlkwpzems .gt_grand_summary_row {
-  color: #333333;
-  background-color: #FFFFFF;
-  text-transform: inherit;
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-#ijlkwpzems .gt_first_grand_summary_row {
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-  border-top-style: double;
-  border-top-width: 6px;
-  border-top-color: #D3D3D3;
-}
-
-#ijlkwpzems .gt_last_grand_summary_row_top {
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-  border-bottom-style: double;
-  border-bottom-width: 6px;
-  border-bottom-color: #D3D3D3;
-}
-
-#ijlkwpzems .gt_striped {
-  background-color: rgba(128, 128, 128, 0.05);
-}
-
-#ijlkwpzems .gt_table_body {
-  border-top-style: solid;
-  border-top-width: 2px;
-  border-top-color: #D3D3D3;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-}
-
-#ijlkwpzems .gt_footnotes {
-  color: #333333;
-  background-color: #FFFFFF;
-  border-bottom-style: none;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  border-left-style: none;
-  border-left-width: 2px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 2px;
-  border-right-color: #D3D3D3;
-}
-
-#ijlkwpzems .gt_footnote {
-  margin: 0px;
-  font-size: 90%;
-  padding-top: 4px;
-  padding-bottom: 4px;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-#ijlkwpzems .gt_sourcenotes {
-  color: #333333;
-  background-color: #FFFFFF;
-  border-bottom-style: none;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  border-left-style: none;
-  border-left-width: 2px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 2px;
-  border-right-color: #D3D3D3;
-}
-
-#ijlkwpzems .gt_sourcenote {
-  font-size: 90%;
-  padding-top: 4px;
-  padding-bottom: 4px;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-#ijlkwpzems .gt_left {
-  text-align: left;
-}
-
-#ijlkwpzems .gt_center {
-  text-align: center;
-}
-
-#ijlkwpzems .gt_right {
-  text-align: right;
-  font-variant-numeric: tabular-nums;
-}
-
-#ijlkwpzems .gt_font_normal {
-  font-weight: normal;
-}
-
-#ijlkwpzems .gt_font_bold {
-  font-weight: bold;
-}
-
-#ijlkwpzems .gt_font_italic {
-  font-style: italic;
-}
-
-#ijlkwpzems .gt_super {
-  font-size: 65%;
-}
-
-#ijlkwpzems .gt_footnote_marks {
-  font-size: 75%;
-  vertical-align: 0.4em;
-  position: initial;
-}
-
-#ijlkwpzems .gt_asterisk {
-  font-size: 100%;
-  vertical-align: 0;
-}
-
-#ijlkwpzems .gt_indent_1 {
-  text-indent: 5px;
-}
-
-#ijlkwpzems .gt_indent_2 {
-  text-indent: 10px;
-}
-
-#ijlkwpzems .gt_indent_3 {
-  text-indent: 15px;
-}
-
-#ijlkwpzems .gt_indent_4 {
-  text-indent: 20px;
-}
-
-#ijlkwpzems .gt_indent_5 {
-  text-indent: 25px;
-}
-</style>
-<table class="gt_table" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
-  <thead>
-    <tr class="gt_heading">
-      <td colspan="6" class="gt_heading gt_title gt_font_normal" style="text-align: left;">National Winning Streaks: Sprint</td>
-    </tr>
-    <tr class="gt_heading">
-      <td colspan="6" class="gt_heading gt_subtitle gt_font_normal gt_bottom_border" style="text-align: left;">Includes World Cup, OWG, WSC &amp; TdS events from 2006</td>
-    </tr>
-    <tr class="gt_col_headings">
-      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col" id=""></th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" style="font-weight: bold;" scope="col" id="Nation">Nation</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" style="font-weight: bold;" scope="col" id="Start">Start</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" style="font-weight: bold;" scope="col" id="End">End</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" style="font-weight: bold;" scope="col" id="# Races"># Races</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" style="font-weight: bold;" scope="col" id="Athletes">Athletes</th>
-    </tr>
-  </thead>
-  <tbody class="gt_table_body">
-    <tr class="gt_row_group_first"><td headers="Men stub_1_1 stub_1" rowspan="7" class="gt_row gt_left gt_stub_row_group" style="font-weight: bold;">Men</td>
-<td headers="Men stub_1_1 nation" class="gt_row gt_left" style="vertical-align: top;">NOR</td>
-<td headers="Men stub_1_1 streak_start" class="gt_row gt_right" style="vertical-align: top;">2008-02-10</td>
-<td headers="Men stub_1_1 streak_end" class="gt_row gt_right" style="vertical-align: top;">2009-01-01</td>
-<td headers="Men stub_1_1 streak_len_n" class="gt_row gt_right" style="vertical-align: top;">9</td>
-<td headers="Men stub_1_1 skier_names" class="gt_row gt_left" style="text-align: right;"><div data-qmd="Hattestad (4)<br>Gloeersen (1)<br>Hetland (1)<br>Northug (1)<br>Roenning (1)<br>Svartedal (1)"><div class="gt_from_md"><p>Hattestad (4)<br>Gloeersen (1)<br>Hetland (1)<br>Northug (1)<br>Roenning (1)<br>Svartedal (1)</p>
-</div></div></td></tr>
-    <tr><td headers="Men nation_2 nation" class="gt_row gt_left" style="vertical-align: top;">NOR</td>
-<td headers="Men nation_2 streak_start" class="gt_row gt_right" style="vertical-align: top;">2023-02-03</td>
-<td headers="Men nation_2 streak_end" class="gt_row gt_right" style="vertical-align: top;">2023-12-15</td>
-<td headers="Men nation_2 streak_len_n" class="gt_row gt_right" style="vertical-align: top;">9</td>
-<td headers="Men nation_2 skier_names" class="gt_row gt_left" style="text-align: right;"><div data-qmd="Klaebo (8)<br>Valnes (1)"><div class="gt_from_md"><p>Klaebo (8)<br>Valnes (1)</p>
-</div></div></td></tr>
-    <tr><td headers="Men nation_3 nation" class="gt_row gt_left" style="vertical-align: top;">NOR</td>
-<td headers="Men nation_3 streak_start" class="gt_row gt_right" style="vertical-align: top;">2021-12-03</td>
-<td headers="Men nation_3 streak_end" class="gt_row gt_right" style="vertical-align: top;">2022-02-26</td>
-<td headers="Men nation_3 streak_len_n" class="gt_row gt_right" style="vertical-align: top;">7</td>
-<td headers="Men nation_3 skier_names" class="gt_row gt_left" style="text-align: right;"><div data-qmd="Klaebo (6)<br>Taugboel (1)"><div class="gt_from_md"><p>Klaebo (6)<br>Taugboel (1)</p>
-</div></div></td></tr>
-    <tr><td headers="Men nation_4 nation" class="gt_row gt_left" style="vertical-align: top;">NOR</td>
-<td headers="Men nation_4 streak_start" class="gt_row gt_right" style="vertical-align: top;">2009-02-13</td>
-<td headers="Men nation_4 streak_end" class="gt_row gt_right" style="vertical-align: top;">2009-11-28</td>
-<td headers="Men nation_4 streak_len_n" class="gt_row gt_right" style="vertical-align: top;">6</td>
-<td headers="Men nation_4 skier_names" class="gt_row gt_left" style="text-align: right;"><div data-qmd="Hattestad (4)<br>Kjoelstad (1)<br>Northug (1)"><div class="gt_from_md"><p>Hattestad (4)<br>Kjoelstad (1)<br>Northug (1)</p>
-</div></div></td></tr>
-    <tr><td headers="Men nation_5 nation" class="gt_row gt_left" style="vertical-align: top;">NOR</td>
-<td headers="Men nation_5 streak_start" class="gt_row gt_right" style="vertical-align: top;">2018-12-15</td>
-<td headers="Men nation_5 streak_end" class="gt_row gt_right" style="vertical-align: top;">2019-02-09</td>
-<td headers="Men nation_5 streak_len_n" class="gt_row gt_right" style="vertical-align: top;">6</td>
-<td headers="Men nation_5 skier_names" class="gt_row gt_left" style="text-align: right;"><div data-qmd="Klaebo (5)<br>Skar (1)"><div class="gt_from_md"><p>Klaebo (5)<br>Skar (1)</p>
-</div></div></td></tr>
-    <tr><td headers="Men nation_6 nation" class="gt_row gt_left" style="vertical-align: top;">NOR</td>
-<td headers="Men nation_6 streak_start" class="gt_row gt_right" style="vertical-align: top;">2019-02-21</td>
-<td headers="Men nation_6 streak_end" class="gt_row gt_right" style="vertical-align: top;">2019-12-14</td>
-<td headers="Men nation_6 streak_len_n" class="gt_row gt_right" style="vertical-align: top;">6</td>
-<td headers="Men nation_6 skier_names" class="gt_row gt_left" style="text-align: right;"><div data-qmd="Klaebo (6)"><div class="gt_from_md"><p>Klaebo (6)</p>
-</div></div></td></tr>
-    <tr><td headers="Men nation_7 nation" class="gt_row gt_left" style="vertical-align: top;">NOR</td>
-<td headers="Men nation_7 streak_start" class="gt_row gt_right" style="vertical-align: top;">2020-01-26</td>
-<td headers="Men nation_7 streak_end" class="gt_row gt_right" style="vertical-align: top;">2020-11-27</td>
-<td headers="Men nation_7 streak_len_n" class="gt_row gt_right" style="vertical-align: top;">6</td>
-<td headers="Men nation_7 skier_names" class="gt_row gt_left" style="text-align: right;"><div data-qmd="Klaebo (4)<br>Golberg (1)<br>Valnes (1)"><div class="gt_from_md"><p>Klaebo (4)<br>Golberg (1)<br>Valnes (1)</p>
-</div></div></td></tr>
-    <tr class="gt_row_group_first"><td headers="Women stub_1_8 stub_1" rowspan="7" class="gt_row gt_left gt_stub_row_group" style="font-weight: bold;">Women</td>
-<td headers="Women stub_1_8 nation" class="gt_row gt_left" style="vertical-align: top;">SWE</td>
-<td headers="Women stub_1_8 streak_start" class="gt_row gt_right" style="vertical-align: top;">2021-01-01</td>
-<td headers="Women stub_1_8 streak_end" class="gt_row gt_right" style="vertical-align: top;">2021-12-18</td>
-<td headers="Women stub_1_8 streak_len_n" class="gt_row gt_right" style="vertical-align: top;">9</td>
-<td headers="Women stub_1_8 skier_names" class="gt_row gt_left" style="text-align: right;"><div data-qmd="Dahlqvist (5)<br>Svahn (3)<br>Sundling (1)"><div class="gt_from_md"><p>Dahlqvist (5)<br>Svahn (3)<br>Sundling (1)</p>
-</div></div></td></tr>
-    <tr><td headers="Women nation_9 nation" class="gt_row gt_left" style="vertical-align: top;">NOR</td>
-<td headers="Women nation_9 streak_start" class="gt_row gt_right" style="vertical-align: top;">2014-03-05</td>
-<td headers="Women nation_9 streak_end" class="gt_row gt_right" style="vertical-align: top;">2015-01-17</td>
-<td headers="Women nation_9 streak_len_n" class="gt_row gt_right" style="vertical-align: top;">8</td>
-<td headers="Women nation_9 skier_names" class="gt_row gt_left" style="text-align: right;"><div data-qmd="Bjoergen (5)<br>Oestberg (2)<br>Falla (1)"><div class="gt_from_md"><p>Bjoergen (5)<br>Oestberg (2)<br>Falla (1)</p>
-</div></div></td></tr>
-    <tr><td headers="Women nation_10 nation" class="gt_row gt_left" style="vertical-align: top;">NOR</td>
-<td headers="Women nation_10 streak_start" class="gt_row gt_right" style="vertical-align: top;">2015-02-14</td>
-<td headers="Women nation_10 streak_end" class="gt_row gt_right" style="vertical-align: top;">2015-11-27</td>
-<td headers="Women nation_10 streak_len_n" class="gt_row gt_right" style="vertical-align: top;">5</td>
-<td headers="Women nation_10 skier_names" class="gt_row gt_left" style="text-align: right;"><div data-qmd="Bjoergen (3)<br>Falla (2)"><div class="gt_from_md"><p>Bjoergen (3)<br>Falla (2)</p>
-</div></div></td></tr>
-    <tr><td headers="Women nation_11 nation" class="gt_row gt_left" style="vertical-align: top;">SWE</td>
-<td headers="Women nation_11 streak_start" class="gt_row gt_right" style="vertical-align: top;">2018-11-30</td>
-<td headers="Women nation_11 streak_end" class="gt_row gt_right" style="vertical-align: top;">2019-01-12</td>
-<td headers="Women nation_11 streak_len_n" class="gt_row gt_right" style="vertical-align: top;">5</td>
-<td headers="Women nation_11 skier_names" class="gt_row gt_left" style="text-align: right;"><div data-qmd="Nilsson (4)<br>Sundling (1)"><div class="gt_from_md"><p>Nilsson (4)<br>Sundling (1)</p>
-</div></div></td></tr>
-    <tr><td headers="Women nation_12 nation" class="gt_row gt_left" style="vertical-align: top;">NOR</td>
-<td headers="Women nation_12 streak_start" class="gt_row gt_right" style="vertical-align: top;">2012-03-04</td>
-<td headers="Women nation_12 streak_end" class="gt_row gt_right" style="vertical-align: top;">2012-11-30</td>
-<td headers="Women nation_12 streak_len_n" class="gt_row gt_right" style="vertical-align: top;">4</td>
-<td headers="Women nation_12 skier_names" class="gt_row gt_left" style="text-align: right;"><div data-qmd="Bjoergen (4)"><div class="gt_from_md"><p>Bjoergen (4)</p>
-</div></div></td></tr>
-    <tr><td headers="Women nation_13 nation" class="gt_row gt_left" style="vertical-align: top;">NOR</td>
-<td headers="Women nation_13 streak_start" class="gt_row gt_right" style="vertical-align: top;">2016-02-03</td>
-<td headers="Women nation_13 streak_end" class="gt_row gt_right" style="vertical-align: top;">2016-03-01</td>
-<td headers="Women nation_13 streak_len_n" class="gt_row gt_right" style="vertical-align: top;">4</td>
-<td headers="Women nation_13 skier_names" class="gt_row gt_left" style="text-align: right;"><div data-qmd="Falla (4)"><div class="gt_from_md"><p>Falla (4)</p>
-</div></div></td></tr>
-    <tr><td headers="Women nation_14 nation" class="gt_row gt_left" style="vertical-align: top;">NOR</td>
-<td headers="Women nation_14 streak_start" class="gt_row gt_right" style="vertical-align: top;">2023-03-14</td>
-<td headers="Women nation_14 streak_end" class="gt_row gt_right" style="vertical-align: top;">2023-03-25</td>
-<td headers="Women nation_14 streak_len_n" class="gt_row gt_right" style="vertical-align: top;">4</td>
-<td headers="Women nation_14 skier_names" class="gt_row gt_left" style="text-align: right;"><div data-qmd="Skistad (4)"><div class="gt_from_md"><p>Skistad (4)</p>
-</div></div></td></tr>
-  </tbody>
-  
-  
-</table>
-</div>
-</div>
-</div>
-
-
-</section>
-
- ]]></description>
-  <category>world cup</category>
-  <category>distance</category>
-  <category>sprint</category>
-  <category>winning streak</category>
-  <guid>https://statisticalskier.netlify.app/posts/2023-12-17-winning-streak-by-nation/winning_streak_nation.html</guid>
   <pubDate>Sun, 17 Dec 2023 07:00:00 GMT</pubDate>
 </item>
 </channel>
