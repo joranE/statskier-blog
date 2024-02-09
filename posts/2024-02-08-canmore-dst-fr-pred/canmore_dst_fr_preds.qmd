@@ -1,0 +1,84 @@
+---
+title: "Canmore 15k Freestyle Predictions"
+author: "Joran Elias"
+date: "2024-02-08"
+categories: [world cup,distance,freestyle,mass start,predictions,canmore]
+draft: false
+---
+
+```{r pkgs,message=FALSE}
+library(tidyverse)
+library(statskier2)
+library(gt)
+library(gtExtras)
+library(ggpubr)
+library(arrow)
+
+theme_set(theme_bw())
+```
+
+### Predictions
+Back to the predictions game! Nothing too daring in the output this time, I think.
+
+```{r pred-data}
+location <- "Canmore"
+len <- "15k"
+tech <- "Freestyle"
+mens_preds <- 
+  readr::read_csv(file = '2024-02-09_men_fr_dst_canmore.csv',
+                  show_col_types = FALSE)
+womens_preds <- 
+  readr::read_csv(file = '2024-02-09_wom_fr_dst_canmore.csv',
+                  show_col_types = FALSE)
+```
+
+#### Men's 15k Freestyle Predictions
+```{r tbl-men}
+mens_preds |> 
+  select(-compid) |> 
+  gt() |> 
+  tab_header(title = glue::glue("{loc} {len} {tech}",loc = location,len = len,tech = tech),
+             subtitle = "Men") |> 
+  opt_align_table_header(align = 'left') |> 
+  tab_caption(caption = "") |> 
+  tab_options(
+    table.font.size = 9,
+    ihtml.active = TRUE,
+    ihtml.use_pagination = TRUE,
+    ihtml.use_compact_mode = TRUE,
+    ihtml.use_highlight = TRUE
+  ) |> 
+  cols_label(
+    fisid = 'FIS Code',
+    name = 'Name',
+    page_rank = 'Predicted PR',
+    page_rank_pos = 'Predicted Finish') |> 
+  fmt_number(columns = page_rank,decimals = 4) |> 
+  gt_plt_bar(column = page_rank) 
+```
+
+#### Women's 15k Freestyle Predictions
+```{r tbl-wom}
+womens_preds |> 
+  select(-compid) |> 
+  gt() |> 
+  tab_header(title = glue::glue("{loc} {len} {tech}",loc = location,len = len,tech = tech),
+             subtitle = "Women") |>
+  opt_align_table_header(align = 'left') |> 
+  tab_caption(caption = "") |> 
+  tab_options(
+    table.font.size = 9,
+    ihtml.active = TRUE,
+    ihtml.use_pagination = TRUE,
+    ihtml.use_compact_mode = TRUE,
+    ihtml.use_highlight = TRUE
+  ) |> 
+  cols_label(
+    fisid = 'FIS Code',
+    name = 'Name',
+    page_rank = 'Predicted PR',
+    page_rank_pos = 'Predicted Finish') |> 
+  fmt_number(columns = page_rank,decimals = 4) |> 
+  gt_plt_bar(column = page_rank)
+```
+
