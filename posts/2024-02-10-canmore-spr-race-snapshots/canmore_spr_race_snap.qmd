@@ -1,0 +1,79 @@
+---
+title: "Canmore Freestyle Sprint Race Snapshots"
+author: "Joran Elias"
+date: "2024-02-10"
+categories: [world cup,sprint,race snapshots,freestyle,canmore]
+draft: false
+---
+
+```{r pkgs}
+#| warning: false
+#| message: false
+library(tidyverse)
+library(statskier2)
+library(patchwork)
+
+statskier_connect()
+```
+
+```{r gen-snap}
+location <- "Canmore"
+tech <- "Freestyle"
+men_spr_id <- 19784
+wom_spr_id <- 19783
+
+p_men <- race_snapshot_spr(
+  event_id = men_spr_id,
+  title = glue::glue("Men's {loc} {tech} Sprint",loc = location,tech = tech),
+  reduced = TRUE)
+
+p_wom <- race_snapshot_spr(
+  event_id = wom_spr_id,
+  title = glue::glue("Women's {loc} {tech} Sprint",loc = location,tech = tech),
+  reduced = TRUE)
+```
+
+### Men's Race Snapshot
+```{r men-snap,fig.height=10,fig.width=7}
+p_men$plot
+```
+
+### Women's Race Snapshot
+```{r wom-snap,fig.height=10,fig.width=7}
+p_wom$plot
+```
+
+### Heat Progressions
+```{r heat-progressions}
+#| fig-height: 13
+#| fig-width: 15
+wom_heat_raw <- spr_heat_plot(
+  .eventid = wom_spr_id,
+  subtitle = "QF & SF heats indicated by numbers on the plot.",
+  time_scale = "raw",
+  clip = NULL)
+men_heat_raw <- spr_heat_plot(
+  .eventid = men_spr_id,
+  subtitle = "QF & SF heats indicated by numbers on the plot.",
+  time_scale = "raw",
+  clip = c(140,170))
+
+wom_heat_med <- spr_heat_plot(
+  .eventid = wom_spr_id,
+  subtitle = "QF & SF heats indicated by numbers on the plot.",
+  time_scale = "median",
+  clip = NULL)
+men_heat_med <- spr_heat_plot(
+  .eventid = men_spr_id,
+  subtitle = "QF & SF heats indicated by numbers on the plot.",
+  time_scale = "median",
+  clip = c(-10,15))
+
+all_heats <- 
+  wom_heat_raw + 
+  wom_heat_med + 
+  men_heat_raw + 
+  men_heat_med + 
+  plot_layout(guides = 'collect')
+all_heats
+```
