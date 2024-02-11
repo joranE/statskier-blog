@@ -1,0 +1,150 @@
+---
+title: "Jessie Diggins Is Picking QF5 And Skiing It Very Hard"
+author: "Joran Elias"
+date: "2024-02-11"
+categories: [world cup,sprint,heats,jessie diggins]
+draft: false
+execute: 
+  message: false
+---
+
+```{r}
+#| label: pkgs
+#| message: false
+library(tidyverse)
+library(statskier2)
+library(glue)
+
+theme_set(theme_minimal())
+
+statskier_connect()
+
+v_spr_hts <- dplyr::tbl(..statskier_pg_con..,'v_sprint_heats')
+v_spr <- dplyr::tbl(..statskier_pg_con..,'v_sprint')
+```
+
+```{r}
+#| label: pull-data
+maj_int_hts <- v_spr_hts |> 
+  filter(primary_tag %in% c('wc','tds','owg','wsc') & 
+           season >= '2015-2016') |> 
+  collect()
+maj_int_res <- v_spr |> 
+  filter(primary_tag %in% c('wc','tds','owg','wsc') & 
+           season >= '2015-2016') |> 
+  collect()
+
+nms <- c(
+  'SVAHN Linn',
+  'RIBOM Emma',
+  'SKISTAD Kristine Stavaas',
+  'DIGGINS Jessie',
+  'KARLSSON Frida',
+  'SUNDLING Jonna',
+  'DAHLQVIST Maja',
+  'BRENNAN Rosie',
+  'FAEHNDRICH Nadine',
+  'JOENSUU Jasmi'
+)
+
+nms2 <- nms[!grepl('DIGGINS',nms)]
+nms2 <- statskier2::extract_all_caps(nms2)
+nms2 <- stringr::str_to_title(nms2)
+nms2 <- paste(nms2,collapse = ', ')
+
+qf_choices <- maj_int_hts |> 
+  filter(!is.na(qf) & 
+           name %in% nms) |> 
+  select(eventid,compid,name,qf) |> 
+  distinct()
+
+qual_res <- maj_int_res |> 
+  filter(name %in% nms) |> 
+  select(eventid,date,season,tech,length,location,site,compid,rankqual)
+
+ath_dat <- 
+  left_join(
+    qf_choices,
+    qual_res,
+    by = c('eventid','compid')
+  )
+
+qf_summary <- ath_dat |> 
+  group_by(name,season,qf) |> 
+  summarise(n = n_distinct(eventid)) |> 
+  ungroup() |> 
+  complete(nesting(name,season),qf,fill = list(n = 0)) |> 
+  mutate(diggins_flag = if_else(grepl('DIGGINS',name),'Jessie Diggins','Top 10 WC Spr Pts*'),
+         season_lbl = substr(season,6,9))
+```
+
+I noted earlier that Jessie Diggins has been opting for QF5 with increasing
+frequency of the past several season, and that this is markedly different than
+other top sprinters:
+
+```{r}
+qf_summary |> 
+  summarise(
+    n = sum(n),
+    .by = c('diggins_flag','season_lbl','qf')
+  ) |> 
+  group_by(diggins_flag,season_lbl) |> 
+  mutate(pct = n / sum(n)) |> 
+  filter(season_lbl >= '2018') |> 
+  ggplot(data = _,aes(x = season_lbl,y = pct,color = factor(qf),group = factor(qf))) + 
+  facet_wrap(~diggins_flag,ncol = 2) + 
+  geom_point() + 
+  geom_line() + 
+  scale_color_brewer(palette = 'Set1') +
+  scale_y_continuous(labels = scales::label_percent()) +
+  labs(
+    x = 'Season',
+    y = NULL,
+    color = 'QF Choice',
+    caption = glue('*{nms2}')) +
+  ggtitle(
+    label = 'Jessie Diggins Unique QF Choice Strategy'
+  ) +
+  theme(
+    legend.direction = 'horizontal',
+    legend.position = 'bottom',
+    plot.title.position = 'plot',
+    plot.title = element_text(face = 'bold'))
+```
+
+It's also the case that she is skiing the quarterfinal differently too, setting
+a very hard pace. This has resulted in a significant shift in the relative 
+speeds in the different quarterfinals:
+
+```{r}
+maj_int_hts <- 
+  maj_int_hts |> 
+  filter(gender == 'Women' & !is.na(qf) & !is.na(heat_time) & heat_rank == 1) |> 
+  group_by(eventid,season,date) |> 
+  mutate(qf_rel_time = (heat_time - median(heat_time,na.rm = TRUE)) / median(heat_time,na.rm = TRUE))
+
+maj_int_hts |> 
+  group_by(season,qf) |> 
+  summarise(med = mean(qf_rel_time,na.rm = TRUE),.groups = 'drop') |>
+  mutate(season_lbl = as.integer(substr(season,6,9))) |> 
+  ggplot(data = _,aes(x = season_lbl,y = med,color = factor(qf),group = factor(qf))) + 
+  geom_hline(yintercept = 0,color = 'gray30') +
+  geom_point() +
+  geom_line() + 
+  scale_x_continuous(breaks = 2016:2024,labels = as.character(2016:2024)) +
+  scale_y_continuous(
+    breaks = seq(-0.015,0.01,by = 0.005),
+    labels = scales::label_percent()) + 
+  scale_color_brewer(palette = 'Set1') +
+  labs(x = 'Season',y = 'Avg Percent Behind Median QF',color = 'QF') + 
+  ggtitle(
+    label = "Relative speeds of women's sprint quarterfinals",
+    subtitle = 'Each point is the average percent difference from the median winning time across quarterfinals'
+  ) + 
+  theme(
+    plot.title.position = 'plot',
+    legend.position = 'bottom',
+    legend.direction = 'horizontal',
+    plot.title = element_text(face = 'bold')
+  )
+```
