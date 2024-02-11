@@ -18,7 +18,7 @@ theme_set(theme_bw())
 ```
 
 ### Predictions
-Back to the predictions game! Nothing too daring in the output this time, I think.
+Just squeaking this one in under the wire.
 
 ```{r pred-data}
 location <- "Canmore"
