@@ -15,7 +15,58 @@
 <link>https://statisticalskier.netlify.app/index.html</link>
 </image>
 <generator>quarto-1.2.313</generator>
-<lastBuildDate>Sun, 11 Feb 2024 07:00:00 GMT</lastBuildDate>
+<lastBuildDate>Tue, 13 Feb 2024 07:00:00 GMT</lastBuildDate>
+<item>
+  <title>Canmore Classic Sprint Race Snapshots</title>
+  <dc:creator>Joran Elias</dc:creator>
+  <link>https://statisticalskier.netlify.app/posts/2024-02-13-canmore-spr-race-snapshots/canmore_spr_race_snap.html</link>
+  <description><![CDATA[ 
+
+
+
+
+<div class="cell">
+
+</div>
+<div class="cell">
+
+</div>
+<section id="mens-race-snapshot" class="level3">
+<h3 class="anchored" data-anchor-id="mens-race-snapshot">Men’s Race Snapshot</h3>
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="https://statisticalskier.netlify.app/posts/2024-02-13-canmore-spr-race-snapshots/canmore_spr_race_snap_files/figure-html/men-snap-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+</section>
+<section id="womens-race-snapshot" class="level3">
+<h3 class="anchored" data-anchor-id="womens-race-snapshot">Women’s Race Snapshot</h3>
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="https://statisticalskier.netlify.app/posts/2024-02-13-canmore-spr-race-snapshots/canmore_spr_race_snap_files/figure-html/wom-snap-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+</section>
+<section id="heat-progressions" class="level3">
+<h3 class="anchored" data-anchor-id="heat-progressions">Heat Progressions</h3>
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="https://statisticalskier.netlify.app/posts/2024-02-13-canmore-spr-race-snapshots/canmore_spr_race_snap_files/figure-html/heat-progressions-1.png" class="img-fluid" width="1440"></p>
+</div>
+</div>
+
+
+</section>
+
+ ]]></description>
+  <category>world cup</category>
+  <category>sprint</category>
+  <category>race snapshots</category>
+  <category>classic</category>
+  <category>canmore</category>
+  <guid>https://statisticalskier.netlify.app/posts/2024-02-13-canmore-spr-race-snapshots/canmore_spr_race_snap.html</guid>
+  <pubDate>Tue, 13 Feb 2024 07:00:00 GMT</pubDate>
+</item>
 <item>
   <title>Canmore 20k Classic Mass Start Race Snapshots</title>
   <dc:creator>Joran Elias</dc:creator>
@@ -9601,57 +9652,6 @@
   <category>val di fiemme</category>
   <guid>https://statisticalskier.netlify.app/posts/2024-01-05-valdifiemme-dst-cl-pred/valdifiemme_dst_cl_preds.html</guid>
   <pubDate>Fri, 05 Jan 2024 07:00:00 GMT</pubDate>
-</item>
-<item>
-  <title>TdS Davos Freestyle Sprint Race Snapshots</title>
-  <dc:creator>Joran Elias</dc:creator>
-  <link>https://statisticalskier.netlify.app/posts/2024-01-03-davos-spr-race-snapshots/davos_spr_race_snap.html</link>
-  <description><![CDATA[ 
-
-
-
-
-<div class="cell">
-
-</div>
-<div class="cell">
-
-</div>
-<section id="mens-race-snapshot" class="level3">
-<h3 class="anchored" data-anchor-id="mens-race-snapshot">Men’s Race Snapshot</h3>
-<div class="cell">
-<div class="cell-output-display">
-<p><img src="https://statisticalskier.netlify.app/posts/2024-01-03-davos-spr-race-snapshots/davos_spr_race_snap_files/figure-html/men-snap-1.png" class="img-fluid" width="576"></p>
-</div>
-</div>
-</section>
-<section id="womens-race-snapshot" class="level3">
-<h3 class="anchored" data-anchor-id="womens-race-snapshot">Women’s Race Snapshot</h3>
-<div class="cell">
-<div class="cell-output-display">
-<p><img src="https://statisticalskier.netlify.app/posts/2024-01-03-davos-spr-race-snapshots/davos_spr_race_snap_files/figure-html/wom-snap-1.png" class="img-fluid" width="576"></p>
-</div>
-</div>
-</section>
-<section id="heat-progressions" class="level3">
-<h3 class="anchored" data-anchor-id="heat-progressions">Heat Progressions</h3>
-<div class="cell">
-<div class="cell-output-display">
-<p><img src="https://statisticalskier.netlify.app/posts/2024-01-03-davos-spr-race-snapshots/davos_spr_race_snap_files/figure-html/heat-progressions-1.png" class="img-fluid" width="1440"></p>
-</div>
-</div>
-
-
-</section>
-
- ]]></description>
-  <category>tour de ski</category>
-  <category>sprint</category>
-  <category>race snapshots</category>
-  <category>freestyle</category>
-  <category>davos</category>
-  <guid>https://statisticalskier.netlify.app/posts/2024-01-03-davos-spr-race-snapshots/davos_spr_race_snap.html</guid>
-  <pubDate>Wed, 03 Jan 2024 07:00:00 GMT</pubDate>
 </item>
 </channel>
 </rss>
