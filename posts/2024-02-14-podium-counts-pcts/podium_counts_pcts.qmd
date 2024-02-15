@@ -1,0 +1,218 @@
+---
+title: "Podium Counts & Percents"
+author: "Joran Elias"
+date: "2024-02-14"
+categories: [world cup,sprint,distance]
+draft: false
+fig-width: 9
+fig-height: 9
+---
+
+```{r setup}
+library(tidyverse)
+library(statskier2)
+library(ggridges)
+library(ggrepel)
+library(ggforce)
+library(patchwork)
+
+statskier_connect()
+
+theme_set(theme_minimal())
+
+v_dst_maj_int <- dplyr::tbl(..statskier_pg_con..,"v_distance_maj_int")
+v_spr_maj_int <- dplyr::tbl(..statskier_pg_con..,"v_sprint_maj_int")
+dst_maj_int <- v_dst_maj_int |> collect()
+spr_maj_int <- v_spr_maj_int |> collect()
+```
+
+Devon Kershaw was nerding out a bit on his podcast this week about both how many
+podium Klæbo has and the percentage of his races that are podiums, so I thought 
+I'd make some graphs.
+
+Part of the reason this caught my ear was that after a recent transcription push
+I now have a close enough to complete record of all major international (World Cup,
+Tour de Ski, Olympic & World Championship) that I actually feel comfortable making
+summaries that stretch well back into the 80's.
+
+It's not 100% complete. I know that I'm missing 1 World Cup race for sure, and 
+another where the results I have are incomplete, but it's good enough for some
+high level stuff with caveats.
+
+One of those caveats is that I count things differently than FIS, so don't
+expect these numbers to exactly match what FIS publishes. FIS will include relays
+in counts of podiums, and stage race overall results, which I prefer not to. I also 
+prefer to exclude pursuit starts where World Cup results were based on the "time of the day".
+
+However, I can include reasonably complete data for elite skiers from the 80's now.
+
+```{r data}
+dst_pods <- dst_maj_int |> 
+  filter(!is.na(rank) & 
+           format != "Pursuit" & 
+           season >= "1981-1982") |> 
+  summarise(
+    n_pods = sum(rank <= 3),
+    n_wins = sum(rank == 1),
+    n = n_distinct(eventid),
+    pct_pod = mean(rank <= 3),
+    pct_win = mean(rank == 1),
+    .by = c('gender','compid','fisid','name')
+  ) |> 
+  arrange(desc(pct_pod)) |> 
+  mutate(type = 'Distance',
+         name_lbl = statskier2::extract_all_caps(name),
+         name_lbl = stringr::str_to_title(name_lbl)) |> 
+  mutate(fill_highlight = 
+           case_when(
+             name_lbl %in% c("Svan","Vaelbe","Bolshunov","Daehlie","Johaug","Bjoergen") ~ "Tier 1",
+             name_lbl %in% c("Smirnov","Lazutina","Kowalczyk","Belmondo") ~ "Tier 2",
+             name_lbl %in% c("Karlsson","Klaebo","Pettersen","Andersson","Kirvesniemi","Matikanen Kallstroem","Elofsson") ~ "Tier 3",
+             name_lbl %in% c("Skari Martinsen","Egorova","Sundby","Weng","Smigun-Vaehi","Neumannova","Cologna","Kalla","Northug") ~ "Tier 4",
+             TRUE ~ "Other"
+           ))
+
+spr_pods <- spr_maj_int |> 
+  filter(!is.na(rank)) |> 
+  summarise(
+    n_pods = sum(rank <= 3),
+    n_wins = sum(rank == 1),
+    n = n_distinct(eventid),
+    pct_pod = mean(rank <= 3),
+    pct_win = mean(rank == 1),
+    .by = c('gender','compid','fisid','name')
+  ) |> 
+  arrange(desc(pct_pod)) |> 
+  mutate(type = 'Sprint',
+         name_lbl = statskier2::extract_all_caps(name),
+         name_lbl = stringr::str_to_title(name_lbl)) |> 
+  mutate(fill_highlight = 
+           case_when(
+             name_lbl %in% c("Klaebo") ~ "Tier 1",
+             name_lbl %in% c("Falla","Bjoergen") ~ "Tier 2",
+             name_lbl %in% c("Skari Martinsen","Svahn") ~ "Tier 3",
+             name_lbl %in% c("Nilsson","Sundling","Hetland","Majdic","Pellegrino","Northug","Dahlqvist") ~ "Tier 4",
+             TRUE ~ "Other"
+           ))
+
+comb_pods <- 
+  bind_rows(
+    dst_maj_int |> 
+      filter(!is.na(rank) & 
+               format != "Pursuit" & 
+               season >= "1981-1982") |> 
+      select(eventid,gender,compid,fisid,name,rank),
+    spr_maj_int |> 
+      filter(!is.na(rank)) |> 
+      select(eventid,gender,compid,fisid,name,rank)
+  ) |> 
+  summarise(
+    n_pods = sum(rank <= 3),
+    n_wins = sum(rank == 1),
+    n = n_distinct(eventid),
+    pct_pod = mean(rank <= 3),
+    pct_win = mean(rank == 1),
+    .by = c('gender','compid','fisid','name')
+  ) |> 
+  arrange(desc(pct_pod)) |> 
+  mutate(type = 'Overall',
+         name_lbl = statskier2::extract_all_caps(name),
+         name_lbl = stringr::str_to_title(name_lbl)) |> 
+  mutate(fill_highlight = 
+           case_when(
+             name_lbl %in% c("Svan","Vaelbe","Klaebo","Daehlie","Johaug","Bjoergen") ~ "Tier 1",
+             name_lbl %in% c("Bolshunov","Smirnov","Skari Martinsen","Lazutina","Falla","Belmondo","Northug","Kowalczyk") ~ "Tier 2",
+             TRUE ~ "Other"
+           ))
+```
+
+```{r plots-setup}
+N <- 15
+P <- 0.15
+x_theme <- theme(
+  plot.title.position = "plot",
+  plot.title = element_text(face = "bold"),
+  legend.position = "bottom",
+  legend.direction = "horizontal",
+  plot.caption = element_text(face = "italic")
+)
+lbls <- labs(
+  x = "Number of podiums",
+  y = "Percent podiums",
+  color = NULL,
+  fill = NULL,
+  caption = "WC/TdS/OWG/WSC; pursuit starts & relays excluded; DNF/DSQs not counted against % podium\nstatisticalskier.netlify.app")
+```
+
+### Overall Podiums
+Starting with distance & sprint combined, which looks like this:
+```{r plot-overall}
+comb_pods |> 
+  filter(n_pods > N & pct_pod > P) |> 
+  ggplot(data = _,aes(x = n_pods,y = pct_pod)) + 
+  geom_mark_hull(
+    aes(fill = fill_highlight,filter = fill_highlight != "Other"),
+    color = NA,alpha = 0.25,expand = unit(3,"mm")) +
+  geom_point() +
+  geom_text_repel(aes(label = name_lbl,color = gender),size = 3,fontface = "bold") + 
+  scale_y_continuous(labels = scales::label_percent()) +
+  scale_color_brewer(palette = "Set1") +
+  scale_fill_brewer(palette = "Set2",guide = "none") +
+  lbls + 
+  ggtitle(
+    label = "Overall: percent vs number of podiums",
+    subtitle = glue::glue("Skiers with a minimum of {n} podiums & {p}% podiums.",n = N,p = P*100)
+  ) + 
+  x_theme
+```
+In this case, there's Bjœrgen, Klæbo, Johaug, Dæhlie, Vaelbe, Svan and then 
+there's maybe a second group ranging from Bolshunov to Kowalczyk. 
+
+### Distance Podiums
+Focusing on distance only yields basically the same picture at the top, except we've swapped
+Bolshunov in for Klæbo. Then there are maybe three small groups below that elite tier.
+
+```{r plot-distance}
+dst_pods |> 
+  filter(n_pods > N & pct_pod > P) |> 
+  ggplot(data = _,aes(x = n_pods,y = pct_pod)) + 
+  geom_mark_hull(
+    aes(fill = fill_highlight,filter = fill_highlight != "Other"),
+    color = NA,alpha = 0.25,expand = unit(3,"mm")) +
+  geom_point() +
+  geom_text_repel(aes(label = name_lbl,color = gender),size = 3,fontface = "bold") + 
+  scale_y_continuous(labels = scales::label_percent()) + 
+  scale_color_brewer(palette = "Set1") +
+  scale_fill_brewer(palette = "Set2",guide = "none") +
+  lbls + 
+  ggtitle(
+    label = "Distance: percent vs number of podiums",
+    subtitle = glue::glue("Skiers with a minimum of {n} podiums & {p}% podiums. (WC/TdS/OWG/WSC; pursuit starts & relays excluded)",n = N,p = P*100)
+  ) + 
+  x_theme
+```
+### Sprint Podiums
+Lastly, focusing on only sprints we see that Klæbo really is off all on his own.
+The only person remotely close in terms of percentages is Bente Skari Martinsen
+who raced in an entirely different era of sprinting. Bjœrgen & Fall are off on
+their own over to the right and then there's group in the center around Hetland & 
+Majdic.
+```{r plot-sprint}
+spr_pods |> 
+  filter(n_pods > N & pct_pod > P) |> 
+  ggplot(data = _,aes(x = n_pods,y = pct_pod)) +
+  geom_mark_ellipse(
+    aes(fill = fill_highlight,filter = fill_highlight != "Other"),
+    color = NA,alpha = 0.25,expand = unit(3,"mm")) +
+  geom_point() +
+  geom_text_repel(aes(label = name_lbl,color = gender),size = 3,fontface = "bold") + 
+  scale_y_continuous(labels = scales::label_percent()) + 
+  scale_color_brewer(palette = "Set1") +
+  scale_fill_brewer(palette = "Set2",guide = "none") +
+  lbls + 
+  ggtitle(
+    label = "Sprint: percent vs number of podiums",
+    subtitle = glue::glue("Skiers with a minimum of {n} podiums & {p}% podiums. (WC/TdS/OWG/WSC; relays excluded)",n = N,p = P*100)
+  ) + 
+  x_theme
+```
