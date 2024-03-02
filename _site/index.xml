@@ -15,7 +15,98 @@
 <link>https://statisticalskier.netlify.app/index.html</link>
 </image>
 <generator>quarto-1.2.313</generator>
-<lastBuildDate>Wed, 14 Feb 2024 07:00:00 GMT</lastBuildDate>
+<lastBuildDate>Sat, 02 Mar 2024 07:00:00 GMT</lastBuildDate>
+<item>
+  <title>Lahti 20k Classic Interval Start Race Snapshots</title>
+  <dc:creator>Joran Elias</dc:creator>
+  <link>https://statisticalskier.netlify.app/posts/2024-03-02-lahti-dst-cl-race-snapshots/lahti_dst_cl_race_snap.html</link>
+  <description><![CDATA[ 
+
+
+
+
+<div class="cell">
+
+</div>
+<div class="cell">
+
+</div>
+<section id="race-snapshots" class="level3">
+<h3 class="anchored" data-anchor-id="race-snapshots">Race Snapshots</h3>
+<section id="men" class="level4">
+<h4 class="anchored" data-anchor-id="men">Men</h4>
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="https://statisticalskier.netlify.app/posts/2024-03-02-lahti-dst-cl-race-snapshots/lahti_dst_cl_race_snap_files/figure-html/men-snap-1.png" class="img-fluid" width="768"></p>
+</div>
+</div>
+</section>
+<section id="women" class="level4">
+<h4 class="anchored" data-anchor-id="women">Women</h4>
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="https://statisticalskier.netlify.app/posts/2024-03-02-lahti-dst-cl-race-snapshots/lahti_dst_cl_race_snap_files/figure-html/wom-snap-1.png" class="img-fluid" width="768"></p>
+</div>
+</div>
+</section>
+</section>
+<section id="pacing-plots" class="level3">
+<h3 class="anchored" data-anchor-id="pacing-plots">Pacing Plots</h3>
+<div class="cell">
+
+</div>
+<section id="men-1" class="level4">
+<h4 class="anchored" data-anchor-id="men-1">Men</h4>
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="https://statisticalskier.netlify.app/posts/2024-03-02-lahti-dst-cl-race-snapshots/lahti_dst_cl_race_snap_files/figure-html/men-pacing-1.png" class="img-fluid" width="768"></p>
+</div>
+</div>
+</section>
+<section id="women-1" class="level4">
+<h4 class="anchored" data-anchor-id="women-1">Women</h4>
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="https://statisticalskier.netlify.app/posts/2024-03-02-lahti-dst-cl-race-snapshots/lahti_dst_cl_race_snap_files/figure-html/wom-pacing-1.png" class="img-fluid" width="768"></p>
+</div>
+</div>
+</section>
+</section>
+<section id="splits" class="level3">
+<h3 class="anchored" data-anchor-id="splits">Splits</h3>
+<div class="cell">
+
+</div>
+<section id="men-2" class="level4">
+<h4 class="anchored" data-anchor-id="men-2">Men</h4>
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="https://statisticalskier.netlify.app/posts/2024-03-02-lahti-dst-cl-race-snapshots/lahti_dst_cl_race_snap_files/figure-html/men-splits-1.png" class="img-fluid" width="960"></p>
+</div>
+</div>
+</section>
+<section id="women-2" class="level4">
+<h4 class="anchored" data-anchor-id="women-2">Women</h4>
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="https://statisticalskier.netlify.app/posts/2024-03-02-lahti-dst-cl-race-snapshots/lahti_dst_cl_race_snap_files/figure-html/wom-splits-1.png" class="img-fluid" width="960"></p>
+</div>
+</div>
+
+
+</section>
+</section>
+
+ ]]></description>
+  <category>world cup</category>
+  <category>distance</category>
+  <category>race snapshots</category>
+  <category>interval start</category>
+  <category>classic</category>
+  <category>lahti</category>
+  <guid>https://statisticalskier.netlify.app/posts/2024-03-02-lahti-dst-cl-race-snapshots/lahti_dst_cl_race_snap.html</guid>
+  <pubDate>Sat, 02 Mar 2024 07:00:00 GMT</pubDate>
+</item>
 <item>
   <title>Podium Counts &amp; Percents</title>
   <dc:creator>Joran Elias</dc:creator>
@@ -8650,97 +8741,6 @@
   <category>oberhof</category>
   <guid>https://statisticalskier.netlify.app/posts/2024-01-19-oberhof-spr-pred/oberhof_spr_preds.html</guid>
   <pubDate>Fri, 19 Jan 2024 07:00:00 GMT</pubDate>
-</item>
-<item>
-  <title>Val di Fiemme 15k Classic Mass Start Race Snapshots</title>
-  <dc:creator>Joran Elias</dc:creator>
-  <link>https://statisticalskier.netlify.app/posts/2024-01-06-valdifiemme-dst-cl-race-snapshots/valdifiemme_dst_cl_race_snap.html</link>
-  <description><![CDATA[ 
-
-
-
-
-<div class="cell">
-
-</div>
-<div class="cell">
-
-</div>
-<section id="race-snapshots" class="level3">
-<h3 class="anchored" data-anchor-id="race-snapshots">Race Snapshots</h3>
-<section id="men" class="level4">
-<h4 class="anchored" data-anchor-id="men">Men</h4>
-<div class="cell">
-<div class="cell-output-display">
-<p><img src="https://statisticalskier.netlify.app/posts/2024-01-06-valdifiemme-dst-cl-race-snapshots/valdifiemme_dst_cl_race_snap_files/figure-html/men-snap-1.png" class="img-fluid" width="768"></p>
-</div>
-</div>
-</section>
-<section id="women" class="level4">
-<h4 class="anchored" data-anchor-id="women">Women</h4>
-<div class="cell">
-<div class="cell-output-display">
-<p><img src="https://statisticalskier.netlify.app/posts/2024-01-06-valdifiemme-dst-cl-race-snapshots/valdifiemme_dst_cl_race_snap_files/figure-html/wom-snap-1.png" class="img-fluid" width="768"></p>
-</div>
-</div>
-</section>
-</section>
-<section id="pacing-plots" class="level3">
-<h3 class="anchored" data-anchor-id="pacing-plots">Pacing Plots</h3>
-<div class="cell">
-
-</div>
-<section id="men-1" class="level4">
-<h4 class="anchored" data-anchor-id="men-1">Men</h4>
-<div class="cell">
-<div class="cell-output-display">
-<p><img src="https://statisticalskier.netlify.app/posts/2024-01-06-valdifiemme-dst-cl-race-snapshots/valdifiemme_dst_cl_race_snap_files/figure-html/men-pacing-1.png" class="img-fluid" width="768"></p>
-</div>
-</div>
-</section>
-<section id="women-1" class="level4">
-<h4 class="anchored" data-anchor-id="women-1">Women</h4>
-<div class="cell">
-<div class="cell-output-display">
-<p><img src="https://statisticalskier.netlify.app/posts/2024-01-06-valdifiemme-dst-cl-race-snapshots/valdifiemme_dst_cl_race_snap_files/figure-html/wom-pacing-1.png" class="img-fluid" width="768"></p>
-</div>
-</div>
-</section>
-</section>
-<section id="splits" class="level3">
-<h3 class="anchored" data-anchor-id="splits">Splits</h3>
-<div class="cell">
-
-</div>
-<section id="men-2" class="level4">
-<h4 class="anchored" data-anchor-id="men-2">Men</h4>
-<div class="cell">
-<div class="cell-output-display">
-<p><img src="https://statisticalskier.netlify.app/posts/2024-01-06-valdifiemme-dst-cl-race-snapshots/valdifiemme_dst_cl_race_snap_files/figure-html/men-splits-1.png" class="img-fluid" width="960"></p>
-</div>
-</div>
-</section>
-<section id="women-2" class="level4">
-<h4 class="anchored" data-anchor-id="women-2">Women</h4>
-<div class="cell">
-<div class="cell-output-display">
-<p><img src="https://statisticalskier.netlify.app/posts/2024-01-06-valdifiemme-dst-cl-race-snapshots/valdifiemme_dst_cl_race_snap_files/figure-html/wom-splits-1.png" class="img-fluid" width="960"></p>
-</div>
-</div>
-
-
-</section>
-</section>
-
- ]]></description>
-  <category>tour de ski</category>
-  <category>distance</category>
-  <category>race snapshots</category>
-  <category>mass start</category>
-  <category>classic</category>
-  <category>val di fiemme</category>
-  <guid>https://statisticalskier.netlify.app/posts/2024-01-06-valdifiemme-dst-cl-race-snapshots/valdifiemme_dst_cl_race_snap.html</guid>
-  <pubDate>Sat, 06 Jan 2024 07:00:00 GMT</pubDate>
 </item>
 </channel>
 </rss>
