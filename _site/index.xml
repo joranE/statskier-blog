@@ -15,7 +15,99 @@
 <link>https://statisticalskier.netlify.app/index.html</link>
 </image>
 <generator>quarto-1.2.313</generator>
-<lastBuildDate>Sun, 03 Mar 2024 07:00:00 GMT</lastBuildDate>
+<lastBuildDate>Sun, 10 Mar 2024 07:00:00 GMT</lastBuildDate>
+<item>
+  <title>Oslo 50k Classic Mass Start Race Snapshots</title>
+  <dc:creator>Joran Elias</dc:creator>
+  <link>https://statisticalskier.netlify.app/posts/2024-03-10-oslo-dst-cl-race-snapshots/oslo_dst_cl_race_snap.html</link>
+  <description><![CDATA[ 
+
+
+
+
+<div class="cell">
+
+</div>
+<div class="cell">
+
+</div>
+<section id="race-snapshots" class="level3">
+<h3 class="anchored" data-anchor-id="race-snapshots">Race Snapshots</h3>
+<section id="men" class="level4">
+<h4 class="anchored" data-anchor-id="men">Men</h4>
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="https://statisticalskier.netlify.app/posts/2024-03-10-oslo-dst-cl-race-snapshots/oslo_dst_cl_race_snap_files/figure-html/men-snap-1.png" class="img-fluid" width="768"></p>
+</div>
+</div>
+</section>
+<section id="women" class="level4">
+<h4 class="anchored" data-anchor-id="women">Women</h4>
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="https://statisticalskier.netlify.app/posts/2024-03-10-oslo-dst-cl-race-snapshots/oslo_dst_cl_race_snap_files/figure-html/wom-snap-1.png" class="img-fluid" width="768"></p>
+</div>
+</div>
+</section>
+</section>
+<section id="pacing-plots" class="level3">
+<h3 class="anchored" data-anchor-id="pacing-plots">Pacing Plots</h3>
+<div class="cell">
+
+</div>
+<section id="men-1" class="level4">
+<h4 class="anchored" data-anchor-id="men-1">Men</h4>
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="https://statisticalskier.netlify.app/posts/2024-03-10-oslo-dst-cl-race-snapshots/oslo_dst_cl_race_snap_files/figure-html/men-pacing-1.png" class="img-fluid" width="768"></p>
+</div>
+</div>
+</section>
+<section id="women-1" class="level4">
+<h4 class="anchored" data-anchor-id="women-1">Women</h4>
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="https://statisticalskier.netlify.app/posts/2024-03-10-oslo-dst-cl-race-snapshots/oslo_dst_cl_race_snap_files/figure-html/wom-pacing-1.png" class="img-fluid" width="768"></p>
+</div>
+</div>
+</section>
+</section>
+<section id="splits" class="level3">
+<h3 class="anchored" data-anchor-id="splits">Splits</h3>
+<div class="cell">
+
+</div>
+<section id="men-2" class="level4">
+<h4 class="anchored" data-anchor-id="men-2">Men</h4>
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="https://statisticalskier.netlify.app/posts/2024-03-10-oslo-dst-cl-race-snapshots/oslo_dst_cl_race_snap_files/figure-html/men-splits-1.png" class="img-fluid" width="960"></p>
+</div>
+</div>
+</section>
+<section id="women-2" class="level4">
+<h4 class="anchored" data-anchor-id="women-2">Women</h4>
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="https://statisticalskier.netlify.app/posts/2024-03-10-oslo-dst-cl-race-snapshots/oslo_dst_cl_race_snap_files/figure-html/wom-splits-1.png" class="img-fluid" width="960"></p>
+</div>
+</div>
+
+
+</section>
+</section>
+
+ ]]></description>
+  <category>world cup</category>
+  <category>distance</category>
+  <category>race snapshots</category>
+  <category>mass start</category>
+  <category>classic</category>
+  <category>oslo</category>
+  <category>holmenkollen</category>
+  <guid>https://statisticalskier.netlify.app/posts/2024-03-10-oslo-dst-cl-race-snapshots/oslo_dst_cl_race_snap.html</guid>
+  <pubDate>Sun, 10 Mar 2024 07:00:00 GMT</pubDate>
+</item>
 <item>
   <title>Lahti Freestyle Sprint Race Snapshots</title>
   <dc:creator>Joran Elias</dc:creator>
@@ -7771,57 +7863,6 @@
   <category>predictions</category>
   <category>oberhof</category>
   <guid>https://statisticalskier.netlify.app/posts/2024-01-19-oberhof-dst-cl-pred/oberhof_dst_cl_preds.html</guid>
-  <pubDate>Fri, 19 Jan 2024 07:00:00 GMT</pubDate>
-</item>
-<item>
-  <title>Oberhof Classic Sprint Race Snapshots</title>
-  <dc:creator>Joran Elias</dc:creator>
-  <link>https://statisticalskier.netlify.app/posts/2024-01-19-oberhof-spr-race-snapshots/oberhof_spr_race_snap.html</link>
-  <description><![CDATA[ 
-
-
-
-
-<div class="cell">
-
-</div>
-<div class="cell">
-
-</div>
-<section id="mens-race-snapshot" class="level3">
-<h3 class="anchored" data-anchor-id="mens-race-snapshot">Men’s Race Snapshot</h3>
-<div class="cell">
-<div class="cell-output-display">
-<p><img src="https://statisticalskier.netlify.app/posts/2024-01-19-oberhof-spr-race-snapshots/oberhof_spr_race_snap_files/figure-html/men-snap-1.png" class="img-fluid" width="576"></p>
-</div>
-</div>
-</section>
-<section id="womens-race-snapshot" class="level3">
-<h3 class="anchored" data-anchor-id="womens-race-snapshot">Women’s Race Snapshot</h3>
-<div class="cell">
-<div class="cell-output-display">
-<p><img src="https://statisticalskier.netlify.app/posts/2024-01-19-oberhof-spr-race-snapshots/oberhof_spr_race_snap_files/figure-html/wom-snap-1.png" class="img-fluid" width="576"></p>
-</div>
-</div>
-</section>
-<section id="heat-progressions" class="level3">
-<h3 class="anchored" data-anchor-id="heat-progressions">Heat Progressions</h3>
-<div class="cell">
-<div class="cell-output-display">
-<p><img src="https://statisticalskier.netlify.app/posts/2024-01-19-oberhof-spr-race-snapshots/oberhof_spr_race_snap_files/figure-html/heat-progressions-1.png" class="img-fluid" width="1440"></p>
-</div>
-</div>
-
-
-</section>
-
- ]]></description>
-  <category>world cup</category>
-  <category>sprint</category>
-  <category>race snapshots</category>
-  <category>classic</category>
-  <category>oberhof</category>
-  <guid>https://statisticalskier.netlify.app/posts/2024-01-19-oberhof-spr-race-snapshots/oberhof_spr_race_snap.html</guid>
   <pubDate>Fri, 19 Jan 2024 07:00:00 GMT</pubDate>
 </item>
 </channel>
