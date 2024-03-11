@@ -1,0 +1,369 @@
+---
+title: "All Time Best Distance Skiers"
+author: "Joran Elias"
+date: "2024-03-10"
+categories: [world cup,olympics,world championships,distance]
+draft: false
+execute:
+  echo: false
+  message: false
+  warning: false
+---
+
+```{r pkgs}
+library(tidyverse)
+library(statskier2)
+library(geomtextpath)
+library(ggthemes)
+library(ggrepel)
+library(ggtext)
+library(gt)
+
+theme_set(theme_minimal())
+
+statskier_connect()
+```
+
+```{r data}
+v_dst_maj_int <- dplyr::tbl(..statskier_pg_con..,"v_distance_maj_int")
+dst_maj_int <- v_dst_maj_int |> 
+  filter(!is.na(time) & !is.na(rank) & season >= "1979-1980") |> 
+  collect() |> 
+  arrange(eventid,time)
+
+dst_maj_int <- 
+  dst_maj_int |> 
+  mutate(
+    format_red = if_else(format %in% c("Mass","Skiathlon"),"Mass/Skiathlon",format)
+  ) |> 
+  mutate(
+    .by = c(gender,format_red),
+    pb_ecdf = cume_dist(pb),
+    pbm_ecdf = cume_dist(pbm)
+  )
+
+ecdf_funs <- 
+  dst_maj_int |> 
+  group_by(gender,format_red) |> 
+  summarise(
+    pb_ecdf = list(ecdf(pb)),
+    pbm_ecdf = list(ecdf(pbm))
+  )
+```
+
+Putting skier's performances in historical context is something I've written about a lot,
+in a variety of forms. Most recently I looked at simple [rates of winning & podiums](https://statisticalskier.netlify.app/posts/2024-02-14-podium-counts-pcts/podium_counts_pcts) as
+a way of quantifying some of the best skiers in history.
+
+Another way to slice that, focusing only on distance racing, is to focus more on
+percent back type measures. The two I like to use are the traditional percent back
+from the race winner (PB) and the percent "back" from the median race finisher (PBM).
+
+The former is what FIS points are derived from, the latter is an alternative that
+I like to use from time to time. They are measuring slightly different things,
+so they each have their own strengths & weaknesses.
+
+Let's first look at the distribution of PB values for the last 45 years or so.
+
+```{r pb-distributions}
+#| fig-width: 8
+#| fig-height: 5
+dst_maj_int |> 
+  filter(format != "Pursuit") |> 
+  ggplot(
+    data = _,
+    aes(x = pb,color = format_red,group = format_red)
+  ) + 
+  facet_wrap(~gender,ncol = 1) +
+  geom_textdensity(aes(label = format_red),n = 2048,hjust = 0.075,size = 10 / .pt,linewidth = 0.8) + 
+  scale_x_continuous(labels = scales::label_percent()) + 
+  scale_color_tableau(guide = "none") +
+  labs(x = "Percent from race winner",y = NULL) +
+  ggtitle(
+    label = "Distributions of the percent back from the race winner",
+    subtitle = "All WC, OWG & WSC races since 1980 (pursuit starts excluded)"
+  ) +
+  coord_cartesian(xlim = c(0,0.25)) + 
+  theme(
+    plot.title.position = "plot",
+    plot.title = element_text(size = 42 / .pt,face = "bold"),
+    axis.text.y = element_blank(),
+    strip.text = element_text(size = 30 / .pt)
+  )
+```
+
+As usual, I'm excluding pursuit starts entirely, as I don't really consider them 
+standalone races that can be meaningfully compared to any others. I am including 
+"pursuit break" races, which is an old format primarily from the 90's which was
+the combined time of a classic & skate race separated by a day. They were sort 
+of like modern skiathlons but with a day in between the classic & skate portions.
+
+The standard stuff jumps out here:
+
+  - Men's mass starts are much more likely to generate very low PBs, as the races
+  tend to be very slow with a sprint finish
+  - Women's mass starts also are more likely to have low PBs, but to much lesser
+  extent
+  - In general, most men's PBs are between 0-10%, with the most common around 5%
+  (mass starts excepted)
+  - In general, most women's PBs are between 0-15%, with the most common PBs 
+  tending to fall closer to 7.5%
+  
+Keep in mind that these PB distributions are across *all* skiers, so it includes
+the folks finishing last. I'm only plotting the left portion of the distribution,
+in reality it extends way out to the right.
+
+Next, let's look at PBM:
+
+```{r pbm-distributions}
+#| fig-width: 8
+#| fig-height: 5
+dst_maj_int |> 
+  filter(format != "Pursuit") |> 
+  ggplot(
+    data = _,
+    aes(x = pbm,color = format_red,group = format_red)
+  ) + 
+  facet_wrap(~gender,ncol = 1) +
+  geom_textdensity(aes(label = format_red),n = 2048,hjust = 0.125,size = 10 / .pt,linewidth = 0.8) + 
+  scale_x_continuous(labels = scales::label_percent()) + 
+  scale_color_tableau(guide = "none") +
+  labs(x = "Percent from median race finisher",y = NULL) +
+  ggtitle(
+    label = "Distributions of the percent back from median race finisher",
+    subtitle = "All WC, OWG & WSC races since 1980 (pursuit starts excluded)"
+  ) +
+  coord_cartesian(xlim = c(-0.1,0.15)) + 
+  theme(
+    plot.title.position = "plot",
+    plot.title = element_text(size = 42 / .pt,face = "bold"),
+    axis.text.y = element_blank(),
+    strip.text = element_text(size = 30 / .pt)
+  )
+```
+
+Since our reference point is the median race finisher, these values don't have a 
+hard stop at 0%. The top half of a race will have negative PBMs and the bottom half
+will have positive ones. In theory, the race winner could have an arbitrarily low
+PBM.
+
+That's one of the advantages of PBM, as it allows for an expression of the margin 
+of victory of the race winner. For skiers like Therese Johaug who when she won 
+would often win by very large margins, PBM will reflect that, whereas it would get
+lost in the usual PB measure.
+
+On the other hand, with PB, we know that 0% always means you won the race. With
+PBM you could have a value of -1% or -5% and they might both be races you won. That
+information just isn't stored in PBM at all.
+
+The other well known problem with PB (much less so with PBM) is that as we mentioned
+above it can mean very different things in different race formats. A PB of 1% has 
+a very different meaning for an interval start race versus a mass start in terms
+of how many people finished ahead of or behind you.
+
+One simple way to address this is to convert all the PB & PBM values to percentiles.
+So instead of a PB of 1%, we'd say that for a men's interval start race it equates 
+to a percentile of `r round(1 - ecdf_funs$pb_ecdf[[1]](0.01),2)`, i.e. that
+result is in the 96th percentile for men's interval start races. Think of it like
+the results you might get on a standardized test saying that your test results
+are in the 96th percentile.
+
+```{r pb-pbm-translation-vals}
+tbl_vals <- 
+  ecdf_funs |> 
+  mutate(
+    pb01 = map(pb_ecdf,.f = ~do.call(.x,list(0.01))),
+    pb05 = map(pb_ecdf,.f = ~do.call(.x,list(0.05))),
+    pb10 = map(pb_ecdf,.f = ~do.call(.x,list(0.1))),
+    pbm01 = map(pbm_ecdf,.f = ~do.call(.x,list(-0.05))),
+    pbm05 = map(pbm_ecdf,.f = ~do.call(.x,list(-0.025))),
+    pbm10 = map(pbm_ecdf,.f = ~do.call(.x,list(-0.01)))
+  ) |> 
+  select(-ends_with("ecdf")) |> 
+  filter(format_red != "Pursuit") |> 
+  tidyr::unnest(cols = starts_with("pb")) |> 
+  mutate(
+    across(.cols = starts_with("pb"),.fns = ~1 - .x)
+  )
+```
+
+Here's a simple table summarising some example translations between PB & PBM
+values (column headers) and their corresponding percentiles (table values):
+
+```{r pb-pbm-translation-tbl}
+tbl_vals |> 
+  group_by(gender) |> 
+  gt(row_group_as_column = TRUE) |>
+  tab_options(table.width = pct(100)) |> 
+  cols_label(
+    format_red = "Race format",
+    pb01 = "1%",
+    pb05 = "5%",
+    pb10 = "10%",
+    pbm01 = "-5%",
+    pbm05 = "-2.5%",
+    pbm10 = "-1%"
+  ) |> 
+  tab_spanner(
+    label = "PB",
+    columns = matches("^pb[0-9]{2}")
+  ) |> 
+  tab_spanner(
+    label = "PBM",
+    columns = matches("^pbm[0-9]{2}")
+  ) |> 
+  fmt_percent(columns = everything(),decimals = 1) |> 
+  tab_style(
+    style = cell_text(weight = "bold"),
+    locations = list(cells_column_labels(),cells_column_spanners(),cells_row_groups())
+  ) |> 
+  tab_style(
+    style = cell_borders(sides = "right"),
+    locations = cells_body(columns = 5)
+  )
+  
+```
+
+If you do that for all the PB & PBM values you now have everything on a common
+scale that means closer to the same thing across all race formats.
+
+If you go even further and summarise each skier by their median PB & PBM 
+percentiles you can plot the distribution of all skiers on these two measures:
+
+```{r skier-ecdf-stats}
+skier_ecdf <- 
+  dst_maj_int |> 
+  filter(format != "Pursuit") |> 
+  summarise(
+    pb_q25 = quantile(pb_ecdf,0.25),
+    pb_q50 = quantile(pb_ecdf,0.50),
+    pb_q75 = quantile(pb_ecdf,0.75),
+    pbm_q25 = quantile(pbm_ecdf,0.25),
+    pbm_q50 = quantile(pbm_ecdf,0.50),
+    pbm_q75 = quantile(pbm_ecdf,0.75),
+    comb_rank = sqrt(pb_q50^2 + pbm_q50^2),
+    n = n(),
+    last_race_date = max(date),
+    .by = c(gender,compid,name)
+  ) |> 
+  mutate(
+    active = if_else(last_race_date >= "2023-10-01" | grepl("BOLSHUNOV",name),"Active","Not Active")
+  ) |> 
+  arrange(comb_rank)
+```
+
+```{r skier-joint-distribution}
+#| fig-width: 8
+#| fig-height: 5
+skier_ecdf |> 
+  filter(n >= 30) |> 
+  ggplot(
+    data = _,
+    aes(x = 1 - pb_q50,y = 1 - pbm_q50)
+  ) + 
+  facet_wrap(~gender,ncol = 2) +
+  geom_density_2d_filled(show.legend = FALSE,bins = 15) + 
+  annotate(
+    geom = "text",
+    x = 0.9,
+    y = 0.9,
+    label = "Best skiers",
+    color = "white",
+    vjust = 0,
+    hjust = 0.75,
+    size = 9 / .pt
+  ) +
+  annotate(
+    geom = "text",
+    x = 0.1,
+    y = 0.1,
+    label = "'Worst' skiers",
+    color = "white",
+    vjust = 1,
+    hjust = 0.25,
+    size = 9 / .pt
+  ) +
+  scale_fill_viridis_d(option = "plasma") + 
+  scale_x_continuous(labels = scales::label_percent()) + 
+  scale_y_continuous(labels = scales::label_percent()) +
+  labs(
+    x = "Median percent back from the race winner",
+    y = "Median percent back from the median finisher"
+  ) + 
+  ggtitle(
+    label = "Joint distribution of skiers' % back from the winner & median finisher",
+    subtitle = "Only skiers with a minimum of 30 races"
+  ) +
+  theme(
+    panel.grid = element_blank(),
+    plot.title.position = "plot",
+    plot.title = element_text(size = 42 / .pt,face = "bold"),
+    strip.text = element_text(size = 30 / .pt)
+  )
+```
+
+The best skiers are in the upper right, with very high percentiles on both measures.
+The "worst" skiers (but still likely faster than all of us) are in the lower left 
+with very low percentiles on both measures.
+
+The two measures are highly correlated, as we'd expect, but the degree that these
+distributions extend outward from a perfect diagonal line indicates there is 
+some variability between to two.
+
+Now let's focus in on the skiers that comprise the upper right of both distributions
+here by plotting the raw data for skiers that would fall in the upper right:
+
+```{r best-skiers}
+#| fig-width: 8
+#| fig-height: 6
+skier_ecdf |> 
+  filter(n >= 30) |> 
+  slice_min(order_by = comb_rank,n = 30,by = c(gender)) |> 
+  ggplot(
+    data = _,
+    aes(x = 1 - pb_q50,y = 1 - pbm_q50,label = name)
+  ) + 
+  facet_wrap(~gender,ncol = 2) +
+  geom_abline(intercept = 0,slope = 1,color = "blue",alpha = 0.5) +
+  geom_point(aes(color = active),size = 0.75) +
+  geom_text_repel(aes(color = active),size = 6 / .pt) + 
+  scale_x_continuous(labels = scales::label_percent()) +
+  scale_y_continuous(labels = scales::label_percent()) + 
+  scale_color_manual(values = c("Active" = "salmon","Not Active" = "black"),guide = "none") +
+  labs(
+    x = "Median PB",
+    y = "Median PBM",
+    color = NULL
+  ) + 
+  ggtitle(
+    label = "Top distance skiers from 1980-2024",
+    subtitle = "Minimum of 30 races, currently active skiers in <span style = 'color:#FA8072;'>red</span>"
+  ) + 
+  theme(
+    plot.title.position = "plot",
+    plot.title = element_text(size = 42 / .pt,face = "bold"),
+    strip.text = element_text(size = 28 / .pt),
+    plot.subtitle = element_markdown()
+  )
+```
+
+I've included Alexander Bolshunov in the "active skier" group, since presumably
+he will continue racing if certain world events magically resolve 
+themselves. Also, I will let you supply your own commentary on people shown 
+here that may or may not have been chemically enhanced.
+
+To help translate this plot, let's focus just on Gunde Svan. What this is saying
+is that Svan's *median* PB & PBM across all his races was roughly in the 97th
+percentile across all skiers. His "typical" race was a better result than 97% of
+all other skier's results *ever*.
+
+A few things I'd note about this collection of the "best" distance skiers:
+
+  - There are considerably more active men in this group than active women
+  - Marit Björgen does not fare nearly as well here as I'd expected
+  - There's a distinct group of men (Svan, Dæhlie, Wassberg, Bolshunov & Smirnov)
+  that are clearly separated from the rest
+  - Some skiers do better on one measure than the other; for example, Petter Northug
+  does better on PB than PBM, which is probably a reflection of the fact that he
+  was particularly known for winning mass start sprint finishes, so he has lots of
+  wins in that measure, but the victory margins are small
