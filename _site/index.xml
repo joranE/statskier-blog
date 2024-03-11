@@ -15,11 +15,11 @@
 <link>https://statisticalskier.netlify.app/index.html</link>
 </image>
 <generator>quarto-1.2.313</generator>
-<lastBuildDate>Sun, 10 Mar 2024 07:00:00 GMT</lastBuildDate>
+<lastBuildDate>Mon, 11 Mar 2024 06:00:00 GMT</lastBuildDate>
 <item>
   <title>All Time Best Distance Skiers</title>
   <dc:creator>Joran Elias</dc:creator>
-  <link>https://statisticalskier.netlify.app/posts/2024-03-10-best-dst-skiers/all_time_best_dst_skiers.html</link>
+  <link>https://statisticalskier.netlify.app/posts/2024-03-11-best-dst-skiers/all_time_best_dst_skiers.html</link>
   <description><![CDATA[ 
 
 
@@ -37,7 +37,7 @@
 <p>Let’s first look at the distribution of PB values for the last 45 years or so.</p>
 <div class="cell">
 <div class="cell-output-display">
-<p><img src="https://statisticalskier.netlify.app/posts/2024-03-10-best-dst-skiers/all_time_best_dst_skiers_files/figure-html/pb-distributions-1.png" class="img-fluid" width="768"></p>
+<p><img src="https://statisticalskier.netlify.app/posts/2024-03-11-best-dst-skiers/all_time_best_dst_skiers_files/figure-html/pb-distributions-1.png" class="img-fluid" width="768"></p>
 </div>
 </div>
 <p>As usual, I’m excluding pursuit starts entirely, as I don’t really consider them standalone races that can be meaningfully compared to any others. I am including “pursuit break” races, which is an old format primarily from the 90’s which was the combined time of a classic &amp; skate race separated by a day. They were sort of like modern skiathlons but with a day in between the classic &amp; skate portions.</p>
@@ -52,7 +52,7 @@
 <p>Next, let’s look at PBM:</p>
 <div class="cell">
 <div class="cell-output-display">
-<p><img src="https://statisticalskier.netlify.app/posts/2024-03-10-best-dst-skiers/all_time_best_dst_skiers_files/figure-html/pbm-distributions-1.png" class="img-fluid" width="768"></p>
+<p><img src="https://statisticalskier.netlify.app/posts/2024-03-11-best-dst-skiers/all_time_best_dst_skiers_files/figure-html/pbm-distributions-1.png" class="img-fluid" width="768"></p>
 </div>
 </div>
 <p>Since our reference point is the median race finisher, these values don’t have a hard stop at 0%. The top half of a race will have negative PBMs and the bottom half will have positive ones. In theory, the race winner could have an arbitrarily low PBM.</p>
@@ -67,23 +67,23 @@
 <div class="cell">
 <div class="cell-output-display">
 
-<div id="vuysbpfrsw" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#vuysbpfrsw table {
+<div id="fcpbxsuenp" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#fcpbxsuenp table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#vuysbpfrsw thead, #vuysbpfrsw tbody, #vuysbpfrsw tfoot, #vuysbpfrsw tr, #vuysbpfrsw td, #vuysbpfrsw th {
+#fcpbxsuenp thead, #fcpbxsuenp tbody, #fcpbxsuenp tfoot, #fcpbxsuenp tr, #fcpbxsuenp td, #fcpbxsuenp th {
   border-style: none;
 }
 
-#vuysbpfrsw p {
+#fcpbxsuenp p {
   margin: 0;
   padding: 0;
 }
 
-#vuysbpfrsw .gt_table {
+#fcpbxsuenp .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -109,12 +109,12 @@
   border-left-color: #D3D3D3;
 }
 
-#vuysbpfrsw .gt_caption {
+#fcpbxsuenp .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#vuysbpfrsw .gt_title {
+#fcpbxsuenp .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -126,7 +126,7 @@
   border-bottom-width: 0;
 }
 
-#vuysbpfrsw .gt_subtitle {
+#fcpbxsuenp .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -138,7 +138,7 @@
   border-top-width: 0;
 }
 
-#vuysbpfrsw .gt_heading {
+#fcpbxsuenp .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -150,13 +150,13 @@
   border-right-color: #D3D3D3;
 }
 
-#vuysbpfrsw .gt_bottom_border {
+#fcpbxsuenp .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#vuysbpfrsw .gt_col_headings {
+#fcpbxsuenp .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -171,7 +171,7 @@
   border-right-color: #D3D3D3;
 }
 
-#vuysbpfrsw .gt_col_heading {
+#fcpbxsuenp .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -191,7 +191,7 @@
   overflow-x: hidden;
 }
 
-#vuysbpfrsw .gt_column_spanner_outer {
+#fcpbxsuenp .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -203,15 +203,15 @@
   padding-right: 4px;
 }
 
-#vuysbpfrsw .gt_column_spanner_outer:first-child {
+#fcpbxsuenp .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#vuysbpfrsw .gt_column_spanner_outer:last-child {
+#fcpbxsuenp .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#vuysbpfrsw .gt_column_spanner {
+#fcpbxsuenp .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -223,11 +223,11 @@
   width: 100%;
 }
 
-#vuysbpfrsw .gt_spanner_row {
+#fcpbxsuenp .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#vuysbpfrsw .gt_group_heading {
+#fcpbxsuenp .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -253,7 +253,7 @@
   text-align: left;
 }
 
-#vuysbpfrsw .gt_empty_group_heading {
+#fcpbxsuenp .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -268,15 +268,15 @@
   vertical-align: middle;
 }
 
-#vuysbpfrsw .gt_from_md > :first-child {
+#fcpbxsuenp .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#vuysbpfrsw .gt_from_md > :last-child {
+#fcpbxsuenp .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#vuysbpfrsw .gt_row {
+#fcpbxsuenp .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -295,7 +295,7 @@
   overflow-x: hidden;
 }
 
-#vuysbpfrsw .gt_stub {
+#fcpbxsuenp .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -308,7 +308,7 @@
   padding-right: 5px;
 }
 
-#vuysbpfrsw .gt_stub_row_group {
+#fcpbxsuenp .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -322,15 +322,15 @@
   vertical-align: top;
 }
 
-#vuysbpfrsw .gt_row_group_first td {
+#fcpbxsuenp .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#vuysbpfrsw .gt_row_group_first th {
+#fcpbxsuenp .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#vuysbpfrsw .gt_summary_row {
+#fcpbxsuenp .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -340,16 +340,16 @@
   padding-right: 5px;
 }
 
-#vuysbpfrsw .gt_first_summary_row {
+#fcpbxsuenp .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#vuysbpfrsw .gt_first_summary_row.thick {
+#fcpbxsuenp .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#vuysbpfrsw .gt_last_summary_row {
+#fcpbxsuenp .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -359,7 +359,7 @@
   border-bottom-color: #D3D3D3;
 }
 
-#vuysbpfrsw .gt_grand_summary_row {
+#fcpbxsuenp .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -369,7 +369,7 @@
   padding-right: 5px;
 }
 
-#vuysbpfrsw .gt_first_grand_summary_row {
+#fcpbxsuenp .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -379,7 +379,7 @@
   border-top-color: #D3D3D3;
 }
 
-#vuysbpfrsw .gt_last_grand_summary_row_top {
+#fcpbxsuenp .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -389,11 +389,11 @@
   border-bottom-color: #D3D3D3;
 }
 
-#vuysbpfrsw .gt_striped {
+#fcpbxsuenp .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#vuysbpfrsw .gt_table_body {
+#fcpbxsuenp .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -402,7 +402,7 @@
   border-bottom-color: #D3D3D3;
 }
 
-#vuysbpfrsw .gt_footnotes {
+#fcpbxsuenp .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -416,7 +416,7 @@
   border-right-color: #D3D3D3;
 }
 
-#vuysbpfrsw .gt_footnote {
+#fcpbxsuenp .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -425,7 +425,7 @@
   padding-right: 5px;
 }
 
-#vuysbpfrsw .gt_sourcenotes {
+#fcpbxsuenp .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -439,7 +439,7 @@
   border-right-color: #D3D3D3;
 }
 
-#vuysbpfrsw .gt_sourcenote {
+#fcpbxsuenp .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -447,63 +447,63 @@
   padding-right: 5px;
 }
 
-#vuysbpfrsw .gt_left {
+#fcpbxsuenp .gt_left {
   text-align: left;
 }
 
-#vuysbpfrsw .gt_center {
+#fcpbxsuenp .gt_center {
   text-align: center;
 }
 
-#vuysbpfrsw .gt_right {
+#fcpbxsuenp .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#vuysbpfrsw .gt_font_normal {
+#fcpbxsuenp .gt_font_normal {
   font-weight: normal;
 }
 
-#vuysbpfrsw .gt_font_bold {
+#fcpbxsuenp .gt_font_bold {
   font-weight: bold;
 }
 
-#vuysbpfrsw .gt_font_italic {
+#fcpbxsuenp .gt_font_italic {
   font-style: italic;
 }
 
-#vuysbpfrsw .gt_super {
+#fcpbxsuenp .gt_super {
   font-size: 65%;
 }
 
-#vuysbpfrsw .gt_footnote_marks {
+#fcpbxsuenp .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#vuysbpfrsw .gt_asterisk {
+#fcpbxsuenp .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#vuysbpfrsw .gt_indent_1 {
+#fcpbxsuenp .gt_indent_1 {
   text-indent: 5px;
 }
 
-#vuysbpfrsw .gt_indent_2 {
+#fcpbxsuenp .gt_indent_2 {
   text-indent: 10px;
 }
 
-#vuysbpfrsw .gt_indent_3 {
+#fcpbxsuenp .gt_indent_3 {
   text-indent: 15px;
 }
 
-#vuysbpfrsw .gt_indent_4 {
+#fcpbxsuenp .gt_indent_4 {
   text-indent: 20px;
 }
 
-#vuysbpfrsw .gt_indent_5 {
+#fcpbxsuenp .gt_indent_5 {
   text-indent: 25px;
 }
 </style>
@@ -587,7 +587,7 @@
 </div>
 <div class="cell">
 <div class="cell-output-display">
-<p><img src="https://statisticalskier.netlify.app/posts/2024-03-10-best-dst-skiers/all_time_best_dst_skiers_files/figure-html/skier-joint-distribution-1.png" class="img-fluid" width="768"></p>
+<p><img src="https://statisticalskier.netlify.app/posts/2024-03-11-best-dst-skiers/all_time_best_dst_skiers_files/figure-html/skier-joint-distribution-1.png" class="img-fluid" width="768"></p>
 </div>
 </div>
 <p>The best skiers are in the upper right, with very high percentiles on both measures. The “worst” skiers (but still likely faster than all of us) are in the lower left with very low percentiles on both measures.</p>
@@ -595,7 +595,7 @@
 <p>Now let’s focus in on the skiers that comprise the upper right of both distributions here by plotting the raw data for skiers that would fall in the upper right:</p>
 <div class="cell">
 <div class="cell-output-display">
-<p><img src="https://statisticalskier.netlify.app/posts/2024-03-10-best-dst-skiers/all_time_best_dst_skiers_files/figure-html/best-skiers-1.png" class="img-fluid" width="768"></p>
+<p><img src="https://statisticalskier.netlify.app/posts/2024-03-11-best-dst-skiers/all_time_best_dst_skiers_files/figure-html/best-skiers-1.png" class="img-fluid" width="768"></p>
 </div>
 </div>
 <p>I’ve included Alexander Bolshunov in the “active skier” group, since presumably he will continue racing if certain world events magically resolve themselves. Also, I will let you supply your own commentary on people shown here that may or may not have been chemically enhanced.</p>
@@ -615,8 +615,8 @@
   <category>olympics</category>
   <category>world championships</category>
   <category>distance</category>
-  <guid>https://statisticalskier.netlify.app/posts/2024-03-10-best-dst-skiers/all_time_best_dst_skiers.html</guid>
-  <pubDate>Sun, 10 Mar 2024 07:00:00 GMT</pubDate>
+  <guid>https://statisticalskier.netlify.app/posts/2024-03-11-best-dst-skiers/all_time_best_dst_skiers.html</guid>
+  <pubDate>Mon, 11 Mar 2024 06:00:00 GMT</pubDate>
 </item>
 <item>
   <title>Oslo 50k Classic Mass Start Race Snapshots</title>
