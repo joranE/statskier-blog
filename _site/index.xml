@@ -15,7 +15,98 @@
 <link>https://statisticalskier.netlify.app/index.html</link>
 </image>
 <generator>quarto-1.2.313</generator>
-<lastBuildDate>Fri, 15 Mar 2024 06:00:00 GMT</lastBuildDate>
+<lastBuildDate>Sat, 16 Mar 2024 06:00:00 GMT</lastBuildDate>
+<item>
+  <title>Falun 10k Classic Interval Start Race Snapshots</title>
+  <dc:creator>Joran Elias</dc:creator>
+  <link>https://statisticalskier.netlify.app/posts/2024-03-16-falun-dst-cl-race-snapshots/falun_dst_cl_race_snap.html</link>
+  <description><![CDATA[ 
+
+
+
+
+<div class="cell">
+
+</div>
+<div class="cell">
+
+</div>
+<section id="race-snapshots" class="level3">
+<h3 class="anchored" data-anchor-id="race-snapshots">Race Snapshots</h3>
+<section id="men" class="level4">
+<h4 class="anchored" data-anchor-id="men">Men</h4>
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="https://statisticalskier.netlify.app/posts/2024-03-16-falun-dst-cl-race-snapshots/falun_dst_cl_race_snap_files/figure-html/men-snap-1.png" class="img-fluid" width="768"></p>
+</div>
+</div>
+</section>
+<section id="women" class="level4">
+<h4 class="anchored" data-anchor-id="women">Women</h4>
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="https://statisticalskier.netlify.app/posts/2024-03-16-falun-dst-cl-race-snapshots/falun_dst_cl_race_snap_files/figure-html/wom-snap-1.png" class="img-fluid" width="768"></p>
+</div>
+</div>
+</section>
+</section>
+<section id="pacing-plots" class="level3">
+<h3 class="anchored" data-anchor-id="pacing-plots">Pacing Plots</h3>
+<div class="cell">
+
+</div>
+<section id="men-1" class="level4">
+<h4 class="anchored" data-anchor-id="men-1">Men</h4>
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="https://statisticalskier.netlify.app/posts/2024-03-16-falun-dst-cl-race-snapshots/falun_dst_cl_race_snap_files/figure-html/men-pacing-1.png" class="img-fluid" width="768"></p>
+</div>
+</div>
+</section>
+<section id="women-1" class="level4">
+<h4 class="anchored" data-anchor-id="women-1">Women</h4>
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="https://statisticalskier.netlify.app/posts/2024-03-16-falun-dst-cl-race-snapshots/falun_dst_cl_race_snap_files/figure-html/wom-pacing-1.png" class="img-fluid" width="768"></p>
+</div>
+</div>
+</section>
+</section>
+<section id="splits" class="level3">
+<h3 class="anchored" data-anchor-id="splits">Splits</h3>
+<div class="cell">
+
+</div>
+<section id="men-2" class="level4">
+<h4 class="anchored" data-anchor-id="men-2">Men</h4>
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="https://statisticalskier.netlify.app/posts/2024-03-16-falun-dst-cl-race-snapshots/falun_dst_cl_race_snap_files/figure-html/men-splits-1.png" class="img-fluid" width="960"></p>
+</div>
+</div>
+</section>
+<section id="women-2" class="level4">
+<h4 class="anchored" data-anchor-id="women-2">Women</h4>
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="https://statisticalskier.netlify.app/posts/2024-03-16-falun-dst-cl-race-snapshots/falun_dst_cl_race_snap_files/figure-html/wom-splits-1.png" class="img-fluid" width="960"></p>
+</div>
+</div>
+
+
+</section>
+</section>
+
+ ]]></description>
+  <category>world cup</category>
+  <category>distance</category>
+  <category>race snapshots</category>
+  <category>interval start</category>
+  <category>classic</category>
+  <category>falun</category>
+  <guid>https://statisticalskier.netlify.app/posts/2024-03-16-falun-dst-cl-race-snapshots/falun_dst_cl_race_snap.html</guid>
+  <pubDate>Sat, 16 Mar 2024 06:00:00 GMT</pubDate>
+</item>
 <item>
   <title>Falun Classic Sprint Race Snapshots</title>
   <dc:creator>Joran Elias</dc:creator>
@@ -6482,57 +6573,6 @@
   <category>predictions</category>
   <category>goms</category>
   <guid>https://statisticalskier.netlify.app/posts/2024-01-27-goms-dst-fr-pred/goms_dst_fr_preds.html</guid>
-  <pubDate>Sat, 27 Jan 2024 07:00:00 GMT</pubDate>
-</item>
-<item>
-  <title>Goms Freestyle Sprint Race Snapshots</title>
-  <dc:creator>Joran Elias</dc:creator>
-  <link>https://statisticalskier.netlify.app/posts/2024-01-27-goms-spr-race-snapshots/goms_spr_race_snap.html</link>
-  <description><![CDATA[ 
-
-
-
-
-<div class="cell">
-
-</div>
-<div class="cell">
-
-</div>
-<section id="mens-race-snapshot" class="level3">
-<h3 class="anchored" data-anchor-id="mens-race-snapshot">Men’s Race Snapshot</h3>
-<div class="cell">
-<div class="cell-output-display">
-<p><img src="https://statisticalskier.netlify.app/posts/2024-01-27-goms-spr-race-snapshots/goms_spr_race_snap_files/figure-html/men-snap-1.png" class="img-fluid" width="672"></p>
-</div>
-</div>
-</section>
-<section id="womens-race-snapshot" class="level3">
-<h3 class="anchored" data-anchor-id="womens-race-snapshot">Women’s Race Snapshot</h3>
-<div class="cell">
-<div class="cell-output-display">
-<p><img src="https://statisticalskier.netlify.app/posts/2024-01-27-goms-spr-race-snapshots/goms_spr_race_snap_files/figure-html/wom-snap-1.png" class="img-fluid" width="672"></p>
-</div>
-</div>
-</section>
-<section id="heat-progressions" class="level3">
-<h3 class="anchored" data-anchor-id="heat-progressions">Heat Progressions</h3>
-<div class="cell">
-<div class="cell-output-display">
-<p><img src="https://statisticalskier.netlify.app/posts/2024-01-27-goms-spr-race-snapshots/goms_spr_race_snap_files/figure-html/heat-progressions-1.png" class="img-fluid" width="1440"></p>
-</div>
-</div>
-
-
-</section>
-
- ]]></description>
-  <category>world cup</category>
-  <category>sprint</category>
-  <category>race snapshots</category>
-  <category>freestyle</category>
-  <category>goms</category>
-  <guid>https://statisticalskier.netlify.app/posts/2024-01-27-goms-spr-race-snapshots/goms_spr_race_snap.html</guid>
   <pubDate>Sat, 27 Jan 2024 07:00:00 GMT</pubDate>
 </item>
 </channel>
