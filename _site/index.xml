@@ -15,7 +15,94 @@
 <link>https://statisticalskier.netlify.app/index.html</link>
 </image>
 <generator>quarto-1.2.313</generator>
-<lastBuildDate>Sat, 07 Dec 2024 07:00:00 GMT</lastBuildDate>
+<lastBuildDate>Sun, 08 Dec 2024 07:00:00 GMT</lastBuildDate>
+<item>
+  <title>Lillehammer 20k Skiathlon Race Snapshots</title>
+  <dc:creator>Joran Elias</dc:creator>
+  <link>https://statisticalskier.netlify.app/posts/2024-12-08-lillehammer-dst-fr-race-snapshots/lillehammer_dst_fr_race_snap.html</link>
+  <description><![CDATA[ 
+
+
+
+
+<div class="cell">
+
+</div>
+<div class="cell">
+
+</div>
+<section id="race-snapshots" class="level3">
+<h3 class="anchored" data-anchor-id="race-snapshots">Race Snapshots</h3>
+<section id="men" class="level4">
+<h4 class="anchored" data-anchor-id="men">Men</h4>
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="https://statisticalskier.netlify.app/posts/2024-12-08-lillehammer-dst-fr-race-snapshots/lillehammer_dst_fr_race_snap_files/figure-html/men-snap-1.png" class="img-fluid" width="768"></p>
+</div>
+</div>
+</section>
+<section id="women" class="level4">
+<h4 class="anchored" data-anchor-id="women">Women</h4>
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="https://statisticalskier.netlify.app/posts/2024-12-08-lillehammer-dst-fr-race-snapshots/lillehammer_dst_fr_race_snap_files/figure-html/wom-snap-1.png" class="img-fluid" width="768"></p>
+</div>
+</div>
+</section>
+</section>
+<section id="pacing-plots" class="level3">
+<h3 class="anchored" data-anchor-id="pacing-plots">Pacing Plots</h3>
+<p>I can probably come up with a decent visualization for the lap pacing when they do multiple laps of two different loops (they did 4x loop 1 &amp; 3x loop 2 today) but I don’t have the bandwidth to tackle that today.</p>
+<div class="cell">
+
+</div>
+<section id="men-1" class="level4">
+<h4 class="anchored" data-anchor-id="men-1">Men</h4>
+<div class="cell">
+
+</div>
+</section>
+<section id="women-1" class="level4">
+<h4 class="anchored" data-anchor-id="women-1">Women</h4>
+<div class="cell">
+
+</div>
+</section>
+</section>
+<section id="splits" class="level3">
+<h3 class="anchored" data-anchor-id="splits">Splits</h3>
+<div class="cell">
+
+</div>
+<section id="men-2" class="level4">
+<h4 class="anchored" data-anchor-id="men-2">Men</h4>
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="https://statisticalskier.netlify.app/posts/2024-12-08-lillehammer-dst-fr-race-snapshots/lillehammer_dst_fr_race_snap_files/figure-html/men-splits-1.png" class="img-fluid" width="960"></p>
+</div>
+</div>
+</section>
+<section id="women-2" class="level4">
+<h4 class="anchored" data-anchor-id="women-2">Women</h4>
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="https://statisticalskier.netlify.app/posts/2024-12-08-lillehammer-dst-fr-race-snapshots/lillehammer_dst_fr_race_snap_files/figure-html/wom-splits-1.png" class="img-fluid" width="960"></p>
+</div>
+</div>
+
+
+</section>
+</section>
+
+ ]]></description>
+  <category>world cup</category>
+  <category>distance</category>
+  <category>race snapshots</category>
+  <category>skiathlon</category>
+  <category>lillehammer</category>
+  <guid>https://statisticalskier.netlify.app/posts/2024-12-08-lillehammer-dst-fr-race-snapshots/lillehammer_dst_fr_race_snap.html</guid>
+  <pubDate>Sun, 08 Dec 2024 07:00:00 GMT</pubDate>
+</item>
 <item>
   <title>Lillehammer Freestyle Sprint Race Snapshots</title>
   <dc:creator>Joran Elias</dc:creator>
@@ -2771,97 +2858,6 @@
   <category>canmore</category>
   <guid>https://statisticalskier.netlify.app/posts/2024-02-10-canmore-spr-race-snapshots/canmore_spr_race_snap.html</guid>
   <pubDate>Sat, 10 Feb 2024 07:00:00 GMT</pubDate>
-</item>
-<item>
-  <title>Canmore 15k Freestyle Mass Start Race Snapshots</title>
-  <dc:creator>Joran Elias</dc:creator>
-  <link>https://statisticalskier.netlify.app/posts/2024-02-09-canmore-dst-fr-race-snapshots/canmore_dst_fr_race_snap.html</link>
-  <description><![CDATA[ 
-
-
-
-
-<div class="cell">
-
-</div>
-<div class="cell">
-
-</div>
-<section id="race-snapshots" class="level3">
-<h3 class="anchored" data-anchor-id="race-snapshots">Race Snapshots</h3>
-<section id="men" class="level4">
-<h4 class="anchored" data-anchor-id="men">Men</h4>
-<div class="cell">
-<div class="cell-output-display">
-<p><img src="https://statisticalskier.netlify.app/posts/2024-02-09-canmore-dst-fr-race-snapshots/canmore_dst_fr_race_snap_files/figure-html/men-snap-1.png" class="img-fluid" width="768"></p>
-</div>
-</div>
-</section>
-<section id="women" class="level4">
-<h4 class="anchored" data-anchor-id="women">Women</h4>
-<div class="cell">
-<div class="cell-output-display">
-<p><img src="https://statisticalskier.netlify.app/posts/2024-02-09-canmore-dst-fr-race-snapshots/canmore_dst_fr_race_snap_files/figure-html/wom-snap-1.png" class="img-fluid" width="768"></p>
-</div>
-</div>
-</section>
-</section>
-<section id="pacing-plots" class="level3">
-<h3 class="anchored" data-anchor-id="pacing-plots">Pacing Plots</h3>
-<div class="cell">
-
-</div>
-<section id="men-1" class="level4">
-<h4 class="anchored" data-anchor-id="men-1">Men</h4>
-<div class="cell">
-<div class="cell-output-display">
-<p><img src="https://statisticalskier.netlify.app/posts/2024-02-09-canmore-dst-fr-race-snapshots/canmore_dst_fr_race_snap_files/figure-html/men-pacing-1.png" class="img-fluid" width="768"></p>
-</div>
-</div>
-</section>
-<section id="women-1" class="level4">
-<h4 class="anchored" data-anchor-id="women-1">Women</h4>
-<div class="cell">
-<div class="cell-output-display">
-<p><img src="https://statisticalskier.netlify.app/posts/2024-02-09-canmore-dst-fr-race-snapshots/canmore_dst_fr_race_snap_files/figure-html/wom-pacing-1.png" class="img-fluid" width="768"></p>
-</div>
-</div>
-</section>
-</section>
-<section id="splits" class="level3">
-<h3 class="anchored" data-anchor-id="splits">Splits</h3>
-<div class="cell">
-
-</div>
-<section id="men-2" class="level4">
-<h4 class="anchored" data-anchor-id="men-2">Men</h4>
-<div class="cell">
-<div class="cell-output-display">
-<p><img src="https://statisticalskier.netlify.app/posts/2024-02-09-canmore-dst-fr-race-snapshots/canmore_dst_fr_race_snap_files/figure-html/men-splits-1.png" class="img-fluid" width="960"></p>
-</div>
-</div>
-</section>
-<section id="women-2" class="level4">
-<h4 class="anchored" data-anchor-id="women-2">Women</h4>
-<div class="cell">
-<div class="cell-output-display">
-<p><img src="https://statisticalskier.netlify.app/posts/2024-02-09-canmore-dst-fr-race-snapshots/canmore_dst_fr_race_snap_files/figure-html/wom-splits-1.png" class="img-fluid" width="960"></p>
-</div>
-</div>
-
-
-</section>
-</section>
-
- ]]></description>
-  <category>world cup</category>
-  <category>distance</category>
-  <category>race snapshots</category>
-  <category>mass start</category>
-  <category>freestyle</category>
-  <category>canmore</category>
-  <guid>https://statisticalskier.netlify.app/posts/2024-02-09-canmore-dst-fr-race-snapshots/canmore_dst_fr_race_snap.html</guid>
-  <pubDate>Fri, 09 Feb 2024 07:00:00 GMT</pubDate>
 </item>
 </channel>
 </rss>
