@@ -1,0 +1,104 @@
+---
+title: "Davos 20k Classic Interval Start Race Snapshots"
+author: "Joran Elias"
+date: "2024-12-15"
+categories: [world cup,distance,race snapshots,interval start,classic,davos]
+draft: false
+---
+
+```{r pkgs,message=FALSE}
+library(tidyverse)
+library(glue)
+library(statskier2)
+
+statskier_connect()
+ev_id_m <- 20398
+ev_id_w <- 20399
+
+race_location <- 'Davos'
+race_length <- '20'
+race_tech <- 'Classic'
+race_format <- 'Interval'
+
+n_laps_men <- 3
+n_laps_wom <- 3
+```
+
+```{r gen-snap}
+p_men <- race_snapshot_dst(event_id = ev_id_m,
+                           title = glue("Men's {location} {length}k {tech} {format}",
+                                        location = race_location,
+                                        length = race_length,
+                                        tech = race_tech,
+                                        format = race_format),
+                           reduced = TRUE)
+p_wom <- race_snapshot_dst(event_id = ev_id_w,
+                           title = glue("Women's {location} {length}k {tech} {format}",
+                                        location = race_location,
+                                        length = race_length,
+                                        tech = race_tech,
+                                        format = race_format),
+                           reduced = TRUE)
+```
+
+### Race Snapshots
+#### Men
+```{r men-snap,fig.height=12,fig.width=8}
+p_men$plot
+```
+
+#### Women
+```{r wom-snap,fig.height=12,fig.width=8}
+p_wom$plot
+```
+
+### Pacing Plots
+```{r pacing-plots}
+m_pac <- dst_pacing_plot(.eventid = ev_id_m,
+                         .subset = rank <= 9,
+                         n_laps = n_laps_men,
+                         #omit_splits = 2.3,
+                         collapse_short_seg = FALSE,
+                         title_text = glue("Men's {location} {length}k {tech} {format}",
+                                           location = race_location,
+                                           length = race_length,
+                                           tech = race_tech,
+                                           format = race_format),
+                         skip_first_split = FALSE)
+w_pac <- dst_pacing_plot(.eventid = ev_id_w,
+                         .subset = rank <= 9,
+                         n_laps = n_laps_wom,
+                         #omit_splits = 2.3,
+                         collapse_short_seg = FALSE,
+                         title_text = glue("Women's {location} {length}k {tech} {format}",
+                                           location = race_location,
+                                           length = race_length,
+                                           tech = race_tech,
+                                           format = race_format),
+                         skip_first_split = FALSE)
+```
+#### Men
+```{r men-pacing,fig.height=8,fig.width=8}
+m_pac$plot
+```
+
+#### Women
+```{r wom-pacing,fig.width=8,fig.height=8}
+w_pac$plot
+```
+
+### Splits
+```{r splits}
+wom_splits <- dst_split_plot(.eventid = ev_id_w,ref_split = 1)
+men_splits <- dst_split_plot(.eventid = ev_id_m,ref_split = 1)
+```
+
+#### Men
+```{r men-splits,fig.height=10,fig.width=10}
+men_splits$final_plot
+```
+
+#### Women
+```{r wom-splits,fig.height=10,fig.width=10}
+wom_splits$final_plot
+```
