@@ -15,7 +15,98 @@
 <link>https://statisticalskier.netlify.app/index.html</link>
 </image>
 <generator>quarto-1.2.313</generator>
-<lastBuildDate>Sat, 14 Dec 2024 07:00:00 GMT</lastBuildDate>
+<lastBuildDate>Sun, 15 Dec 2024 07:00:00 GMT</lastBuildDate>
+<item>
+  <title>Davos 20k Classic Interval Start Race Snapshots</title>
+  <dc:creator>Joran Elias</dc:creator>
+  <link>https://statisticalskier.netlify.app/posts/2024-12-15-davos-dst-cl-race-snapshots/davos_dst_cl_race_snap.html</link>
+  <description><![CDATA[ 
+
+
+
+
+<div class="cell">
+
+</div>
+<div class="cell">
+
+</div>
+<section id="race-snapshots" class="level3">
+<h3 class="anchored" data-anchor-id="race-snapshots">Race Snapshots</h3>
+<section id="men" class="level4">
+<h4 class="anchored" data-anchor-id="men">Men</h4>
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="https://statisticalskier.netlify.app/posts/2024-12-15-davos-dst-cl-race-snapshots/davos_dst_cl_race_snap_files/figure-html/men-snap-1.png" class="img-fluid" width="768"></p>
+</div>
+</div>
+</section>
+<section id="women" class="level4">
+<h4 class="anchored" data-anchor-id="women">Women</h4>
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="https://statisticalskier.netlify.app/posts/2024-12-15-davos-dst-cl-race-snapshots/davos_dst_cl_race_snap_files/figure-html/wom-snap-1.png" class="img-fluid" width="768"></p>
+</div>
+</div>
+</section>
+</section>
+<section id="pacing-plots" class="level3">
+<h3 class="anchored" data-anchor-id="pacing-plots">Pacing Plots</h3>
+<div class="cell">
+
+</div>
+<section id="men-1" class="level4">
+<h4 class="anchored" data-anchor-id="men-1">Men</h4>
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="https://statisticalskier.netlify.app/posts/2024-12-15-davos-dst-cl-race-snapshots/davos_dst_cl_race_snap_files/figure-html/men-pacing-1.png" class="img-fluid" width="768"></p>
+</div>
+</div>
+</section>
+<section id="women-1" class="level4">
+<h4 class="anchored" data-anchor-id="women-1">Women</h4>
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="https://statisticalskier.netlify.app/posts/2024-12-15-davos-dst-cl-race-snapshots/davos_dst_cl_race_snap_files/figure-html/wom-pacing-1.png" class="img-fluid" width="768"></p>
+</div>
+</div>
+</section>
+</section>
+<section id="splits" class="level3">
+<h3 class="anchored" data-anchor-id="splits">Splits</h3>
+<div class="cell">
+
+</div>
+<section id="men-2" class="level4">
+<h4 class="anchored" data-anchor-id="men-2">Men</h4>
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="https://statisticalskier.netlify.app/posts/2024-12-15-davos-dst-cl-race-snapshots/davos_dst_cl_race_snap_files/figure-html/men-splits-1.png" class="img-fluid" width="960"></p>
+</div>
+</div>
+</section>
+<section id="women-2" class="level4">
+<h4 class="anchored" data-anchor-id="women-2">Women</h4>
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="https://statisticalskier.netlify.app/posts/2024-12-15-davos-dst-cl-race-snapshots/davos_dst_cl_race_snap_files/figure-html/wom-splits-1.png" class="img-fluid" width="960"></p>
+</div>
+</div>
+
+
+</section>
+</section>
+
+ ]]></description>
+  <category>world cup</category>
+  <category>distance</category>
+  <category>race snapshots</category>
+  <category>interval start</category>
+  <category>classic</category>
+  <category>davos</category>
+  <guid>https://statisticalskier.netlify.app/posts/2024-12-15-davos-dst-cl-race-snapshots/davos_dst_cl_race_snap.html</guid>
+  <pubDate>Sun, 15 Dec 2024 07:00:00 GMT</pubDate>
+</item>
 <item>
   <title>Davos Freestyle Sprint Race Snapshots</title>
   <dc:creator>Joran Elias</dc:creator>
@@ -2819,44 +2910,6 @@
   <category>predictions</category>
   <category>canmore</category>
   <guid>https://statisticalskier.netlify.app/posts/2024-02-11-canmore-dst-cl-pred/canmore_dst_cl_preds.html</guid>
-  <pubDate>Sun, 11 Feb 2024 07:00:00 GMT</pubDate>
-</item>
-<item>
-  <title>Jessie Diggins Is Picking QF5 And Skiing It Very Hard</title>
-  <dc:creator>Joran Elias</dc:creator>
-  <link>https://statisticalskier.netlify.app/posts/2024-02-11-diggins-qf-choices/diggins_qf_choices.html</link>
-  <description><![CDATA[ 
-
-
-
-
-<div class="cell">
-
-</div>
-<div class="cell">
-
-</div>
-<p>I noted earlier that Jessie Diggins has been opting for QF5 with increasing frequency of the past several season, and that this is markedly different than other top sprinters:</p>
-<div class="cell">
-<div class="cell-output-display">
-<p><img src="https://statisticalskier.netlify.app/posts/2024-02-11-diggins-qf-choices/diggins_qf_choices_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid" width="672"></p>
-</div>
-</div>
-<p>It’s also the case that she is skiing the quarterfinal differently too, setting a very hard pace. This has resulted in a significant shift in the relative speeds in the different quarterfinals:</p>
-<div class="cell">
-<div class="cell-output-display">
-<p><img src="https://statisticalskier.netlify.app/posts/2024-02-11-diggins-qf-choices/diggins_qf_choices_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid" width="672"></p>
-</div>
-</div>
-
-
-
- ]]></description>
-  <category>world cup</category>
-  <category>sprint</category>
-  <category>heats</category>
-  <category>jessie diggins</category>
-  <guid>https://statisticalskier.netlify.app/posts/2024-02-11-diggins-qf-choices/diggins_qf_choices.html</guid>
   <pubDate>Sun, 11 Feb 2024 07:00:00 GMT</pubDate>
 </item>
 </channel>
