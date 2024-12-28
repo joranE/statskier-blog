@@ -1,0 +1,111 @@
+---
+title: "Will someone please finally kill the skiathlon?"
+author: "Joran Elias"
+date: "2024-12-28"
+categories: [skiathlon]
+draft: false
+---
+
+```{r pkgs}
+#| warning: false
+#| message: false
+library(tidyverse)
+library(statskier2)
+library(ggthemes)
+
+theme_set(
+  theme_minimal() + 
+    theme(
+      panel.grid.major.x = element_blank(),
+      panel.grid.minor = element_blank(),
+      title = element_text(face = "bold"),
+      plot.title.position = "plot",
+      strip.text = element_text(hjust = 0,size = rel(1.1))
+    )
+)
+
+
+statskier_connect()
+v_evs <- dplyr::tbl(..statskier_pg_con..,"v_event")
+events <- v_evs |> collect()
+```
+
+```{r skiathlon-counts}
+skiathlon_counts <- 
+  events |> 
+  filter(event_type == "Distance") |> 
+  mutate(
+    maj_int = primary_tag %in% c("wc","wsc","owg","tds"),
+    skiathlon = format == "Skiathlon"
+  ) |> 
+  summarise(
+    n = n_distinct(eventid),
+    .by = c(season,gender,maj_int,skiathlon)
+  ) |> 
+  arrange(season,gender,maj_int,skiathlon) |> 
+  tidyr::complete(season,gender,maj_int,skiathlon) |> 
+  replace_na(replace = list(n = 0)) |> 
+  mutate(date = as.Date(season_to_date(season)))
+
+pal <- ggthemes::tableau_color_pal()(10)
+```
+
+The skiathlon is a dumb event and it always has been. The gimmick of switching techniques mid-race was never compelling. The classic portion of the race doesn't serve any purpose, particularly because it is never last. If the order were sometimes switched that might at least give classic specialists something to work with, but alas, no.
+
+And of course, rather than just kill the event, FIS allows it to limp along, presumably because it's on the Olympic program. But the number of skiathlons happening at the major international level (WC, TdS, WSC & OWG) is getting rediculous:
+
+```{r maj-int-skiathlons}
+skiathlon_counts |> 
+  filter(skiathlon & season >= "1999-2000" & maj_int) |> 
+  ggplot(
+    data = _,
+    aes(x = date,y = n)
+  ) + 
+  facet_wrap(~gender,ncol = 1) +
+  geom_step(color = pal[1],linewidth = 1) +
+  scale_x_date(
+    name = "Season",
+    date_breaks = "4 years",
+    date_labels = "'%y",
+    expand = expansion(mult = c(0,0.01))
+  ) + 
+  scale_y_continuous(
+    name = "Skiathlons",
+    breaks = 0:5,
+    expand = expansion(mult = c(0.01,0.01))
+  ) + 
+  ggtitle(
+    label = "Major international skiathlons"
+  )
+```
+
+This is made to look even *more* rediculous when you tally up all the other FIS sanctioned skiathlons being held, _anywhere_:
+
+```{r fis-skiathlons}
+skiathlon_counts |> 
+  filter(skiathlon & season >= "1999-2000" & !maj_int) |> 
+  ggplot(
+    data = _,
+    aes(x = date,y = n)
+  ) + 
+  facet_wrap(~gender,ncol = 1) +
+  geom_step(color = pal[1],linewidth = 1) +
+  scale_x_date(
+    name = "Season",
+    date_breaks = "4 years",
+    date_labels = "'%y",
+    expand = expansion(mult = c(0,0.01))
+  ) + 
+  scale_y_continuous(
+    name = "Skiathlons",
+    breaks = seq(0,30,by = 5),
+    expand = expansion(mult = c(0.01,0.01))
+  ) + 
+  ggtitle(
+    label = "All other FIS skiathlons"
+  )
+```
+
+At it's peak, there were never more than 25-30 FIS sanctioned skiathlons being held per season across _the entire globe_.
+
+Somebody, please, put this awful event out of it's misery.
