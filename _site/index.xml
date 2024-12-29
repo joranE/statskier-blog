@@ -15,7 +15,98 @@
 <link>https://statisticalskier.netlify.app/index.html</link>
 </image>
 <generator>quarto-1.2.313</generator>
-<lastBuildDate>Sat, 28 Dec 2024 07:00:00 GMT</lastBuildDate>
+<lastBuildDate>Sun, 29 Dec 2024 07:00:00 GMT</lastBuildDate>
+<item>
+  <title>Toblach 15k Classic Mass Start Race Snapshots</title>
+  <dc:creator>Joran Elias</dc:creator>
+  <link>https://statisticalskier.netlify.app/posts/2024-12-29-toblach-dst-cl-race-snapshots/toblach_dst_cl_race_snap.html</link>
+  <description><![CDATA[ 
+
+
+
+
+<div class="cell">
+
+</div>
+<div class="cell">
+
+</div>
+<section id="race-snapshots" class="level3">
+<h3 class="anchored" data-anchor-id="race-snapshots">Race Snapshots</h3>
+<section id="men" class="level4">
+<h4 class="anchored" data-anchor-id="men">Men</h4>
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="https://statisticalskier.netlify.app/posts/2024-12-29-toblach-dst-cl-race-snapshots/toblach_dst_cl_race_snap_files/figure-html/men-snap-1.png" class="img-fluid" width="768"></p>
+</div>
+</div>
+</section>
+<section id="women" class="level4">
+<h4 class="anchored" data-anchor-id="women">Women</h4>
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="https://statisticalskier.netlify.app/posts/2024-12-29-toblach-dst-cl-race-snapshots/toblach_dst_cl_race_snap_files/figure-html/wom-snap-1.png" class="img-fluid" width="768"></p>
+</div>
+</div>
+</section>
+</section>
+<section id="pacing-plots" class="level3">
+<h3 class="anchored" data-anchor-id="pacing-plots">Pacing Plots</h3>
+<div class="cell">
+
+</div>
+<section id="men-1" class="level4">
+<h4 class="anchored" data-anchor-id="men-1">Men</h4>
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="https://statisticalskier.netlify.app/posts/2024-12-29-toblach-dst-cl-race-snapshots/toblach_dst_cl_race_snap_files/figure-html/men-pacing-1.png" class="img-fluid" width="768"></p>
+</div>
+</div>
+</section>
+<section id="women-1" class="level4">
+<h4 class="anchored" data-anchor-id="women-1">Women</h4>
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="https://statisticalskier.netlify.app/posts/2024-12-29-toblach-dst-cl-race-snapshots/toblach_dst_cl_race_snap_files/figure-html/wom-pacing-1.png" class="img-fluid" width="768"></p>
+</div>
+</div>
+</section>
+</section>
+<section id="splits" class="level3">
+<h3 class="anchored" data-anchor-id="splits">Splits</h3>
+<div class="cell">
+
+</div>
+<section id="men-2" class="level4">
+<h4 class="anchored" data-anchor-id="men-2">Men</h4>
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="https://statisticalskier.netlify.app/posts/2024-12-29-toblach-dst-cl-race-snapshots/toblach_dst_cl_race_snap_files/figure-html/men-splits-1.png" class="img-fluid" width="960"></p>
+</div>
+</div>
+</section>
+<section id="women-2" class="level4">
+<h4 class="anchored" data-anchor-id="women-2">Women</h4>
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="https://statisticalskier.netlify.app/posts/2024-12-29-toblach-dst-cl-race-snapshots/toblach_dst_cl_race_snap_files/figure-html/wom-splits-1.png" class="img-fluid" width="960"></p>
+</div>
+</div>
+
+
+</section>
+</section>
+
+ ]]></description>
+  <category>tour de ski</category>
+  <category>distance</category>
+  <category>race snapshots</category>
+  <category>mass start</category>
+  <category>classic</category>
+  <category>toblach</category>
+  <guid>https://statisticalskier.netlify.app/posts/2024-12-29-toblach-dst-cl-race-snapshots/toblach_dst_cl_race_snap.html</guid>
+  <pubDate>Sun, 29 Dec 2024 07:00:00 GMT</pubDate>
+</item>
 <item>
   <title>TdS Toblach Freestyle Sprint Race Snapshots</title>
   <dc:creator>Joran Elias</dc:creator>
@@ -1885,57 +1976,6 @@
   <category>distance</category>
   <guid>https://statisticalskier.netlify.app/posts/2024-02-14-podium-counts-pcts/podium_counts_pcts.html</guid>
   <pubDate>Wed, 14 Feb 2024 07:00:00 GMT</pubDate>
-</item>
-<item>
-  <title>Canmore Classic Sprint Race Snapshots</title>
-  <dc:creator>Joran Elias</dc:creator>
-  <link>https://statisticalskier.netlify.app/posts/2024-02-13-canmore-spr-race-snapshots/canmore_spr_race_snap.html</link>
-  <description><![CDATA[ 
-
-
-
-
-<div class="cell">
-
-</div>
-<div class="cell">
-
-</div>
-<section id="mens-race-snapshot" class="level3">
-<h3 class="anchored" data-anchor-id="mens-race-snapshot">Men’s Race Snapshot</h3>
-<div class="cell">
-<div class="cell-output-display">
-<p><img src="https://statisticalskier.netlify.app/posts/2024-02-13-canmore-spr-race-snapshots/canmore_spr_race_snap_files/figure-html/men-snap-1.png" class="img-fluid" width="672"></p>
-</div>
-</div>
-</section>
-<section id="womens-race-snapshot" class="level3">
-<h3 class="anchored" data-anchor-id="womens-race-snapshot">Women’s Race Snapshot</h3>
-<div class="cell">
-<div class="cell-output-display">
-<p><img src="https://statisticalskier.netlify.app/posts/2024-02-13-canmore-spr-race-snapshots/canmore_spr_race_snap_files/figure-html/wom-snap-1.png" class="img-fluid" width="672"></p>
-</div>
-</div>
-</section>
-<section id="heat-progressions" class="level3">
-<h3 class="anchored" data-anchor-id="heat-progressions">Heat Progressions</h3>
-<div class="cell">
-<div class="cell-output-display">
-<p><img src="https://statisticalskier.netlify.app/posts/2024-02-13-canmore-spr-race-snapshots/canmore_spr_race_snap_files/figure-html/heat-progressions-1.png" class="img-fluid" width="1440"></p>
-</div>
-</div>
-
-
-</section>
-
- ]]></description>
-  <category>world cup</category>
-  <category>sprint</category>
-  <category>race snapshots</category>
-  <category>classic</category>
-  <category>canmore</category>
-  <guid>https://statisticalskier.netlify.app/posts/2024-02-13-canmore-spr-race-snapshots/canmore_spr_race_snap.html</guid>
-  <pubDate>Tue, 13 Feb 2024 07:00:00 GMT</pubDate>
 </item>
 </channel>
 </rss>
