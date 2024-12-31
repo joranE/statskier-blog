@@ -15,7 +15,95 @@
 <link>https://statisticalskier.netlify.app/index.html</link>
 </image>
 <generator>quarto-1.2.313</generator>
-<lastBuildDate>Sun, 29 Dec 2024 07:00:00 GMT</lastBuildDate>
+<lastBuildDate>Tue, 31 Dec 2024 07:00:00 GMT</lastBuildDate>
+<item>
+  <title>Toblach 20k Skiathlon Race Snapshots</title>
+  <dc:creator>Joran Elias</dc:creator>
+  <link>https://statisticalskier.netlify.app/posts/2024-12-31-toblach-dst-fr-race-snapshots/toblach_dst_fr_race_snap.html</link>
+  <description><![CDATA[ 
+
+
+
+
+<div class="cell">
+
+</div>
+<div class="cell">
+
+</div>
+<section id="race-snapshots" class="level3">
+<h3 class="anchored" data-anchor-id="race-snapshots">Race Snapshots</h3>
+<section id="men" class="level4">
+<h4 class="anchored" data-anchor-id="men">Men</h4>
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="https://statisticalskier.netlify.app/posts/2024-12-31-toblach-dst-fr-race-snapshots/toblach_dst_fr_race_snap_files/figure-html/men-snap-1.png" class="img-fluid" width="768"></p>
+</div>
+</div>
+</section>
+<section id="women" class="level4">
+<h4 class="anchored" data-anchor-id="women">Women</h4>
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="https://statisticalskier.netlify.app/posts/2024-12-31-toblach-dst-fr-race-snapshots/toblach_dst_fr_race_snap_files/figure-html/wom-snap-1.png" class="img-fluid" width="768"></p>
+</div>
+</div>
+</section>
+</section>
+<section id="pacing-plots" class="level3">
+<h3 class="anchored" data-anchor-id="pacing-plots">Pacing Plots</h3>
+<p>Only a single lap, so no pacing plots.</p>
+<div class="cell">
+
+</div>
+<section id="men-1" class="level4">
+<h4 class="anchored" data-anchor-id="men-1">Men</h4>
+<div class="cell">
+
+</div>
+</section>
+<section id="women-1" class="level4">
+<h4 class="anchored" data-anchor-id="women-1">Women</h4>
+<div class="cell">
+
+</div>
+</section>
+</section>
+<section id="splits" class="level3">
+<h3 class="anchored" data-anchor-id="splits">Splits</h3>
+<div class="cell">
+
+</div>
+<section id="men-2" class="level4">
+<h4 class="anchored" data-anchor-id="men-2">Men</h4>
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="https://statisticalskier.netlify.app/posts/2024-12-31-toblach-dst-fr-race-snapshots/toblach_dst_fr_race_snap_files/figure-html/men-splits-1.png" class="img-fluid" width="960"></p>
+</div>
+</div>
+</section>
+<section id="women-2" class="level4">
+<h4 class="anchored" data-anchor-id="women-2">Women</h4>
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="https://statisticalskier.netlify.app/posts/2024-12-31-toblach-dst-fr-race-snapshots/toblach_dst_fr_race_snap_files/figure-html/wom-splits-1.png" class="img-fluid" width="960"></p>
+</div>
+</div>
+
+
+</section>
+</section>
+
+ ]]></description>
+  <category>tour de ski</category>
+  <category>distance</category>
+  <category>race snapshots</category>
+  <category>interval start</category>
+  <category>toblach</category>
+  <category>freestyle</category>
+  <guid>https://statisticalskier.netlify.app/posts/2024-12-31-toblach-dst-fr-race-snapshots/toblach_dst_fr_race_snap.html</guid>
+  <pubDate>Tue, 31 Dec 2024 07:00:00 GMT</pubDate>
+</item>
 <item>
   <title>Toblach 15k Classic Mass Start Race Snapshots</title>
   <dc:creator>Joran Elias</dc:creator>
@@ -1915,67 +2003,6 @@
   <category>lahti</category>
   <guid>https://statisticalskier.netlify.app/posts/2024-03-02-lahti-dst-cl-race-snapshots/lahti_dst_cl_race_snap.html</guid>
   <pubDate>Sat, 02 Mar 2024 07:00:00 GMT</pubDate>
-</item>
-<item>
-  <title>Podium Counts &amp; Percents</title>
-  <dc:creator>Joran Elias</dc:creator>
-  <link>https://statisticalskier.netlify.app/posts/2024-02-14-podium-counts-pcts/podium_counts_pcts.html</link>
-  <description><![CDATA[ 
-
-
-
-
-<div class="cell">
-
-</div>
-<p>Devon Kershaw was nerding out a bit on his podcast this week about both how many podium Klæbo has and the percentage of his races that are podiums, so I thought I’d make some graphs.</p>
-<p>Part of the reason this caught my ear was that after a recent transcription push I now have a close enough to complete record of all major international (World Cup, Tour de Ski, Olympic &amp; World Championship) that I actually feel comfortable making summaries that stretch well back into the 80’s.</p>
-<p>It’s not 100% complete. I know that I’m missing 1 World Cup race for sure, and another where the results I have are incomplete, but it’s good enough for some high level stuff with caveats.</p>
-<p>One of those caveats is that I count things differently than FIS, so don’t expect these numbers to exactly match what FIS publishes. FIS will include relays in counts of podiums, and stage race overall results, which I prefer not to. I also prefer to exclude pursuit starts where World Cup results were based on the “time of the day”.</p>
-<p>However, I can include reasonably complete data for elite skiers from the 80’s now.</p>
-<div class="cell">
-
-</div>
-<div class="cell">
-
-</div>
-<section id="overall-podiums" class="level3">
-<h3 class="anchored" data-anchor-id="overall-podiums">Overall Podiums</h3>
-<p>Starting with distance &amp; sprint combined, which looks like this:</p>
-<div class="cell">
-<div class="cell-output-display">
-<p><img src="https://statisticalskier.netlify.app/posts/2024-02-14-podium-counts-pcts/podium_counts_pcts_files/figure-html/plot-overall-1.png" class="img-fluid" width="864"></p>
-</div>
-</div>
-<p>In this case, there’s Bjœrgen, Klæbo, Johaug, Dæhlie, Vaelbe, Svan and then there’s maybe a second group ranging from Bolshunov to Kowalczyk.</p>
-</section>
-<section id="distance-podiums" class="level3">
-<h3 class="anchored" data-anchor-id="distance-podiums">Distance Podiums</h3>
-<p>Focusing on distance only yields basically the same picture at the top, except we’ve swapped Bolshunov in for Klæbo. Then there are maybe three small groups below that elite tier.</p>
-<div class="cell">
-<div class="cell-output-display">
-<p><img src="https://statisticalskier.netlify.app/posts/2024-02-14-podium-counts-pcts/podium_counts_pcts_files/figure-html/plot-distance-1.png" class="img-fluid" width="864"></p>
-</div>
-</div>
-</section>
-<section id="sprint-podiums" class="level3">
-<h3 class="anchored" data-anchor-id="sprint-podiums">Sprint Podiums</h3>
-<p>Lastly, focusing on only sprints we see that Klæbo really is off all on his own. The only person remotely close in terms of percentages is Bente Skari Martinsen who raced in an entirely different era of sprinting. Bjœrgen &amp; Fall are off on their own over to the right and then there’s group in the center around Hetland &amp; Majdic.</p>
-<div class="cell">
-<div class="cell-output-display">
-<p><img src="https://statisticalskier.netlify.app/posts/2024-02-14-podium-counts-pcts/podium_counts_pcts_files/figure-html/plot-sprint-1.png" class="img-fluid" width="864"></p>
-</div>
-</div>
-
-
-</section>
-
- ]]></description>
-  <category>world cup</category>
-  <category>sprint</category>
-  <category>distance</category>
-  <guid>https://statisticalskier.netlify.app/posts/2024-02-14-podium-counts-pcts/podium_counts_pcts.html</guid>
-  <pubDate>Wed, 14 Feb 2024 07:00:00 GMT</pubDate>
 </item>
 </channel>
 </rss>
