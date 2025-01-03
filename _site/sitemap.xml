@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://statisticalskier.netlify.app/index.html</loc>
-    <lastmod>2024-12-31T17:26:28.502Z</lastmod>
+    <lastmod>2025-01-03T23:23:37.475Z</lastmod>
   </url>
   <url>
     <loc>https://statisticalskier.netlify.app/posts/2023-11-24-ruka-sprint-race-snapshots/ruka_spr_race_snap.html</loc>
@@ -287,5 +287,9 @@
   <url>
     <loc>https://statisticalskier.netlify.app/posts/2024-12-31-toblach-dst-fr-race-snapshots/toblach_dst_fr_race_snap.html</loc>
     <lastmod>2024-12-31T17:26:30.050Z</lastmod>
+  </url>
+  <url>
+    <loc>https://statisticalskier.netlify.app/posts/2025-01-03-val-di-fiemme-spr-race-snapshots/val_di_fiemme_spr_race_snap.html</loc>
+    <lastmod>2025-01-03T23:23:39.119Z</lastmod>
   </url>
 </urlset>
