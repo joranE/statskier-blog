@@ -15,7 +15,85 @@
 <link>https://statisticalskier.netlify.app/index.html</link>
 </image>
 <generator>quarto-1.2.313</generator>
-<lastBuildDate>Sat, 04 Jan 2025 07:00:00 GMT</lastBuildDate>
+<lastBuildDate>Thu, 13 Mar 2025 06:00:00 GMT</lastBuildDate>
+<item>
+  <title>Nation Diversity (Again)</title>
+  <dc:creator>Joran Elias</dc:creator>
+  <link>https://statisticalskier.netlify.app/posts/2025-03-13-nation-diversity-redux/nation_diversity.html</link>
+  <description><![CDATA[ 
+
+
+
+
+<div class="cell">
+
+</div>
+<div class="cell">
+
+</div>
+<div class="cell">
+
+</div>
+<div class="cell">
+
+</div>
+<div class="cell">
+
+</div>
+<p>The recent Trondheim World Championships once again led to lots of discussion of Norway’s dominance of the sport, particularly on the men’s side, less so for the women. This is an evergreen data topic so I thought I’d <em>again</em> provide some visuals for historical context.</p>
+<p>The data I’m working with is WC, TdS, WSC &amp; OWG <em>individual</em> results stretching back to 1980. No relays! One of the tricky things about dealing with different nations across such long time periods is that political boundaries change. In what follows I’ve made two adjustments. The first I consider fairly reasonable, and frankly almost necessary: combining the Soviet athletes from the 80’s with the post-Soviet breakup Russian athletes into a single “nation”. Obviously, the USSR is not the same nation as current day Russia, but combining the two seems like a reasonable way to track “Russian” skiers over multiple decades. Just keep in mind that the 80’s numbers surely included some athletes that today would be Estonian, Kazakh or something.</p>
+<p>The second is combining both East &amp; West Germany from the 80’s with present day unified Germany. I don’t particularly <em>like</em> this one (I actually dislike it on many levels) but it doesn’t have a large impact on the overall message in the plots I’m making and it greatly simplifies some technical details of actually designing the plots.</p>
+<div class="cell">
+
+</div>
+<p>Anyway, let’s start very simply with a plot of the number of different nations represented in the top 3, top 5 &amp; top 10 for each season:</p>
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="https://statisticalskier.netlify.app/posts/2025-03-13-nation-diversity-redux/nation_diversity_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<p>More nations until about 2010 and then it’s dropped a little since. Of course, this is very simplistic and doesn’t account for changes in the number of nations competing. The breakup of the USSR alone “increased diversity” at the top of the results simply by creating a bunch of new nations.</p>
+<div class="cell">
+
+</div>
+<div class="cell">
+
+</div>
+<p>Instead, let’s use an actual measure of diversity (<a href="https://en.wikipedia.org/wiki/Diversity_index">Shannon index</a>), scaled relative to the maximum possible diversity given the number of nations competing:</p>
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="https://statisticalskier.netlify.app/posts/2025-03-13-nation-diversity-redux/nation_diversity_files/figure-html/unnamed-chunk-9-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<p>I’ve used a rolling average here to make things a little more easy to read, given the wild swings we’re seeing.</p>
+<p>This looks much worse. Two things stand out: the wild swings in diversity in the women’s field and the precipitous drop in diversity overall in the men’s field in the last 10-15 years.</p>
+<p>Note that the diversity drop for the men long predates Russia’s absence from the World Cup.</p>
+<p>The fact that the wild swings for the women’s field persists in the diversity measure for the top 5 &amp; top 10 suggests that single athlete phenomenon (e.g.&nbsp;Justyna Kowalczyk) are only partially responsible. Still, the late 90’s dip is probably partially due to Elena Vaelbe, and the late 10’s dip is probably Therese Johaug.</p>
+<div class="cell">
+
+</div>
+<p>Just to round things out, let’s get a little more granular and look at the specific nations at play here:</p>
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="https://statisticalskier.netlify.app/posts/2025-03-13-nation-diversity-redux/nation_diversity_files/figure-html/unnamed-chunk-11-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<p>Norway has not always <em>completely</em> dominated the top of the sport, but I really only see two (and a half) exceptions to Norwegian dominance in this plot: the (probably artificially assisted) dominance of the Russian women in the 90’s, and the Swedish men in the late 80’s. The half an exception is the current surge of the Swedish women.</p>
+<p>Finally, for completeness, here’s what the “Other” category looks like if we break them out and plot them on their own:</p>
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="https://statisticalskier.netlify.app/posts/2025-03-13-nation-diversity-redux/nation_diversity_files/figure-html/unnamed-chunk-12-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<p>Here we can start to identify the impacts of specific individual skiers like Smirnov, Kowalczyk and Diggins.</p>
+
+
+
+ ]]></description>
+  <category>world cup</category>
+  <guid>https://statisticalskier.netlify.app/posts/2025-03-13-nation-diversity-redux/nation_diversity.html</guid>
+  <pubDate>Thu, 13 Mar 2025 06:00:00 GMT</pubDate>
+</item>
 <item>
   <title>Val di Fiemme 20k Skiathlon Race Snapshots</title>
   <dc:creator>Joran Elias</dc:creator>
@@ -1911,98 +1989,6 @@
   <category>distance</category>
   <guid>https://statisticalskier.netlify.app/posts/2024-03-11-best-dst-skiers/all_time_best_dst_skiers.html</guid>
   <pubDate>Mon, 11 Mar 2024 06:00:00 GMT</pubDate>
-</item>
-<item>
-  <title>Oslo 50k Classic Mass Start Race Snapshots</title>
-  <dc:creator>Joran Elias</dc:creator>
-  <link>https://statisticalskier.netlify.app/posts/2024-03-10-oslo-dst-cl-race-snapshots/oslo_dst_cl_race_snap.html</link>
-  <description><![CDATA[ 
-
-
-
-
-<div class="cell">
-
-</div>
-<div class="cell">
-
-</div>
-<section id="race-snapshots" class="level3">
-<h3 class="anchored" data-anchor-id="race-snapshots">Race Snapshots</h3>
-<section id="men" class="level4">
-<h4 class="anchored" data-anchor-id="men">Men</h4>
-<div class="cell">
-<div class="cell-output-display">
-<p><img src="https://statisticalskier.netlify.app/posts/2024-03-10-oslo-dst-cl-race-snapshots/oslo_dst_cl_race_snap_files/figure-html/men-snap-1.png" class="img-fluid" width="768"></p>
-</div>
-</div>
-</section>
-<section id="women" class="level4">
-<h4 class="anchored" data-anchor-id="women">Women</h4>
-<div class="cell">
-<div class="cell-output-display">
-<p><img src="https://statisticalskier.netlify.app/posts/2024-03-10-oslo-dst-cl-race-snapshots/oslo_dst_cl_race_snap_files/figure-html/wom-snap-1.png" class="img-fluid" width="768"></p>
-</div>
-</div>
-</section>
-</section>
-<section id="pacing-plots" class="level3">
-<h3 class="anchored" data-anchor-id="pacing-plots">Pacing Plots</h3>
-<div class="cell">
-
-</div>
-<section id="men-1" class="level4">
-<h4 class="anchored" data-anchor-id="men-1">Men</h4>
-<div class="cell">
-<div class="cell-output-display">
-<p><img src="https://statisticalskier.netlify.app/posts/2024-03-10-oslo-dst-cl-race-snapshots/oslo_dst_cl_race_snap_files/figure-html/men-pacing-1.png" class="img-fluid" width="768"></p>
-</div>
-</div>
-</section>
-<section id="women-1" class="level4">
-<h4 class="anchored" data-anchor-id="women-1">Women</h4>
-<div class="cell">
-<div class="cell-output-display">
-<p><img src="https://statisticalskier.netlify.app/posts/2024-03-10-oslo-dst-cl-race-snapshots/oslo_dst_cl_race_snap_files/figure-html/wom-pacing-1.png" class="img-fluid" width="768"></p>
-</div>
-</div>
-</section>
-</section>
-<section id="splits" class="level3">
-<h3 class="anchored" data-anchor-id="splits">Splits</h3>
-<div class="cell">
-
-</div>
-<section id="men-2" class="level4">
-<h4 class="anchored" data-anchor-id="men-2">Men</h4>
-<div class="cell">
-<div class="cell-output-display">
-<p><img src="https://statisticalskier.netlify.app/posts/2024-03-10-oslo-dst-cl-race-snapshots/oslo_dst_cl_race_snap_files/figure-html/men-splits-1.png" class="img-fluid" width="960"></p>
-</div>
-</div>
-</section>
-<section id="women-2" class="level4">
-<h4 class="anchored" data-anchor-id="women-2">Women</h4>
-<div class="cell">
-<div class="cell-output-display">
-<p><img src="https://statisticalskier.netlify.app/posts/2024-03-10-oslo-dst-cl-race-snapshots/oslo_dst_cl_race_snap_files/figure-html/wom-splits-1.png" class="img-fluid" width="960"></p>
-</div>
-</div>
-
-
-</section>
-</section>
-
- ]]></description>
-  <category>world cup</category>
-  <category>distance</category>
-  <category>race snapshots</category>
-  <category>mass start</category>
-  <category>classic</category>
-  <category>oslo</category>
-  <category>holmenkollen</category>
-  <guid>https://statisticalskier.netlify.app/posts/2024-03-10-oslo-dst-cl-race-snapshots/oslo_dst_cl_race_snap.html</guid>
-  <pubDate>Sun, 10 Mar 2024 07:00:00 GMT</pubDate>
 </item>
 </channel>
 </rss>
