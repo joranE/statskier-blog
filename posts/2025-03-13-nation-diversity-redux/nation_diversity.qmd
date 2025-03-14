@@ -1,0 +1,431 @@
+---
+title: "Nation Diversity (Again)"
+author: "Joran Elias"
+date: "2025-03-13"
+categories: [world cup]
+draft: false
+---
+
+```{r pkgs,message=FALSE}
+library(tidyverse)
+library(ggokabeito)
+library(statskier2)
+library(slider)
+
+statskier_connect()
+
+theme_set(
+  theme_minimal() + 
+    theme(
+      panel.grid.major.x = element_blank(),
+      panel.grid.minor = element_blank(),
+      plot.title = element_text(face = "bold"),
+      plot.title.position = "plot",
+      strip.text = element_text(hjust = 0,size = rel(1.1)),
+      legend.position = "bottom",
+      legend.direction = "horizontal"
+    )
+)
+```
+
+```{r}
+rel_div <- function(.data,cutoff){
+  .data |> 
+    filter(rank <= cutoff) |> 
+    mutate(
+      max_shannon = log(n_distinct(nation)),
+      .by = c(gender,season)
+    ) |> 
+    summarise(
+      n = n(),
+      .by = c(season,gender,nation,max_shannon)
+    ) |> 
+    mutate(
+      p = n / sum(n),
+      .by = c(season,gender)
+    ) |> 
+    summarise(
+      s = -sum(p*log(p)),
+      .by = c(season,gender,max_shannon)
+    ) |> 
+    mutate(
+      s_rel = s / max_shannon,
+      date = season_to_date(season)
+    ) |> 
+    arrange(gender,season) |> 
+    mutate(
+      s_roll = slider::slide_dbl(.x = s,.f = mean,.before = 4L),
+      s_rel_roll = slider::slide_dbl(.x = s_rel,.f = mean,.before = 4L),
+      .by = gender
+    ) |> 
+    mutate(
+      top_n = glue::glue("Top {cutoff}")
+    )
+}
+```
+
+```{r}
+v_dst_maj_int <- dplyr::tbl(..statskier_pg_con..,"v_distance_maj_int")
+v_spr_maj_int <- dplyr::tbl(..statskier_pg_con..,"v_sprint_maj_int")
+
+dst <- 
+  v_dst_maj_int |> 
+  filter(!is.na(rank) & !is.na(nation)) |> 
+  collect() |> 
+  mutate(
+    nation = toupper(nation),
+    nation = 
+      case_when(
+        nation %in% c("RSF","ROC","SOV","RUS") ~ "SOV/RUS",
+        nation %in% c("ESP","SPA") ~ "ESP",
+        nation %in% c("CZE","TCH") ~ "CZE",
+        nation %in% c("GER","DDR","BRD","GDR") ~ "GER",
+        TRUE ~ nation),
+    type = "Distance"
+  )
+
+spr <- 
+  v_spr_maj_int |> 
+  filter(!is.na(rank) & !is.na(nation)) |> 
+  collect() |> 
+  mutate(
+    nation = toupper(nation),
+    nation = 
+      case_when(
+        nation %in% c("RSF","ROC","SOV","RUS") ~ "SOV/RUS",
+        nation %in% c("ESP","SPA") ~ "ESP",
+        nation %in% c("CZE","TCH") ~ "CZE",
+        nation %in% c("GER","DDR","BRD","GDR") ~ "GER",
+        TRUE ~ nation),
+    type = "Sprint"
+  )
+
+dst_spr <- 
+  bind_rows(
+    dst |> select(type,eventid,season,date,primary_tag,gender,compid,nation,rank),
+    spr |> select(type,eventid,season,date,primary_tag,gender,compid,nation,rank)
+  )
+```
+
+```{r}
+only_owg_wsc <- 
+  dst_spr |> 
+  mutate(
+    wsc_owg_flag = if_else(primary_tag %in% c("wsc","owg"),"y","n")
+  ) |> 
+  summarise(
+    all_wsc_owg = all(wsc_owg_flag == "y"),
+    .by = nation
+  ) |> 
+  filter(all_wsc_owg)
+```
+
+```{r}
+dst_spr <- 
+  anti_join(
+    dst_spr,
+    only_owg_wsc,
+    by = "nation"
+  ) 
+```
+
+The recent Trondheim World Championships once again led to lots of discussion of
+Norway's dominance of the sport, particularly on the men's side, less so for the
+women. This is an evergreen data topic so I thought I'd _again_ provide some 
+visuals for historical context.
+
+The data I'm working with is WC, TdS, WSC & OWG _individual_ results stretching back to 1980. No relays! 
+One of the tricky things about dealing with different nations across such long 
+time periods is that political boundaries change. In what follows I've made two
+adjustments. The first I consider fairly reasonable, and frankly almost necessary: 
+combining the Soviet athletes from the 80's with the post-Soviet breakup Russian 
+athletes into a single "nation". Obviously, the USSR is not the same nation as
+current day Russia, but combining the two seems like a reasonable way to track
+"Russian" skiers over multiple decades. Just keep in mind that the 80's numbers 
+surely included some athletes that today would be Estonian, Kazakh or something.
+
+The second is combining both East & West Germany from the 80's with present day
+unified Germany. I don't particularly _like_ this one (I actually dislike it on many levels) 
+but it doesn't have a large impact on the overall message in the plots I'm making
+and it greatly simplifies some technical details of actually designing the plots.
+
+```{r}
+n_nations <- 
+  bind_rows(
+    dst_spr |> 
+      filter(rank <= 3) |> 
+      summarise(
+        n_nations = n_distinct(nation),
+        .by = c(gender,season)
+      ) |> 
+      mutate(n_rank = "Top 3"),
+    dst_spr |> 
+      filter(rank <= 5) |> 
+      summarise(
+        n_nations = n_distinct(nation),
+        .by = c(gender,season)
+      ) |> 
+      mutate(n_rank = "Top 5"),
+    dst_spr |> 
+      filter(rank <= 10) |> 
+      summarise(
+        n_nations = n_distinct(nation),
+        .by = c(gender,season)
+      ) |> 
+      mutate(n_rank = "Top 10")
+  ) |> 
+  mutate(
+    date = season_to_date(season),
+    n_rank = factor(n_rank,levels = c("Top 3","Top 5","Top 10"),ordered = TRUE)
+  )
+```
+
+Anyway, let's start very simply with a plot of the number of different nations
+represented in the top 3, top 5 & top 10 for each season:
+
+```{r}
+n_nations |> 
+  ggplot(
+    data = _,
+    aes(x = as.Date(date),y = n_nations,color = gender)
+  ) + 
+  facet_wrap(~n_rank,nrow = 1) +
+  geom_line(linewidth = 0.7) + 
+  labs(x = NULL,y = "# nations",color = NULL) +
+  ggtitle(
+    label = "Nations represented in WC, TdS, WSC & OWG competitions each season"
+  ) +
+  scale_y_continuous(
+    breaks = seq(0,30,by = 2)
+  ) + 
+  scale_color_okabe_ito()
+```
+
+More nations until about 2010 and then it's dropped a little since. Of course,
+this is very simplistic and doesn't account for changes in the number of nations
+competing. The breakup of the USSR alone "increased diversity" at the top of the
+results simply by creating a bunch of new nations.
+
+```{r}
+div30 <- rel_div(dst_spr,cutoff = 10)
+div10 <- rel_div(dst_spr,cutoff = 5)
+div03 <- rel_div(dst_spr,cutoff = 3)
+```
+
+```{r}
+div_comb <- 
+  bind_rows(
+    div03,
+    div10,
+    div30
+  ) |> 
+  mutate(
+    top_n = factor(top_n,levels = c("Top 3","Top 5","Top 10"),ordered = TRUE)
+  )
+```
+
+Instead, let's use an actual measure of diversity ([Shannon index](https://en.wikipedia.org/wiki/Diversity_index)), scaled relative to
+the maximum possible diversity given the number of nations competing:
+
+```{r}
+div_comb |> 
+  filter(date >= as.Date("1980-01-01")) |> 
+  ggplot(
+    data = _,
+    aes(x = as.Date(date),y = s_rel_roll,color = gender,group = gender)
+  ) + 
+  facet_wrap(~top_n) +
+  geom_line(linewidth = 0.7) +
+  labs(x = NULL,y = "Relative diveristy",color = NULL) +
+  ggtitle(
+    label = "Rolling average relative Shannon index"
+  ) +
+  scale_y_continuous(
+    labels = scales::label_percent()
+  ) +
+  scale_color_okabe_ito()
+```
+
+I've used a rolling average here to make things a little more easy to read, given
+the wild swings we're seeing.
+
+This looks much worse. Two things stand out: the wild swings in diversity in the
+women's field and the precipitous drop in diversity overall in the men's field in
+the last 10-15 years.
+
+Note that the diversity drop for the men long predates Russia's absence from the 
+World Cup.
+
+The fact that the wild swings for the women's field persists in the diversity 
+measure for the top 5 & top 10 suggests that single athlete phenomenon (e.g. Justyna
+Kowalczyk) are only partially responsible. Still, the late 90's dip is probably 
+partially due to Elena Vaelbe, and the late 10's dip is probably Therese Johaug.
+
+```{r}
+pod_counts <- 
+  dst_spr |> 
+  filter(rank <= 3) |> 
+  summarise(
+    n_pods = n(),
+    .by = c(gender,season,nation)
+  )
+```
+
+Just to round things out, let's get a little more granular and look at the specific
+nations at play here:
+
+```{r}
+bar_data <- 
+  pod_counts |> 
+  slice_max(
+    order_by = n_pods,
+    n = 5,
+    by = c(gender,season)
+  ) |> 
+  mutate(
+    nation = if_else(
+      nation %in% c("NOR","SWE","SOV/RUS","ITA","FIN","GER"),
+      nation,
+      "Other"
+    )
+  ) |> 
+  mutate(
+    tot = sum(n_pods),
+    .by = nation
+  ) |> 
+  arrange(desc(tot)) |> 
+  mutate(
+    nation = fct_inorder(nation),
+    nation = fct_relevel(nation,"Other",after = 6),
+    season_int = as.integer(substr(season,6,9))
+  )
+
+x_vals <- sort(unique(bar_data$season_int))
+
+bar_data |> 
+  filter(season_int >= 1980) |> 
+  ggplot(
+    data = _,
+    aes(x = season_int,y = n_pods,fill = nation)
+  ) + 
+  facet_wrap(~gender,ncol = 1) + 
+  geom_col(position = position_fill()) + 
+  geom_hline(
+    yintercept = c(0.25,0.5,0.75),
+    color = "white",
+    linewidth = 0.1
+  ) +
+  geom_segment(
+    data = data.frame(
+      x = seq(1980,2020,by = 10),
+      xend = c(seq(1989,2020,by = 10),2025),
+      y = -0.01,
+      yend = -0.01,
+      gender = "Women"
+    ),
+    aes(x = x,xend = xend,y = y,yend = yend,fill = NULL)
+  ) +
+  scale_x_continuous(
+    breaks = c(1985,1995,2005,2015,2023) - 0.5,
+    labels = c("1980's","1990's","2000's","2010's","2020's"),
+    expand = expansion(mult = c(0,0))
+  ) +
+  scale_y_continuous(
+    labels = scales::label_percent()
+  ) +
+  scale_fill_okabe_ito() + 
+  guides(
+    fill = guide_legend(nrow = 1)
+  ) +
+  labs(x = NULL,y = NULL,fill = NULL) + 
+  ggtitle(
+    label = "Top 3 finishes by nation in WC, TdS, WSC & OWG",
+    subtitle = "1980's GER represents both East & West Germany combined"
+  ) +
+  theme(
+    axis.text.x = element_text(vjust = 4)
+  )
+```
+
+Norway has not always _completely_ dominated the top of the sport, but I really only
+see two (and a half) exceptions to Norwegian dominance in this plot: the (probably artificially 
+assisted) dominance of the Russian women in the 90's, and the Swedish men in the 
+late 80's. The half an exception is the current surge of the Swedish women.
+
+Finally, for completeness, here's what the "Other" category looks like if we
+break them out and plot them on their own:
+
+```{r}
+bar_data <- 
+  pod_counts |> 
+  slice_max(
+    order_by = n_pods,
+    n = 5,
+    by = c(gender,season)
+  ) |> 
+  filter(!nation %in% c("NOR","SWE","SOV/RUS","ITA","FIN","GER")) |> 
+  mutate(
+    nation = if_else(
+      nation %in% c("USA","CZE","POL","FRA","SUI","KAZ"),
+      nation,
+      "Remaining"
+    )
+  ) |> 
+  mutate(
+    tot = sum(n_pods),
+    .by = nation
+  ) |> 
+  arrange(desc(tot)) |> 
+  mutate(
+    nation = fct_inorder(nation),
+    nation = fct_relevel(nation,"Remaining",after = 6),
+    season_int = as.integer(substr(season,6,9))
+  )
+
+bar_data |> 
+  filter(season_int >= 1980) |> 
+  ggplot(
+    data = _,
+    aes(x = season_int,y = n_pods,fill = nation)
+  ) + 
+  facet_wrap(~gender,ncol = 1) + 
+  geom_col(position = position_fill()) + 
+  geom_hline(
+    yintercept = c(0.25,0.5,0.75),
+    color = "white",
+    linewidth = 0.1
+  ) +
+  geom_segment(
+    data = data.frame(
+      x = seq(1980,2020,by = 10),
+      xend = c(seq(1989,2020,by = 10),2025),
+      y = -0.01,
+      yend = -0.01,
+      gender = "Women"
+    ),
+    aes(x = x,xend = xend,y = y,yend = yend,fill = NULL)
+  ) +
+  scale_x_continuous(
+    breaks = c(1985,1995,2005,2015,2023) - 0.5,
+    labels = c("1980's","1990's","2000's","2010's","2020's"),
+    expand = expansion(mult = c(0,0))
+  ) +
+  scale_y_continuous(
+    labels = scales::label_percent()
+  ) +
+  scale_fill_okabe_ito() + 
+  guides(
+    fill = guide_legend(nrow = 1)
+  ) +
+  labs(x = NULL,y = NULL,fill = NULL) + 
+  ggtitle(
+    label = "Breakdown of 'Other' category",
+    subtitle = "Remaining nations mostly comprised of EST, SLO, CAN & AUT"
+  ) +
+  theme(
+    axis.text.x = element_text(vjust = 4)
+  )
+```
+
+Here we can start to identify the impacts of specific individual skiers like 
+Smirnov, Kowalczyk and Diggins.
