@@ -15,7 +15,58 @@
 <link>https://statisticalskier.netlify.app/index.html</link>
 </image>
 <generator>quarto-1.2.313</generator>
-<lastBuildDate>Fri, 28 Nov 2025 07:00:00 GMT</lastBuildDate>
+<lastBuildDate>Sat, 29 Nov 2025 07:00:00 GMT</lastBuildDate>
+<item>
+  <title>Ruka Classic Sprint Race Snapshots</title>
+  <dc:creator>Joran Elias</dc:creator>
+  <link>https://statisticalskier.netlify.app/posts/2025-11-29-ruka-sprint-race-snapshots/ruka_spr_race_snap.html</link>
+  <description><![CDATA[ 
+
+
+
+
+<div class="cell">
+
+</div>
+<div class="cell">
+
+</div>
+<section id="mens-race-snapshot" class="level3">
+<h3 class="anchored" data-anchor-id="mens-race-snapshot">Men’s Race Snapshot</h3>
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="https://statisticalskier.netlify.app/posts/2025-11-29-ruka-sprint-race-snapshots/ruka_spr_race_snap_files/figure-html/men-snap-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+</section>
+<section id="womens-race-snapshot" class="level3">
+<h3 class="anchored" data-anchor-id="womens-race-snapshot">Women’s Race Snapshot</h3>
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="https://statisticalskier.netlify.app/posts/2025-11-29-ruka-sprint-race-snapshots/ruka_spr_race_snap_files/figure-html/wom-snap-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+</section>
+<section id="heat-progressions" class="level3">
+<h3 class="anchored" data-anchor-id="heat-progressions">Heat Progressions</h3>
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="https://statisticalskier.netlify.app/posts/2025-11-29-ruka-sprint-race-snapshots/ruka_spr_race_snap_files/figure-html/heat-progressions-1.png" class="img-fluid" width="1440"></p>
+</div>
+</div>
+
+
+</section>
+
+ ]]></description>
+  <category>world cup</category>
+  <category>sprint</category>
+  <category>race snapshots</category>
+  <category>classic</category>
+  <category>ruka</category>
+  <guid>https://statisticalskier.netlify.app/posts/2025-11-29-ruka-sprint-race-snapshots/ruka_spr_race_snap.html</guid>
+  <pubDate>Sat, 29 Nov 2025 07:00:00 GMT</pubDate>
+</item>
 <item>
   <title>Ruka 10k Classic Race Snapshots</title>
   <dc:creator>Joran Elias</dc:creator>
@@ -1426,57 +1477,6 @@
   <category>falun</category>
   <guid>https://statisticalskier.netlify.app/posts/2024-03-15-falun-spr-race-snapshots/falun_spr_race_snap.html</guid>
   <pubDate>Fri, 15 Mar 2024 06:00:00 GMT</pubDate>
-</item>
-<item>
-  <title>Drammen Classic Sprint Race Snapshots</title>
-  <dc:creator>Joran Elias</dc:creator>
-  <link>https://statisticalskier.netlify.app/posts/2024-03-12-drammen-spr-race-snapshots/drammen_spr_race_snap.html</link>
-  <description><![CDATA[ 
-
-
-
-
-<div class="cell">
-
-</div>
-<div class="cell">
-
-</div>
-<section id="mens-race-snapshot" class="level3">
-<h3 class="anchored" data-anchor-id="mens-race-snapshot">Men’s Race Snapshot</h3>
-<div class="cell">
-<div class="cell-output-display">
-<p><img src="https://statisticalskier.netlify.app/posts/2024-03-12-drammen-spr-race-snapshots/drammen_spr_race_snap_files/figure-html/men-snap-1.png" class="img-fluid" width="672"></p>
-</div>
-</div>
-</section>
-<section id="womens-race-snapshot" class="level3">
-<h3 class="anchored" data-anchor-id="womens-race-snapshot">Women’s Race Snapshot</h3>
-<div class="cell">
-<div class="cell-output-display">
-<p><img src="https://statisticalskier.netlify.app/posts/2024-03-12-drammen-spr-race-snapshots/drammen_spr_race_snap_files/figure-html/wom-snap-1.png" class="img-fluid" width="672"></p>
-</div>
-</div>
-</section>
-<section id="heat-progressions" class="level3">
-<h3 class="anchored" data-anchor-id="heat-progressions">Heat Progressions</h3>
-<div class="cell">
-<div class="cell-output-display">
-<p><img src="https://statisticalskier.netlify.app/posts/2024-03-12-drammen-spr-race-snapshots/drammen_spr_race_snap_files/figure-html/heat-progressions-1.png" class="img-fluid" width="1440"></p>
-</div>
-</div>
-
-
-</section>
-
- ]]></description>
-  <category>world cup</category>
-  <category>sprint</category>
-  <category>race snapshots</category>
-  <category>classic</category>
-  <category>drammen</category>
-  <guid>https://statisticalskier.netlify.app/posts/2024-03-12-drammen-spr-race-snapshots/drammen_spr_race_snap.html</guid>
-  <pubDate>Tue, 12 Mar 2024 06:00:00 GMT</pubDate>
 </item>
 </channel>
 </rss>
