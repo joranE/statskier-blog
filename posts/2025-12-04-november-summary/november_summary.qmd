@@ -1,0 +1,480 @@
+---
+title: "November 2025 Summary"
+author: "Joran Elias"
+date: "2025-12-04"
+categories: [world cup]
+draft: false
+reference-location: margin
+---
+
+```{r pkgs,message=FALSE}
+library(tidyverse)
+library(ggokabeito)
+library(statskier2)
+library(knitr)
+library(ggforce)
+
+knit_hooks$set(inline = function(x) {
+  prettyNum(x, big.mark=",")
+})
+
+statskier_connect()
+
+theme_set(
+  theme_minimal() + 
+    theme(
+      panel.grid.major.x = element_blank(),
+      panel.grid.minor = element_blank(),
+      plot.title = element_text(face = "bold"),
+      plot.title.position = "plot",
+      strip.text = element_text(hjust = 0,size = rel(1.1)),
+      legend.position = "bottom",
+      legend.direction = "horizontal"
+    )
+)
+```
+
+```{r helper-funs}
+km_raced <- function(dst,spr){
+  dst_km_raced <- 
+    dst |> 
+    filter(!is.na(rank) & !is.na(length)) |> 
+    summarise(
+      km_raced = sum(length,na.rm = TRUE),
+      .by = compid
+    )
+  
+  spr_km_raced <- 
+    spr |> 
+    filter(!is.na(rankqual) & !is.na(rank) & !is.na(length)) |> 
+    mutate(
+      n_heats = case_when(
+        between(rank,1,6) ~ 4L,
+        between(rank,7,12) ~ 3L,
+        between(rank,13,30) ~ 2L,
+        .default = 1L
+      ),
+      tot_km = length * n_heats
+    ) |> 
+    summarise(
+      km_raced = sum(tot_km,na.rm = TRUE),
+      .by = compid
+    )
+  
+  bind_rows(
+    dst_km_raced,
+    spr_km_raced
+  ) |> 
+    summarise(
+      km_raced = sum(km_raced,na.rm = TRUE),
+      .by = compid
+    )
+}
+
+normalize <- function(x){
+  (x - mean(x,na.rm = TRUE)) / sd(x,na.rm = TRUE)
+}
+```
+
+```{r}
+v_dst <- dplyr::tbl(..statskier_pg_con..,"v_distance")
+v_spr <- dplyr::tbl(..statskier_pg_con..,"v_sprint")
+
+dst <- 
+  v_dst |> 
+  filter(between(date,"2025-11-01","2025-11-30")) |> 
+  collect() 
+
+spr <- 
+  v_spr |> 
+  filter(between(date,"2025-11-01","2025-11-30")) |>
+  collect() 
+```
+
+```{r events}
+dst_evs <- 
+  dst |> 
+  select(
+    eventid,
+    date,
+    primary_tag,
+    other_tags,
+    location,
+    site,
+    gender,
+    length,
+    format,
+    tech
+  ) |> 
+  distinct() |> 
+  mutate(
+    other_tags = if_else(is.na(other_tags),"",other_tags),
+    site = if_else(is.na(site),"",site)
+  )
+
+spr_evs <- 
+  spr |> 
+  select(
+    eventid,
+    date,
+    primary_tag,
+    other_tags,
+    location,
+    site,
+    gender,
+    length,
+    tech
+  ) |> 
+  distinct() |> 
+  mutate(
+    other_tags = if_else(is.na(other_tags),"",other_tags),
+    site = if_else(is.na(site),"",site)
+  )
+```
+
+```{r athletes}
+athletes <- 
+  bind_rows(
+    dst |> select(compid,fisid,gender,name,nation),
+    spr |> select(compid,fisid,gender,name,nation)
+  ) |> 
+  distinct()
+```
+
+:::{.callout-important}
+This is a silly post with some silly summaries of the prior complete month of FIS
+races. Do not take any of it too seriously. I will probably add things to it with
+each month.
+:::
+
+## November 2025
+```{r n_events_athletes}
+all_events <- 
+  bind_rows(
+    dst |> select(eventid,gender,compid) |> mutate(type = "Distance"),
+    spr |> select(eventid,gender,compid) |> mutate(type = "Sprint")
+  )
+
+n_race_ath <- 
+  all_events |> 
+  summarise(
+    n_dst = n_distinct(eventid[type == "Distance"]),
+    n_spr = n_distinct(eventid[type == "Sprint"]),
+    n_men = n_distinct(compid[gender == "Men"]),
+    n_wom = n_distinct(compid[gender == "Women"])
+  )
+```
+
+### The Basics
+The month of November included `r n_race_ath$n_dst` distance races and `r n_race_ath$n_spr` sprint races. There
+were a total of `r n_race_ath$n_men` male participants and `r n_race_ath$n_wom` female participants [^1].
+
+[^1]: "Participants" include all competitors listed, regardless of whether they started or finished.
+
+```{r most-starts}
+most_starts <- 
+  bind_rows(
+  dst |> 
+    filter(!is.na(rank)) |> 
+    select(compid,fisid,name,gender,eventid),
+  spr |> 
+    filter(!is.na(rankqual)) |> 
+    select(compid,fisid,name,gender,eventid)
+) |>
+  summarise(
+    n = n_distinct(eventid),
+    .by = c(compid,fisid,name,gender)
+  ) |> 
+  slice_max(
+    order_by = n,
+    n = 1,
+    with_ties = TRUE
+  )
+```
+
+### Who showed up a lot?
+The most number of races were completed by `r nrow(most_starts)` athletes, which in
+this case was `r most_starts$n[1]`:
+
+```{r most-starts-tbl}
+#| echo: false
+most_starts |> 
+  select(
+    Athlete = name,
+    Gender = gender,
+    `# events` = n
+  ) |> 
+  kable()
+```
+
+```{r race-avg-speeds}
+dst_speeds <- 
+  dst |> 
+  filter(!is.na(time) & !is.na(length)) |> 
+  mutate(
+    sec_per_km = time / length
+  ) |> 
+  summarise(
+    med_sec_per_km = median(sec_per_km,na.rm = TRUE),
+    .by = c(gender,eventid)
+  )
+
+dst_fast <- 
+  dst_speeds |> 
+  slice_min(
+    order_by = med_sec_per_km,
+    n = 1,
+    by = gender
+  ) |> 
+  inner_join(dst_evs,by = c("eventid","gender")) |> 
+  mutate(tags = paste(primary_tag,other_tags,sep = ",")) |> 
+  select(
+    Date = date,
+    Gender = gender,
+    Type = tags,
+    Site = site,
+    Nation = location,
+    Length = length,
+    Tech = tech,
+    Format = format,
+    `Median sec/km` = med_sec_per_km
+  )
+
+dst_slow <- 
+  dst_speeds |> 
+  slice_max(
+    order_by = med_sec_per_km,
+    n = 1,
+    by = gender
+  ) |> 
+  inner_join(dst_evs,by = c("eventid","gender")) |> 
+  mutate(tags = paste(primary_tag,other_tags,sep = ",")) |> 
+  select(
+    Date = date,
+    Gender = gender,
+    Type = tags,
+    Site = site,
+    Nation = location,
+    Length = length,
+    Tech = tech,
+    Format = format,
+    `Median sec/km` = med_sec_per_km
+  )
+
+spr_speeds <- 
+  spr |> 
+  filter(!is.na(time) & !is.na(length)) |> 
+  mutate(
+    sec_per_km = time / length
+  ) |> 
+  summarise(
+    med_sec_per_km = median(sec_per_km,na.rm = TRUE),
+    .by = c(gender,eventid)
+  )
+
+spr_fast <- 
+  spr_speeds |> 
+  slice_min(
+    order_by = med_sec_per_km,
+    n = 1,
+    by = gender
+  ) |> 
+  inner_join(spr_evs,by = c("eventid","gender")) |> 
+  mutate(tags = paste(primary_tag,other_tags,sep = ",")) |> 
+  select(
+    Date = date,
+    Gender = gender,
+    Type = tags,
+    Site = site,
+    Nation = location,
+    Length = length,
+    Tech = tech,
+    `Median sec/km` = med_sec_per_km
+  )
+
+spr_slow <- 
+  spr_speeds |> 
+  slice_max(
+    order_by = med_sec_per_km,
+    n = 1,
+    by = gender
+  ) |> 
+  inner_join(spr_evs,by = c("eventid","gender")) |> 
+  mutate(tags = paste(primary_tag,other_tags,sep = ",")) |> 
+  select(
+    Date = date,
+    Gender = gender,
+    Type = tags,
+    Site = site,
+    Nation = location,
+    Length = length,
+    Tech = tech,
+    `Median sec/km` = med_sec_per_km
+  )
+```
+
+### Which races were fast & slow?
+These were the "fastest"[^2] men's & women's distance races:
+
+[^2]: "Fast" here means the median seconds per kilometer across all finishers. Keep a 
+close eye on these and the next few items, as I'm not likely to always check carefully
+for errors on the FIS website regarding race length.
+
+```{r}
+#| echo: false
+dst_fast |> 
+  kable(digits = 1)
+```
+
+And these were the slowest men's & women's distance races:
+
+```{r}
+#| echo: false
+dst_slow |> 
+  kable(digits = 1)
+```
+
+The fastest sprint qualifiers:
+
+```{r}
+#| echo: false
+spr_fast |> 
+  kable(digits = 1)
+```
+
+And the slowest sprint qualifiers:
+
+```{r}
+#| echo: false
+spr_slow |> 
+  kable(digits = 1)
+```
+
+### Who raced the furthest?
+Who raced the most total kilometers?[^3] Here I'm only counting finishers (obviously)
+and also making an attempt to count each round of a sprint race. So if you make it to
+the finals in a 1.5km sprint race you credit for 6km of racing.
+
+[^3]: I know. This massively favors distance skiers. It's my website, and distance
+racing is just cooler.
+```{r}
+km <- km_raced(dst,spr)
+fp <- bind_rows(
+  dst |> filter(!is.na(fispoints)) |> select(compid,fispoints),
+  spr |> filter(!is.na(fispoints)) |> select(compid,fispoints)
+) |> 
+  summarise(
+    med_fp = median(fispoints,na.rm = TRUE),
+    .by = compid
+  )
+
+km_fp_data <- 
+  inner_join(km,fp,by = "compid") |> 
+  mutate(
+    km_raced_pct = cume_dist(km_raced),
+    med_fp_pct = cume_dist(-med_fp)
+  )
+```
+
+```{r}
+most_km <- 
+  inner_join(
+    km,
+    athletes,
+    by = "compid"
+  ) |> 
+  slice_max(
+    order_by = km_raced,
+    n = 5,
+    by = gender,
+    with_ties = TRUE
+  ) |> 
+  select(
+    gender,
+    Name = name,
+    Nation = nation,
+    `km raced` = km_raced
+  )
+
+most_km_men <- filter(most_km,gender == "Men") |> select(-gender)
+most_km_wom <- filter(most_km,gender == "Women") |> select(-gender)
+```
+
+The men who raced the most kilometers:
+
+```{r}
+#| echo: false
+most_km_men |> 
+  kable(digits = 1)
+```
+
+And the women who race the most kilometers:
+
+```{r}
+#| echo: false
+most_km_wom |> 
+  kable(digits = 1)
+```
+
+### Zones
+Now for something very silly. Let's take all the skiers and their total kilometers 
+raced along with their median FIS points across those races, including both sprint
+and distance events. Since those scales point in opposite directions (small FIS points 
+are good, while small kilometers raced is bad) we'll convert them both to percentiles. So
+you want to be in a high percentile of both, just like standardized tests.
+
+If we plot this we can annotate the four corners as distinct zones:
+```{r}
+corner_arcs <- 
+  data.frame(
+    corner = c("bottom_left","bottom_right","top_right","top_left"),
+    corner_lbl = c("Non-skiing nations.","Persistent futility.","Elite excellence.","Elite cowardice."),
+    x0 = c(0,1,1,0),
+    y0 = c(0,0,1,1),
+    r = rep(0.1,4),
+    start = c(0,-pi,-pi,3*pi/2),
+    end = c(pi/2,pi/2,-pi/2,0)
+  )
+```
+
+```{r}
+ggplot(
+    data =km_fp_data,
+    aes(x = km_raced_pct,y = med_fp_pct)
+  ) + 
+  geom_point(
+    alpha = 0.2
+  ) +
+  geom_arc(
+    data = corner_arcs,
+    aes(x0 = x0,y0 = y0,r = r,start = start,end = end,color = corner_lbl),
+    linewidth = 1,
+    inherit.aes = FALSE,
+    na.rm = TRUE
+  ) +
+  labs(
+    x = "Percentile of km raced",
+    y = "Percentile of median FIS points",
+    color = "Zone of:"
+  ) +
+  guides(
+    color = guide_legend(ncol = 1,position = "right")
+  ) +
+  scale_x_continuous(
+    limits = c(0,1),
+    labels = scales::label_percent(),
+    expand = expansion(add = c(0.01,0.01))
+  ) +
+  scale_y_continuous(
+    limits = c(0,1),
+    labels = scales::label_percent(),
+    expand = expansion(add = c(0.01,0.01))
+  ) + 
+  coord_equal() + 
+  theme(
+    legend.title.position = "top"
+  )
+```
+
+For this edition I will skip calling out specific skiers in each of the four zones, 
+but I might do so in the future.
