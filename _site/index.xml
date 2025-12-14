@@ -15,7 +15,98 @@
 <link>https://statisticalskier.netlify.app/index.html</link>
 </image>
 <generator>quarto-1.2.313</generator>
-<lastBuildDate>Sat, 13 Dec 2025 07:00:00 GMT</lastBuildDate>
+<lastBuildDate>Sun, 14 Dec 2025 07:00:00 GMT</lastBuildDate>
+<item>
+  <title>Davos 10k Freestyle Interval Start Race Snapshots</title>
+  <dc:creator>Joran Elias</dc:creator>
+  <link>https://statisticalskier.netlify.app/posts/2025-12-14-davos-dst-fr-race-snapshots/davos_dst_fr_race_snap.html</link>
+  <description><![CDATA[ 
+
+
+
+
+<div class="cell">
+
+</div>
+<div class="cell">
+
+</div>
+<section id="race-snapshots" class="level3">
+<h3 class="anchored" data-anchor-id="race-snapshots">Race Snapshots</h3>
+<section id="men" class="level4">
+<h4 class="anchored" data-anchor-id="men">Men</h4>
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="https://statisticalskier.netlify.app/posts/2025-12-14-davos-dst-fr-race-snapshots/davos_dst_fr_race_snap_files/figure-html/men-snap-1.png" class="img-fluid" width="768"></p>
+</div>
+</div>
+</section>
+<section id="women" class="level4">
+<h4 class="anchored" data-anchor-id="women">Women</h4>
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="https://statisticalskier.netlify.app/posts/2025-12-14-davos-dst-fr-race-snapshots/davos_dst_fr_race_snap_files/figure-html/wom-snap-1.png" class="img-fluid" width="768"></p>
+</div>
+</div>
+</section>
+</section>
+<section id="pacing-plots" class="level3">
+<h3 class="anchored" data-anchor-id="pacing-plots">Pacing Plots</h3>
+<div class="cell">
+
+</div>
+<section id="men-1" class="level4">
+<h4 class="anchored" data-anchor-id="men-1">Men</h4>
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="https://statisticalskier.netlify.app/posts/2025-12-14-davos-dst-fr-race-snapshots/davos_dst_fr_race_snap_files/figure-html/men-pacing-1.png" class="img-fluid" width="768"></p>
+</div>
+</div>
+</section>
+<section id="women-1" class="level4">
+<h4 class="anchored" data-anchor-id="women-1">Women</h4>
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="https://statisticalskier.netlify.app/posts/2025-12-14-davos-dst-fr-race-snapshots/davos_dst_fr_race_snap_files/figure-html/wom-pacing-1.png" class="img-fluid" width="768"></p>
+</div>
+</div>
+</section>
+</section>
+<section id="splits" class="level3">
+<h3 class="anchored" data-anchor-id="splits">Splits</h3>
+<div class="cell">
+
+</div>
+<section id="men-2" class="level4">
+<h4 class="anchored" data-anchor-id="men-2">Men</h4>
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="https://statisticalskier.netlify.app/posts/2025-12-14-davos-dst-fr-race-snapshots/davos_dst_fr_race_snap_files/figure-html/men-splits-1.png" class="img-fluid" width="960"></p>
+</div>
+</div>
+</section>
+<section id="women-2" class="level4">
+<h4 class="anchored" data-anchor-id="women-2">Women</h4>
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="https://statisticalskier.netlify.app/posts/2025-12-14-davos-dst-fr-race-snapshots/davos_dst_fr_race_snap_files/figure-html/wom-splits-1.png" class="img-fluid" width="960"></p>
+</div>
+</div>
+
+
+</section>
+</section>
+
+ ]]></description>
+  <category>world cup</category>
+  <category>distance</category>
+  <category>race snapshots</category>
+  <category>interval start</category>
+  <category>freestyle</category>
+  <category>davos</category>
+  <guid>https://statisticalskier.netlify.app/posts/2025-12-14-davos-dst-fr-race-snapshots/davos_dst_fr_race_snap.html</guid>
+  <pubDate>Sun, 14 Dec 2025 07:00:00 GMT</pubDate>
+</item>
 <item>
   <title>Davos Freestyle Sprint Race Snapshots</title>
   <dc:creator>Joran Elias</dc:creator>
@@ -1725,93 +1816,6 @@ Important
   <category>lillehammer</category>
   <guid>https://statisticalskier.netlify.app/posts/2024-12-07-lillehammer-sprint-race-snapshots/lillehammer_spr_race_snap.html</guid>
   <pubDate>Sat, 07 Dec 2024 07:00:00 GMT</pubDate>
-</item>
-<item>
-  <title>Lillehammer 10k Freestyle Race Snapshots</title>
-  <dc:creator>Joran Elias</dc:creator>
-  <link>https://statisticalskier.netlify.app/posts/2024-12-06-lillehammer-dst-fr-race-snapshots/lillehammer_dst_fr_race_snap.html</link>
-  <description><![CDATA[ 
-
-
-
-
-<div class="cell">
-
-</div>
-<div class="cell">
-
-</div>
-<section id="race-snapshots" class="level3">
-<h3 class="anchored" data-anchor-id="race-snapshots">Race Snapshots</h3>
-<section id="men" class="level4">
-<h4 class="anchored" data-anchor-id="men">Men</h4>
-<div class="cell">
-<div class="cell-output-display">
-<p><img src="https://statisticalskier.netlify.app/posts/2024-12-06-lillehammer-dst-fr-race-snapshots/lillehammer_dst_fr_race_snap_files/figure-html/men-snap-1.png" class="img-fluid" width="768"></p>
-</div>
-</div>
-</section>
-<section id="women" class="level4">
-<h4 class="anchored" data-anchor-id="women">Women</h4>
-<div class="cell">
-<div class="cell-output-display">
-<p><img src="https://statisticalskier.netlify.app/posts/2024-12-06-lillehammer-dst-fr-race-snapshots/lillehammer_dst_fr_race_snap_files/figure-html/wom-snap-1.png" class="img-fluid" width="768"></p>
-</div>
-</div>
-</section>
-</section>
-<section id="pacing-plots" class="level3">
-<h3 class="anchored" data-anchor-id="pacing-plots">Pacing Plots</h3>
-<p>The interval times weren’t evenly spaced enough through the course to do lap based pacing plots for this race.</p>
-<div class="cell">
-
-</div>
-<section id="men-1" class="level4">
-<h4 class="anchored" data-anchor-id="men-1">Men</h4>
-<div class="cell">
-
-</div>
-</section>
-<section id="women-1" class="level4">
-<h4 class="anchored" data-anchor-id="women-1">Women</h4>
-<div class="cell">
-
-</div>
-</section>
-</section>
-<section id="splits" class="level3">
-<h3 class="anchored" data-anchor-id="splits">Splits</h3>
-<div class="cell">
-
-</div>
-<section id="men-2" class="level4">
-<h4 class="anchored" data-anchor-id="men-2">Men</h4>
-<div class="cell">
-<div class="cell-output-display">
-<p><img src="https://statisticalskier.netlify.app/posts/2024-12-06-lillehammer-dst-fr-race-snapshots/lillehammer_dst_fr_race_snap_files/figure-html/men-splits-1.png" class="img-fluid" width="960"></p>
-</div>
-</div>
-</section>
-<section id="women-2" class="level4">
-<h4 class="anchored" data-anchor-id="women-2">Women</h4>
-<div class="cell">
-<div class="cell-output-display">
-<p><img src="https://statisticalskier.netlify.app/posts/2024-12-06-lillehammer-dst-fr-race-snapshots/lillehammer_dst_fr_race_snap_files/figure-html/wom-splits-1.png" class="img-fluid" width="960"></p>
-</div>
-</div>
-
-
-</section>
-</section>
-
- ]]></description>
-  <category>world cup</category>
-  <category>distance</category>
-  <category>race snapshots</category>
-  <category>freestyle</category>
-  <category>ruka</category>
-  <guid>https://statisticalskier.netlify.app/posts/2024-12-06-lillehammer-dst-fr-race-snapshots/lillehammer_dst_fr_race_snap.html</guid>
-  <pubDate>Fri, 06 Dec 2024 07:00:00 GMT</pubDate>
 </item>
 </channel>
 </rss>
