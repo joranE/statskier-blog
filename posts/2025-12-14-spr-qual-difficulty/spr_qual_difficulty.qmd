@@ -1,0 +1,201 @@
+---
+title: "Sprint Qualification Difficulty (Again)"
+author: "Joran Elias"
+date: "2025-12-14"
+categories: [world cup,sprint,qualification]
+draft: false
+---
+
+```{r pkgs,message=FALSE}
+library(tidyverse)
+library(ggokabeito)
+library(statskier2)
+library(slider)
+library(qgam)
+
+statskier_connect()
+
+theme_set(
+  theme_minimal() + 
+    theme(
+      panel.grid.major.x = element_blank(),
+      panel.grid.minor = element_blank(),
+      plot.title = element_text(face = "bold"),
+      plot.title.position = "plot",
+      strip.text = element_text(hjust = 0,size = rel(1.1)),
+      legend.position = "bottom",
+      legend.direction = "horizontal"
+    )
+)
+```
+
+```{r}
+v_spr_maj_int <- dplyr::tbl(..statskier_pg_con..,"v_sprint_maj_int")
+
+spr_qual <- 
+  v_spr_maj_int |> 
+  filter(!is.na(rankqual) & !is.na(time)) |> 
+  collect() |> 
+  filter(rankqual <= 30)
+```
+
+```{r}
+spr_data <- 
+  spr_qual |> 
+  filter(
+    rankqual == 30 & 
+      season >= "2006-2007"
+  ) |> 
+  arrange(gender,date) |> 
+  mutate(
+    n = row_number(),
+    .by = gender
+  )
+
+spr_data_split <- split(spr_data,f = spr_data$gender)
+```
+
+```{r,echo=FALSE,message=FALSE}
+capture.output(
+  {
+    mdl_men <- 
+  mqgam(
+    form = pb ~ s(n),
+    data = spr_data_split[["Men"]],
+    qu = c(0.05,0.5,0.95)
+  )
+
+mdl_wom <- 
+  mqgam(
+    form = pb ~ s(n),
+    data = spr_data_split[["Women"]],
+    qu = c(0.05,0.5,0.95)
+  )
+  },
+  file = nullfile()
+)
+```
+
+```{r}
+fitted_men <- qdo(mdl_men,qu = NULL,fun = fitted)
+fitted_wom <- qdo(mdl_wom,qu = NULL,fun = fitted)
+
+spr_data_split[["Men"]]$low <- fitted_men[[1]]
+spr_data_split[["Men"]]$med <- fitted_men[[2]]
+spr_data_split[["Men"]]$high <- fitted_men[[3]]
+
+spr_data_split[["Women"]]$low <- fitted_wom[[1]]
+spr_data_split[["Women"]]$med <- fitted_wom[[2]]
+spr_data_split[["Women"]]$high <- fitted_wom[[3]]
+```
+
+```{r}
+spr_data_fit <- bind_rows(spr_data_split)
+spr_data_q <- 
+  spr_data_fit |> 
+  select(gender,date,low,med,high) |> 
+  pivot_longer(
+    cols = c(low:high),
+    names_to = "levl",
+    values_to = "q"
+  ) |> 
+  mutate(
+    levl_lbl = case_when(
+      levl == "low" ~ "Difficult",
+      levl == "med" ~ "Typical",
+      levl == "high" ~ "Easy"
+    ),
+    levl_lbl = factor(levl_lbl,levels = c("Easy","Typical","Difficult"))
+  )
+```
+
+An observation on a recent episode of the [Skirious Problems](https://www.youtube.com/@SkiriousProblems) podcast caught my attention, as it seemed to be something that was pretty easy to 
+verify quickly.
+
+Basically, they noted that the qualification times in the Davos freestyle sprint,
+at least on the men's side, were very tightly packed together and that it seemed
+as though qualifying for the heats had gotten more difficult in the last several
+years. 
+
+My interpretation of this is that they mean that in order to qualify for the heats
+you need to be closer to the fastest qualification time. I could be wrong, but that's
+how I heard it at least.
+
+This is easy to visualize by plotting the percent back of the
+30th best qualification time across all World Cup sprint races. In the plot below I've
+actually started in the 2006-2007 season to remove most of the early experimental
+sprint events.
+
+```{r}
+ggplot(
+    data = spr_data_fit,
+    aes(x = as.Date(date),y = pb)
+  ) + 
+  facet_wrap(~gender) + 
+  geom_point(alpha = 0.5) + 
+  geom_smooth(
+    data = spr_data_q,
+    method = "gam",
+    formula = y~s(x),
+    aes(x = as.Date(date),y = q,color = levl_lbl),
+    se = FALSE
+  ) +
+  labs(
+    x = NULL,
+    y = "Percent back of the 30th sprint qualifier",
+    color = ""
+  ) +
+  scale_y_continuous(
+    labels = scales::label_percent()
+  ) + 
+  scale_color_okabe_ito() +
+  coord_cartesian(ylim = c(0,0.12))
+```
+
+Before we talk about the colored lines, let's just focus on the points. The first
+thing to note is that there's a *lot* of variation from race to race. By that I 
+mean that the percent back cutoff for qualification generally ranges between
+2.5% - 7.5% for men and 3.0% - 9.0% for women (roughly).
+
+The course, the snow conditions & weather, and the particular mix of skiers at that
+race have a huge effect on how competitive qualification is, at least as measured
+by the percent back of the 30th qualifier. So it's really dangerous to pick out
+one race and treat it as an indicator of a trend.
+
+Now let's turn to the colored lines; what's up with them? Since there's so much
+variation in qualification competitiveness, we can expect that in any season some
+races will be fairly easy to qualify in, some will be quite hard and most will be
+somewhere in the middle. These three things could be trending in different directions!
+
+So what I've done above is fit trend lines to the 95%-tile, the 50%-tile (median)
+and the 5%-tile percent backs (percent's back?) and labelled them "Easy", "Typical" 
+and "Difficult".
+
+The simplest to understand is the median, the blue line. These are your "typical"
+World Cup sprint races. And here, Mika & James from Skirous Problems appear to be
+onto something. The median percent back of the 30th male qualifier has indeed been
+trending down in the last several years, albeit slightly.
+
+More dramatic is the apparent shift in the "Easy" sprint races for the men, the
+orange line. I was initially suspicious of this, given that it seems to be largely
+driven by a cluster of particularly weak qualification fields in the 2020 season.
+
+My first thought was that maybe they were a bunch of sprint races in unusual locations
+(China, Russia, Canada, US) that see significantly smaller fields. But they aren't,
+they are just the regular, pre-pandemic 2020 sprint races. I don't have time to dig into
+that further, but it's curious.
+
+Working slightly against Mika & James is the mostly flat trend of the "Difficult"
+sprint races, the green line.
+
+What we're left with is the broad conclusion that yes, the typical men's sprint
+race has been getting somewhat more competitive in recent years. However, the
+most recent Davos race, being *very* competitive, isn't really a good illustration
+of that trend, as the level of the competitive sprint qualifiers has remained
+pretty stable.
+
+Now that we understand how the plot works, the picture on the women's side is a 
+bit more straightforward. Here, qualification has actually been getting steadily
+easier across the board for almost a decade now. And after writing that sentence,
+I will be very sure to try to avoid any female World Cup sprinter who likely wants
+to punch me now. I'm sorry!
