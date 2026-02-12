@@ -15,7 +15,70 @@
 <link>https://statisticalskier.netlify.app/index.html</link>
 </image>
 <generator>quarto-1.2.313</generator>
-<lastBuildDate>Wed, 07 Jan 2026 07:00:00 GMT</lastBuildDate>
+<lastBuildDate>Thu, 12 Feb 2026 07:00:00 GMT</lastBuildDate>
+<item>
+  <title>The Milan Olympic Sprint Course Was Amazingly Long</title>
+  <dc:creator>Joran Elias</dc:creator>
+  <link>https://statisticalskier.netlify.app/posts/2026-02-11-spr-time/spr_time.html</link>
+  <description><![CDATA[ 
+
+
+
+
+<div class="cell">
+
+</div>
+<div class="cell">
+
+</div>
+<div class="cell">
+
+</div>
+<div class="cell">
+
+</div>
+<div class="cell">
+
+</div>
+<div class="cell">
+
+</div>
+<div class="cell">
+
+</div>
+<p>I’ve seen some discussion around how long this year’s Olympic sprint course was.</p>
+<p>This makes a difference, because physiological differences between performing for 2.5 minutes is enough different from, say 4 minutes that it really changes which athletes are best suited to it, and demands some different training and preparation.</p>
+<p>So let’s quantify how unusually long this Olympic sprint course actually is. We could compare the stated length, but that doesn’t take into account the terrain, which also impacts how long of an effort it takes to complete.</p>
+<p>So instead, let’s take each WC, WSC, OWG or TdS sprint race since ~2013 (that’s approximately how far back I have heat times for) and extract that fastest time from each round. That means for each sprint race, we get four times, one each for the qualification, QFs, SFs and the final.</p>
+<p>The following plot shows how the Milan Olympic course stacks up against the distribution of times across all other classic sprints. The 5%, 50% &amp; 95% lines indicate the 5th, 50th (median) and 95% percentile times across all races in that panel.</p>
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="https://statisticalskier.netlify.app/posts/2026-02-11-spr-time/spr_time_files/figure-html/unnamed-chunk-7-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<p>Clearly, this Olympic sprint course skied much, much longer than virtually any other sprint course any of these athletes have had to compete on for probably their entire careers.</p>
+<p>You can also see that the times got noticeably slower with each round as well. Let’s compare that as well to historical trends.</p>
+<p>As a simple and crude way to do that, let’s take each of these sets of four times and calculate the percentage change from each heat round relative to the qualification time, and average these percent changes.</p>
+<p>The following plot shows the distribution of the average percent change relative to the fastest qualification time across all sprint races since 2013. Once again, this Milan Olympic course slowed down during the day by an historic amount.</p>
+<div class="cell">
+
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="https://statisticalskier.netlify.app/posts/2026-02-11-spr-time/spr_time_files/figure-html/unnamed-chunk-9-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+
+
+
+ ]]></description>
+  <category>world cup</category>
+  <category>sprint</category>
+  <category>qualification</category>
+  <category>olympics</category>
+  <guid>https://statisticalskier.netlify.app/posts/2026-02-11-spr-time/spr_time.html</guid>
+  <pubDate>Thu, 12 Feb 2026 07:00:00 GMT</pubDate>
+</item>
 <item>
   <title>December 2025 Summary</title>
   <dc:creator>Joran Elias</dc:creator>
@@ -2188,57 +2251,6 @@ Important
   <category>toblach</category>
   <guid>https://statisticalskier.netlify.app/posts/2024-12-29-toblach-dst-cl-race-snapshots/toblach_dst_cl_race_snap.html</guid>
   <pubDate>Sun, 29 Dec 2024 07:00:00 GMT</pubDate>
-</item>
-<item>
-  <title>TdS Toblach Freestyle Sprint Race Snapshots</title>
-  <dc:creator>Joran Elias</dc:creator>
-  <link>https://statisticalskier.netlify.app/posts/2024-12-28-toblach-spr-race-snapshots/toblach_spr_race_snap.html</link>
-  <description><![CDATA[ 
-
-
-
-
-<div class="cell">
-
-</div>
-<div class="cell">
-
-</div>
-<section id="mens-race-snapshot" class="level3">
-<h3 class="anchored" data-anchor-id="mens-race-snapshot">Men’s Race Snapshot</h3>
-<div class="cell">
-<div class="cell-output-display">
-<p><img src="https://statisticalskier.netlify.app/posts/2024-12-28-toblach-spr-race-snapshots/toblach_spr_race_snap_files/figure-html/men-snap-1.png" class="img-fluid" width="576"></p>
-</div>
-</div>
-</section>
-<section id="womens-race-snapshot" class="level3">
-<h3 class="anchored" data-anchor-id="womens-race-snapshot">Women’s Race Snapshot</h3>
-<div class="cell">
-<div class="cell-output-display">
-<p><img src="https://statisticalskier.netlify.app/posts/2024-12-28-toblach-spr-race-snapshots/toblach_spr_race_snap_files/figure-html/wom-snap-1.png" class="img-fluid" width="576"></p>
-</div>
-</div>
-</section>
-<section id="heat-progressions" class="level3">
-<h3 class="anchored" data-anchor-id="heat-progressions">Heat Progressions</h3>
-<div class="cell">
-<div class="cell-output-display">
-<p><img src="https://statisticalskier.netlify.app/posts/2024-12-28-toblach-spr-race-snapshots/toblach_spr_race_snap_files/figure-html/heat-progressions-1.png" class="img-fluid" width="1440"></p>
-</div>
-</div>
-
-
-</section>
-
- ]]></description>
-  <category>tour de ski</category>
-  <category>sprint</category>
-  <category>race snapshots</category>
-  <category>freestyle</category>
-  <category>toblach</category>
-  <guid>https://statisticalskier.netlify.app/posts/2024-12-28-toblach-spr-race-snapshots/toblach_spr_race_snap.html</guid>
-  <pubDate>Sat, 28 Dec 2024 07:00:00 GMT</pubDate>
 </item>
 </channel>
 </rss>
