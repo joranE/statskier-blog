@@ -1,0 +1,309 @@
+---
+title: "The Milan Olympic Sprint Course Was Amazingly Long"
+author: "Joran Elias"
+date: "2026-02-12"
+categories: [world cup,sprint,qualification,olympics]
+draft: false
+---
+
+```{r pkgs,message=FALSE}
+library(tidyverse)
+library(ggokabeito)
+library(statskier2)
+library(slider)
+library(qgam)
+
+library(geomtextpath)
+library(ggbeeswarm)
+library(ggrepel)
+
+statskier_connect()
+
+theme_set(
+  theme_minimal() + 
+    theme(
+      panel.grid.major.x = element_blank(),
+      panel.grid.minor = element_blank(),
+      plot.title = element_text(face = "bold"),
+      plot.title.position = "plot",
+      strip.text = element_text(hjust = 0,size = rel(1.1)),
+      legend.position = "bottom",
+      legend.direction = "horizontal"
+    )
+)
+```
+
+```{r}
+v_spr_maj_int <- dplyr::tbl(..statskier_pg_con..,"v_sprint_maj_int")
+v_spr_heats <- dplyr::tbl(..statskier_pg_con..,"v_sprint_heats")
+```
+
+```{r}
+spr_qual_times <- 
+  v_spr_maj_int |> 
+  filter(!is.na(rankqual) & !is.na(time)) |> 
+  collect() |> 
+  filter(rankqual <= 30)
+
+spr_heat_times <- 
+  v_spr_heats |> 
+  collect() |> 
+  filter(eventid %in% spr_qual_times$eventid)
+```
+
+```{r}
+spr_qual_best <- 
+  spr_qual_times |> 
+  slice_min(
+    order_by = time,
+    n = 1,
+    with_ties = FALSE,
+    by = c(eventid,tech,gender,date)
+  )
+
+spr_heat_best <- 
+  spr_heat_times |> 
+  mutate(rnd = substr(heat,1,1)) |> 
+  slice_min(
+    order_by = heat_time,
+    n = 1,
+    with_ties = FALSE,
+    by = c(eventid,tech,gender,date,rnd)
+  ) |> 
+  mutate(
+    time = heat_time
+  )
+```
+
+```{r}
+common_events <- 
+  inner_join(
+    spr_qual_best,
+    spr_heat_best,
+    by = "eventid"
+  ) |> 
+  select(eventid) |> 
+  distinct()
+```
+
+```{r}
+time_prog <- 
+  bind_rows(
+    spr_qual_best |> 
+      select(eventid,tech,gender,date,time) |> 
+      mutate(rnd = "qual") |> 
+      semi_join(common_events,by = "eventid"),
+    spr_heat_best |> 
+      select(eventid,tech,gender,date,rnd,time) |> 
+      semi_join(common_events,by = "eventid")
+  ) |> 
+  mutate(
+    rnd_lbl = 
+      case_when(
+        rnd == "qual" ~ "Qual",
+        rnd == "1" ~ "QF",
+        rnd == "2" ~ "SF",
+        rnd == "3" ~ "FN"
+      ),
+    rnd_lbl = factor(rnd_lbl,levels = c("Qual","QF","SF","FN"),ordered = TRUE)
+  ) |> 
+  arrange(date,eventid,rnd_lbl) |> 
+  mutate(
+    milan_owg = if_else(date == as.Date("2026-02-10"),"y","n")
+  ) |> 
+  mutate(
+    has_all_rnds = all(!is.na(time) & all(time > 100)),
+    .by = eventid
+  ) |> 
+  filter(has_all_rnds)
+```
+
+```{r}
+rnd_qs <- 
+  time_prog |> 
+  summarise(
+    q05 = quantile(time,0.05,na.rm = TRUE),
+    q50 = quantile(time,0.5,na.rm = TRUE),
+    q95 = quantile(time,0.95,na.rm = TRUE),
+    .by = c(gender,tech,rnd_lbl)
+  ) |> 
+  pivot_longer(
+    cols = starts_with("q"),
+    names_to = "q",
+    values_to = "time"
+  ) |> 
+  mutate(
+    q_lbl = 
+      case_when(
+        q == "q05" ~ "5%",
+        q == "q50" ~ "50%",
+        q == "q95" ~ "95%"
+      )
+  )
+```
+
+I've seen some discussion around how long this year's Olympic sprint course was.
+
+This makes a difference, because physiological differences between performing for
+2.5 minutes is enough different from, say 4 minutes that it really changes which
+athletes are best suited to it, and demands some different training and preparation.
+
+So let's quantify how unusually long this Olympic sprint course actually is. We
+could compare the stated length, but that doesn't take into account the terrain,
+which also impacts how long of an effort it takes to complete.
+
+So instead, let's take each WC, WSC, OWG or TdS sprint race since ~2013 (that's
+approximately how far back I have heat times for) and extract that fastest time
+from each round. That means for each sprint race, we get four times, one each for
+the qualification, QFs, SFs and the final.
+
+The following plot shows how the Milan Olympic course stacks up against the distribution
+of times across all other classic sprints. The 5%, 50% & 95% lines indicate the
+5th, 50th (median) and 95% percentile times across all races in that panel.
+
+```{r}
+ggplot(
+  data = rnd_qs,
+  aes(x = rnd_lbl,y = time,group = q)
+) + 
+  facet_grid(gender~tech) + 
+  geom_textpath(
+    aes(label = q_lbl),
+    color = "grey50",
+    size = 8 / .pt,
+    linetype = "dashed"
+  ) + 
+  geom_point(color = "grey50",size = 1) +
+  geom_textline(
+    data = time_prog |> 
+      filter(milan_owg == "y"),
+    aes(x = rnd_lbl,y = time,group = eventid),
+    label = "Milan OWG",
+    size = 8 / .pt,
+    color = "blue",
+    inherit.aes = FALSE
+  ) +
+  geom_point(
+    data = time_prog |> 
+      filter(milan_owg == "y"),
+    aes(x = rnd_lbl,y = time,group = eventid),
+    color = "blue",
+    inherit.aes = FALSE
+  ) +
+  labs(
+    x = "Round",
+    y = "Fastest time (seconds)",
+    title = "Milan Olympic Sprint Course Is Historical Long",
+    subtitle = "Fastest time from each round compared to the historical (2013-2026) WC, OWG, WSC & TdS\nsprint events.",
+    caption = "statisticalskier.netlify.app"
+  ) + 
+  scale_y_continuous(
+    expand = expansion(mult = c(0.02,0.02))
+  ) + 
+  scale_x_discrete(
+    expand = expansion(add = c(0.1,0.1))
+  ) + 
+  theme(
+    panel.grid.major.y = element_blank(),
+    plot.caption = element_text(color = "grey",face = "italic")
+  )
+```
+
+Clearly, this Olympic sprint course skied much, much longer than virtually any
+other sprint course any of these athletes have had to compete on for probably 
+their entire careers.
+
+You can also see that the times got noticeably slower with each round as well. Let's
+compare that as well to historical trends.
+
+As a simple and crude way to do that, let's take each of these sets of four times
+and calculate the percentage change from each heat round relative to the qualification
+time, and average these percent changes.
+
+The following plot shows the distribution of the average percent change relative to the fastest
+qualification time across all sprint races since 2013. Once again, this Milan Olympic
+course slowed down during the day by an historic amount.
+
+```{r}
+rnd_slopes <- 
+  time_prog |> 
+  arrange(eventid,rnd_lbl) |> 
+  select(eventid,rnd_lbl,time) |> 
+  tidyr::nest(times = -c(eventid)) |> 
+  mutate(
+    slope = purrr::map_dbl(
+      .x = times,
+      .f = \(x) with(x,coef(lm(time~rnd_lbl))[2])
+    )
+  ) |> 
+  select(-times)
+
+rnd_pct_chng <- 
+  time_prog |> 
+  arrange(eventid,rnd_lbl) |> 
+  summarise(
+    avg_pct_chng = mean((time - time[1]) / time[1]),
+    .by = eventid
+  )
+```
+
+```{r}
+milan_anno <- 
+  time_prog |> 
+      select(eventid,gender,tech) |> 
+      distinct() |> 
+      left_join(
+        rnd_pct_chng,
+        by = "eventid"
+      ) |> 
+      semi_join(time_prog |> filter(milan_owg == "y"),by = "eventid") |> 
+  mutate(lbl = "Milan OWG")
+
+time_prog |> 
+  select(eventid,gender,tech) |> 
+  distinct() |> 
+  left_join(
+    rnd_pct_chng,
+    by = "eventid"
+  ) |> 
+  ggplot(
+    data = _,
+    aes(x = avg_pct_chng,y = tech)
+  ) + 
+  facet_wrap(~gender) +
+  geom_vline(
+    xintercept = 0,
+    color = "gray",
+    linetype = "dashed"
+  ) +
+  geom_quasirandom() + 
+  geom_point(
+    data = milan_anno,
+    color = "red"
+  ) +
+  geom_label_repel(
+    data = milan_anno,
+    aes(label = lbl),
+    color = "red",
+    size = 9 / .pt,
+    direction = "y",
+    force_pull = 0.5
+  ) +
+  labs(
+    x = "Average percent change in fastest round time (relative to qualification)",
+    y = NULL,
+    title = "Milan Olympic Sprint Course Slowed Down Dramatically",
+    subtitle = "Average percent change of fastest round time relative to best qualifying time",
+    caption = "statisticalskier.netlify.app"
+  ) +
+  scale_x_continuous(
+    breaks = seq(-0.04,0.1,by = 0.02),
+    labels = scales::label_percent()
+  ) + 
+  scale_y_discrete(
+    expand = expansion(add = c(0.5,0.5))
+  )  + 
+  theme(
+    plot.caption = element_text(color = "grey",face = "italic")
+  )
+```
